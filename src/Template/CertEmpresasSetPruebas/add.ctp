@@ -25,7 +25,7 @@
         <div class="row">
             <div class="large-12 columns">
                 <label>Set de Pruebas (.txt)
-                    <input type="file" name="set_de_pruebas" onchange="onFileImage(this);" />                    
+                    <input type="file" name="set_de_pruebas" onchange="onFileImage(this);" />
                 </label>
             </div>
         </div>
@@ -36,13 +36,13 @@
             <div class="large-8">
                 <div class="large-6 columns">
                     <label>Rut Emisor (Empresa a certificar)
-                        <input type="text" name="rut_emisor" placeholder="Rut emisor" />
+                        <input type="text" name="emisor[RUTEmisor]" placeholder="Rut emisor" />
                     </label>
                 </div>
 
                 <div class="large-6 columns">
                     <label>Rut Receptor (Empresa certificadora)
-                        <input type="text" name="rut_receptor" placeholder="Rut receptor" />
+                        <input type="text" name="receptor[RUTRecep]" placeholder="Rut receptor" />
                     </label>
                 </div>
             </div>
@@ -51,21 +51,10 @@
         <div class="row">
             <div class="large-8">
                 <div class="large-6 columns">
-                    <input type="text" name="rs_emisor" placeholder="Razón social emisor" />
+                    <input type="text" name="emisor[RznSoc]" placeholder="Razón social emisor" />
                 </div>
                 <div class="large-6 columns">
-                    <input type="text" name="rs_receptor" placeholder="Razón social receptor" />
-                </div>
-            </div>
-            <div class="large-4 columns"></div>
-        </div>
-        <div class="row">
-            <div class="large-8">
-                <div class="large-6 columns">
-                    <input type="text" name="giro_emisor" placeholder="Giro emisor" />
-                </div>
-                <div class="large-6 columns">
-                    <input type="text" name="giro_receptor" placeholder="Giro receptor" />
+                    <input type="text" name="receptor[RznSocRecep]" placeholder="Razón social receptor" />
                 </div>
             </div>
             <div class="large-4 columns"></div>
@@ -73,21 +62,10 @@
         <div class="row">
             <div class="large-8">
                 <div class="large-6 columns">
-                    <input type="text" name="direccion_emisor" placeholder="Dirección emisor" />
+                    <input type="text" name="emisor[GiroEmis]" placeholder="Giro emisor" />
                 </div>
                 <div class="large-6 columns">
-                    <input type="text" name="direccion_receptor" placeholder="Dirección receptor" />
-                </div>
-            </div>
-            <div class="large-4 columns"></div>
-        </div>
-        <div class="row">
-            <div class="large-8">
-                <div class="large-6 columns">
-                    <?php echo $this->Form->control('comuna_emisor', ['options' => $certEmpresas, 'empty' => 'Comuna emisor', 'label' => false]); ?>
-                </div>
-                <div class="large-6 columns">
-                    <?php echo $this->Form->control('comuna_receptor', ['options' => $certEmpresas, 'empty' => 'Comuna receptor', 'label' => false]); ?>
+                    <input type="text" name="receptor[GiroRecep]" placeholder="Giro receptor" />
                 </div>
             </div>
             <div class="large-4 columns"></div>
@@ -95,7 +73,29 @@
         <div class="row">
             <div class="large-8">
                 <div class="large-6 columns">
-                    <input type="text" name="act_emisor" placeholder="Actividad económica emisor" />
+                    <input type="text" name="emisor[DirOrigen]" placeholder="Dirección emisor" />
+                </div>
+                <div class="large-6 columns">
+                    <input type="text" name="receptor[DirRecep]" placeholder="Dirección receptor" />
+                </div>
+            </div>
+            <div class="large-4 columns"></div>
+        </div>
+        <div class="row">
+            <div class="large-8">
+                <div class="large-6 columns">
+                    <?php echo $this->Form->control('emisor[CmnaOrigen]', ['options' => $comunas, 'empty' => 'Comuna emisor', 'label' => false]); ?>
+                </div>
+                <div class="large-6 columns">
+                    <?php echo $this->Form->control('receptor[CmnaRecep]', ['options' => $comunas, 'empty' => 'Comuna receptor', 'label' => false]); ?>
+                </div>
+            </div>
+            <div class="large-4 columns"></div>
+        </div>
+        <div class="row">
+            <div class="large-8">
+                <div class="large-6 columns">
+                    <input type="text" name="emisor[Acteco]" placeholder="Actividad económica emisor" />
                 </div>
                 <div class="large-6 columns">
                 </div>
@@ -109,12 +109,12 @@
             <div class="large-8">
                 <div class="large-6 columns">
                     <label>Firma electrónica (certificado formato .p12)
-                        <input type="file" name="firma_emisor" onchange="onFileImage(this);" />
+                        <input type="file" name="certificado[firma]" onchange="onFileImage(this);" />
                     </label>
                 </div>
                 <div class="large-6 columns">
                     <label>Contraseña firma electrónica
-                        <input type="text" name="pass_emisor" placeholder="Contraseña firma" />
+                        <input type="text" name="certificado[pass]" placeholder="Contraseña firma" />
                     </label>
                 </div>
             </div>
@@ -126,12 +126,12 @@
             <div class="large-8">
                 <div class="large-6 columns">
                     <label>Fecha resolución
-                        <input type="text" id="nro_resolucion" placeholder="Fecha resolución" />
+                        <input type="text" name="caratula[FchResol]" placeholder="Fecha resolución" />
                     </label>
                 </div>
                 <div class="large-6 columns">
                     <label>Número de resolución
-                        <input type="text" id="nro_resolucion" placeholder="Número de resolución" />
+                        <input type="text" name="caratula[NroResol]" placeholder="Número de resolución" />
                     </label>
                 </div>
             </div>
@@ -142,57 +142,79 @@
             <div class="large-12">
                 <div class="large-4 columns">
                     <label>Archivos CAF (.xml)
-                        <input type="file" name="caf_1" onchange="onFileImage(this);" />
+                        <input type="file" name="cafs[0][caf]" onchange="onFileImage(this);" />
                     </label>
                 </div>
                 <div class="large-2 columns">
                     <label>Nr. Documento
-                        <input type="text" name="nro_documento_1" />
+                        <input type="text" name="cafs[0][nro_documento]" />
                     </label>
                 </div>
                 <div class="large-2 columns">
                     <label>Folio desde
-                        <input type="text" name="folio_desde_1" />
+                        <input type="text" name="cafs[0][folio_desde]" />
                     </label>
                 </div>
                 <div class="large-4 columns">
                     <button type="button" class="button tiny" id="somebutton">
-                        +
+                        <b>+</b>
                     </button>
                 </div>
             </div>
-
         </div>
 
     </fieldset>
+    <br />
     <div class="large-8">
-        <?= $this->Form->button(__('Submit')) ?>
+        <div class="large-2 columns">&nbsp;</div>
+        <div class="large-3 columns">
+            <button type="button" class="button" id="generate">
+                Generar XML
+            </button>
+        </div>
+        <div class="large-1 columns">&nbsp;</div>
+        <div class="large-5 columns">
+            <button type="button" class="button" id="send">
+                Generar y Enviar a SII
+            </button>
+        </div>
+        
     </div>
+    <br /><br /><br /><br /><br /><br />
+    <input type="hidden" name="accion" id="accion" />
     <?= $this->Form->end() ?>
 </div>
 
 
 
 <script>
-var countButton = 1;
-$("#somebutton").click(function () {
+var countButton = 0;
+$("#somebutton").click(function() {
     countButton++;
     $("#caf_container").append('<div class="large-8">\
                 <div class="large-6 columns">\
                     <label>\
-                        <input type="file" name="caf_' + countButton + '" onchange="onFileImage(this);" />\
+                        <input type="file" name="cafs[' + parseInt(countButton) + '][caf]" onchange="onFileImage(this);" />\
                     </label>\
                 </div>\
                 <div class="large-3 columns">\
                     <label>\
-                        <input type="text" name="nro_documento_' + countButton + '" />\
+                        <input type="text" name="cafs[' + parseInt(countButton) + '][nro_documento]" />\
                     </label>\
                 </div>\
                 <div class="large-3 columns">\
                     <label>\
-                        <input type="text" name="folio_desde_' + countButton + '" />\
+                        <input type="text" name="cafs[' + parseInt(countButton) + '][folio_desde]" />\
                     </label>\
                 </div>\
             </div>');
 });
+
+$("#generate, #send").click(function() {
+    $("#accion").value($(this).attr("id"));
+    $("#target").submit();
+});
+
+
+
 </script>

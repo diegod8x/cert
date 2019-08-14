@@ -9,6 +9,7 @@ use Cake\Validation\Validator;
 /**
  * CertEmpresas Model
  *
+ * @property &\Cake\ORM\Association\BelongsTo $CertComunas
  * @property \App\Model\Table\CertEmpresasSetPruebasTable&\Cake\ORM\Association\HasMany $CertEmpresasSetPruebas
  *
  * @method \App\Model\Entity\CertEmpresa get($primaryKey, $options = [])
@@ -36,6 +37,9 @@ class CertEmpresasTable extends Table
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
+        $this->belongsTo('CertComunas', [
+            'foreignKey' => 'cert_comuna_id'
+        ]);
         $this->hasMany('CertEmpresasSetPruebas', [
             'foreignKey' => 'cert_empresa_id'
         ]);
@@ -60,9 +64,38 @@ class CertEmpresasTable extends Table
 
         $validator
             ->scalar('nombre')
-            ->maxLength('nombre', 45)
+            ->maxLength('nombre', 4294967295)
             ->allowEmptyString('nombre');
 
+        $validator
+            ->scalar('giro')
+            ->maxLength('giro', 4294967295)
+            ->allowEmptyString('giro');
+
+        $validator
+            ->scalar('direccion')
+            ->maxLength('direccion', 4294967295)
+            ->allowEmptyString('direccion');
+
+        $validator
+            ->scalar('actividad')
+            ->maxLength('actividad', 4294967295)
+            ->allowEmptyString('actividad');
+
         return $validator;
+    }
+
+    /**
+     * Returns a rules checker object that will be used for validating
+     * application integrity.
+     *
+     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
+     * @return \Cake\ORM\RulesChecker
+     */
+    public function buildRules(RulesChecker $rules)
+    {
+        $rules->add($rules->existsIn(['cert_comuna_id'], 'CertComunas'));
+
+        return $rules;
     }
 }

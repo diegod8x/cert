@@ -4,19 +4,14 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * CertEmpresa Entity
+ * CertComuna Entity
  *
  * @property int $id
- * @property string|null $rut
  * @property string|null $nombre
- * @property string|null $giro
- * @property string|null $direccion
- * @property int|null $cert_comuna_id
- * @property string|null $actividad
  *
- * @property \App\Model\Entity\CertEmpresasSetPrueba[] $cert_empresas_set_pruebas
+ * @property \App\Model\Entity\CertEmpresa[] $cert_empresas
  */
-class CertEmpresa extends Entity
+class CertComuna extends Entity
 {
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
@@ -28,12 +23,7 @@ class CertEmpresa extends Entity
      * @var array
      */
     protected $_accessible = [
-        'rut' => true,
         'nombre' => true,
-        'giro' => true,
-        'direccion' => true,
-        'cert_comuna_id' => true,
-        'actividad' => true,
-        'cert_empresas_set_pruebas' => true
+        'cert_empresas' => true
     ];
 }

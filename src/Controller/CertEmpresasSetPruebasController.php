@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\ORM\TableRegistry;
 \sasco\LibreDTE\Sii::setAmbiente(\sasco\LibreDTE\Sii::CERTIFICACION);
 define("CERT_EMP", ROOT . DS . 'files' . DS . 'certificacion' . DS);
 define("FILE_DTE", 'EnvioDTE');
@@ -55,10 +56,29 @@ class CertEmpresasSetPruebasController extends AppController
     {
 
         
+        
         $this->loadModel('CertComunas');
+        $this->loadModel('CertSetPruebas');
+        
         $config = AppController::config();
         $certEmpresasSetPrueba = $this->CertEmpresasSetPruebas->newEntity();
         if ($this->request->is('post')) {
+            
+            /*if (
+                empty($this->request->data["emisor"]["RUTEmisor"]) || 
+                empty($this->request->data["receptor"]["RUTRecep"]) || 
+                empty($this->request->data["set_de_pruebas"]["name"]) || 
+                empty($this->request->data["cafs"]) || 
+                empty($this->request->data["certificado"]["firma"]) || 
+                empty($this->request->data["caratula"]["FchResol"]) 
+            ) {
+                echo json_encode(["message" => "Debe completar todos los campos antes de enviar la solicitud", "data" => []]); 
+                exit;
+            }
+*/
+            //pr($this->request->data);
+            //exit;
+
             $accion = $this->request->data["accion"];
             //set prueba
             $rutEmisor = $this->request->data["emisor"]["RUTEmisor"];
@@ -76,6 +96,35 @@ class CertEmpresasSetPruebasController extends AppController
             $caratula["RutEnvia"] = $rutEmisor;
             $caratula["RutReceptor"] = "60803000-K"; // sii revisar en produccion
 
+            //data almacenamiento
+            $empresaBD[] = [
+                "rut" => $Emisor["RUTEmisor"],
+                "nombre" => $Emisor["RznSoc"],
+                "giro" => $Emisor["GiroEmis"],
+                "direccion" => $Emisor["DirOrigen"],
+                "cert_comuna_id" => $Emisor["CmnaOrigen"],
+                "actividad" => $Emisor["Acteco"]
+            ];
+            $empresaBD[] = [
+                "rut" => $Receptor["RUTRecep"],
+                "nombre" => $Receptor["RznSocRecep"],
+                "giro" => $Receptor["GiroRecep"],
+                "direccion" => $Receptor["DirRecep"],
+                "cert_comuna_id" => $Receptor["CmnaRecep"],
+                "actividad" => null
+            ];
+
+            $empresasTable = TableRegistry::get('CertEmpresas');
+            $entities = $empresasTable->newEntities($empresaBD);
+            if(!$empresasTable->saveMany($entities)){
+                $obs = 'No se pudo guardar/actualizar empresas.';
+            }
+            
+            pr($result);
+            exit;
+
+            $this->CertEmpresas->save();
+
             //cafs
             $cafs = $this->request->data["cafs"];
             $folios = [];
@@ -84,7 +133,9 @@ class CertEmpresasSetPruebasController extends AppController
                     $folios[$caf["nro_documento"]] = $caf["folio_desde"];
                     $cafFile = $caf["caf"];
 
-                    $pathCAF = CERT_EMP . $rutEmisor . DS . 'folios' . DS . basename($cafFile["name"]);
+                    if (!file_exists(CERT_EMP . $rutEmisor. DS . 'folios')) mkdir(CERT_EMP . $rutEmisor. DS . 'folios', 0777, true);
+
+                    $pathCAF = CERT_EMP . $rutEmisor . DS . 'folios' . DS . basename($caf["nro_documento"].'.xml');
                     move_uploaded_file($cafFile['tmp_name'], $pathCAF);
                 }                    
             }
@@ -122,8 +173,10 @@ class CertEmpresasSetPruebasController extends AppController
             $Folios = [];
             $pathXML = CERT_EMP . $rutEmisor . DS . 'folios' . DS;
             if (!file_exists($pathXML)) mkdir($pathXML, 0777, true);
-            foreach ($folios as $tipo => $cantidad)
+            foreach ($folios as $tipo => $cantidad){
                 $Folios[$tipo] = new \sasco\LibreDTE\Sii\Folios(file_get_contents($pathXML.$tipo.'.xml'));
+            }
+                
             $EnvioDTE = new \sasco\LibreDTE\Sii\EnvioDte();
 
             // generar cada DTE, timbrar, firmar y agregar al sobre de EnvioDTE
@@ -144,26 +197,28 @@ class CertEmpresasSetPruebasController extends AppController
                 $dom = new \DOMDocument;
                 $dom->preserveWhiteSpace = TRUE;
                 $dom->loadXML(trim($EnvioDTE->generar()));
-                $dom->save($pathXML);
+
+                if (!file_exists(CERT_EMP . $rutEmisor. DS . 'xml')) mkdir(CERT_EMP . $rutEmisor. DS . 'xml', 0777, true);
+                $pathXMLEnvio = CERT_EMP . $rutEmisor . DS . 'xml' . DS . FILE_DTE . '.xml';
+
+                $dom->save($pathXMLEnvio); //guarda local
 
                 header('Content-type: text/xml');
-                header('Content-Disposition: attachment; filename='.FILE_BOLETAS.'.xml');
+                header('Content-Disposition: attachment; filename='.FILE_DTE.'.xml');
 
                 echo $dom->saveXML() . "\n";
+                
                 //file_put_contents('xml/EnvioDTE.xml', $EnvioDTE->generar()); // guardar XML en sistema de archivos
             } else if($accion=='send') {
-                $track_id = $EnvioDTE->enviar();
+
+                //$track_id = $EnvioDTE->enviar();
+                $track_id = '7778890';
+                echo $track_id;
             }
 
-            pr($documentos);exit;
+            exit;
 
-            if (!empty($this->request->data["data"]) && !empty($this->request->data["33"]) && !empty($this->request->data["61"]) && !empty($this->request->data["56"]) ) {
-                $this->request->data["data"] = json_decode($this->request->data["data"], true);
-            }
-            else {
-                echo json_encode(["message" => "Debe completar todos los campos antes de enviar la solicitud", "data" => []]); 
-                exit;
-            }
+            
 
 
             $certEmpresasSetPrueba = $this->CertEmpresasSetPruebas->patchEntity($certEmpresasSetPrueba, $this->request->getData());
@@ -174,15 +229,9 @@ class CertEmpresasSetPruebasController extends AppController
             }
             $this->Flash->error(__('The cert empresas set prueba could not be saved. Please, try again.'));
         }
-        $certComunas = $this->CertComunas->find('all')->select(['id','nombre'])->hydrate(false)->toArray();
-        $comunas = [];
-        foreach($certComunas as $comuna)
-            $comunas[$comuna["id"]] = $comuna["nombre"];
-       
-        $certEmpresas = $this->CertEmpresasSetPruebas->CertEmpresas->find('list', ['limit' => 200]);
-        $certSetPruebas = $this->CertEmpresasSetPruebas->CertSetPruebas->find('list', ['limit' => 200]);
-        $this->set('comunas', $comunas);
-        $this->set(compact('certEmpresasSetPrueba', 'certEmpresas', 'certSetPruebas'));
+        $comunas = $this->CertComunas->find('list',['idField' => 'id', 'valueField' => 'nombre'])->toArray();       
+        $setPruebas = $this->CertSetPruebas->find('list', ['idField' => 'id', 'valueField' => 'nombre'])->toArray();
+        $this->set(compact('certEmpresasSetPrueba', 'comunas', 'setPruebas'));
     }
 
    /* public function add()

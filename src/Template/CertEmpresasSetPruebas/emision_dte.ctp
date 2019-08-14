@@ -13,11 +13,17 @@
         <?php // echo $this->Form->input('set_de_pruebas', ['type' => 'file']); ?>
 
         <div class="row">
-            <div class="large-12 columns">
-                <label>Set de Pruebas (.txt)
-                    <input type="file" name="set_de_pruebas" onchange="onFileImage(this);" />
-                </label>
+            <div class="large-8">
+                <div class="large-6 columns">
+                    <?php echo $this->Form->control('cert_set_prueba_id', ['options' => $setPruebas, 'empty' => 'Set dePruebas...', 'label' => 'Seleccione']); ?>
+                </div>
+                <div class="large-6 columns">
+                    <label>Set de Pruebas (.txt)
+                        <input type="file" name="set_de_pruebas" onchange="onFileImage(this);" />
+                    </label>
+                </div>
             </div>
+            <div class="large-4 columns"></div>
         </div>
 
         <br />
@@ -25,7 +31,7 @@
             <div class="large-8">
                 <div class="large-6 columns">
                     <label>Rut Emisor (Empresa a certificar)
-                        <input type="text" name="emisor[RUTEmisor]" placeholder="Rut emisor" />
+                        <input type="text" name="emisor[RUTEmisor]" placeholder="Rut emisor" onchange="getEmpresa()" />
                     </label>
                 </div>
 
@@ -73,10 +79,10 @@
         <div class="row">
             <div class="large-8">
                 <div class="large-6 columns">
-                    <?php echo $this->Form->control('emisor[CmnaOrigen]', ['options' => $comunas, 'empty' => 'Comuna emisor', 'label' => false]); ?>
+                    <?php echo $this->Form->control('emisor[CmnaOrigen]', ['options' => $comunas, 'empty' => 'Comuna emisor...', 'label' => false]); ?>
                 </div>
                 <div class="large-6 columns">
-                    <?php echo $this->Form->control('receptor[CmnaRecep]', ['options' => $comunas, 'empty' => 'Comuna receptor', 'label' => false]); ?>
+                    <?php echo $this->Form->control('receptor[CmnaRecep]', ['options' => $comunas, 'empty' => 'Comuna receptor...', 'label' => false]); ?>
                 </div>
             </div>
             <div class="large-4 columns"></div>
@@ -103,7 +109,7 @@
                 </div>
                 <div class="large-6 columns">
                     <label>Contraseña firma electrónica
-                        <input type="text" name="certificado[pass]" placeholder="Contraseña firma" />
+                        <input type="password" name="certificado[pass]" placeholder="Contraseña firma" />
                     </label>
                 </div>
             </div>
@@ -200,34 +206,17 @@ $("#somebutton").click(function() {
 });
 
 $("#generate, #send").click(function() {
-
     var accion = $(this).attr("id");
     $("#accion").val(accion);
 
-    //alert(accion + JSON.stringify($("#certEmpresasSetPrueba").serialize(),null,2));
-/*
-    $.ajax({
-        type: "POST",
-        url:'<?php echo $this->Html->url(array("controller"=>"cert-empresas-set-pruebas", "action"=>"emisionDte"))?>',
-        data: {
-            "accion" : accion            
-        },
-    async: true,
-    dataType: "json",
-        success: function( data ) {
-            if(data == 1)
-            {
-                $("#numero_documento").val("");
-                alert("El numero de documento ya esta registrado");
-                retorno = false;
-            }
-        }
-    });*/
-	
+    //var data = $('#certEmpresasSetPrueba').serializeArray();
+    //console.log(JSON.stringify(data,null,2));
     $("#certEmpresasSetPrueba").submit();
-
 });
 
+$(".getEmpresa").change(function() {
 
+    alert( "Handler for .change() called." );
+});
 
 </script>

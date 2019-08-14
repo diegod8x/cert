@@ -1,1 +1,310 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<EnvioDTE xmlns="http://www.sii.cl/SiiDte" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sii.cl/SiiDte EnvioDTE_v10.xsd" version="1.0">
+  <SetDTE ID="LibreDTE_SetDoc">
+    <Caratula version="1.0">
+      <RutEmisor>13991496-1</RutEmisor>
+      <RutEnvia>13991496-1</RutEnvia>
+      <RutReceptor>60803000-K</RutReceptor>
+      <FchResol>2019-07-23</FchResol>
+      <NroResol>0</NroResol>
+      <TmstFirmaEnv>2019-08-14T21:47:21</TmstFirmaEnv>
+      <SubTotDTE>
+        <TpoDTE>33</TpoDTE>
+        <NroDTE>2</NroDTE>
+      </SubTotDTE>
+    </Caratula>
+    <DTE version="1.0">
+  <Documento ID="LibreDTE_T33F18">
+    <Encabezado>
+      <IdDoc>
+        <TipoDTE>33</TipoDTE>
+        <Folio>18</Folio>
+        <FchEmis>2019-08-14</FchEmis>
+        <TpoTranVenta>1</TpoTranVenta>
+      </IdDoc>
+      <Emisor>
+        <RUTEmisor>13991496-1</RUTEmisor>
+        <RznSoc>JOSE ANDRES RUIZ CORNEJO</RznSoc>
+        <GiroEmis>PROCESAMIENTO DE DATOS, HOSPEDAJE Y ACTIVIDADES CONEXAS</GiroEmis>
+        <Acteco>631100</Acteco>
+        <DirOrigen>PASAJE AZALEA ORIENTE #2768 jardines del sol</DirOrigen>
+        <CmnaOrigen>52</CmnaOrigen>
+      </Emisor>
+      <Receptor>
+        <RUTRecep>15394719-8</RUTRecep>
+        <RznSocRecep>DIEGO LEOPOLDO DANIEL DIAZ REYES</RznSocRecep>
+        <GiroRecep>ACTIVIDADES DE PROGRAMACION INFORMATICA</GiroRecep>
+        <DirRecep>BORINQUEN 2 Block F DEPTO. 18 COND BRISAS DEL SUR</DirRecep>
+        <CmnaRecep>53</CmnaRecep>
+      </Receptor>
+      <Totales>
+        <MntNeto>206478</MntNeto>
+        <TasaIVA>19</TasaIVA>
+        <IVA>39231</IVA>
+        <MntTotal>245709</MntTotal>
+      </Totales>
+    </Encabezado>
+    <Detalle>
+      <NroLinDet>1</NroLinDet>
+      <NmbItem>Cajón AFECTO</NmbItem>
+      <QtyItem>124</QtyItem>
+      <PrcItem>981</PrcItem>
+      <MontoItem>121644</MontoItem>
+    </Detalle>
+    <Detalle>
+      <NroLinDet>2</NroLinDet>
+      <NmbItem>Relleno AFECTO</NmbItem>
+      <QtyItem>54</QtyItem>
+      <PrcItem>1571</PrcItem>
+      <MontoItem>84834</MontoItem>
+    </Detalle>
+    <Referencia>
+      <NroLinRef>1</NroLinRef>
+      <TpoDocRef>SET</TpoDocRef>
+      <FolioRef>18</FolioRef>
+      <FchRef>2019-08-14</FchRef>
+      <RazonRef>CASO 1137145-1</RazonRef>
+    </Referencia>
+    <TED version="1.0">
+  <DD>
+    <RE>13991496-1</RE>
+    <TD>33</TD>
+    <F>18</F>
+    <FE>2019-08-14</FE>
+    <RR>15394719-8</RR>
+    <RSR>DIEGO LEOPOLDO DANIEL DIAZ REYES</RSR>
+    <MNT>245709</MNT>
+    <IT1>Cajón AFECTO</IT1>
+    <CAF version="1.0">
+<DA>
+<RE>13991496-1</RE>
+<RS>JOSE ANDRES RUIZ CORNEJO</RS>
+<TD>33</TD>
+<RNG><D>1</D><H>50</H></RNG>
+<FA>2019-07-23</FA>
+<RSAPK><M>ph0WdT4yzSbBnIm3cc9W31fURyCpmJzMlu7HG32cfwYij0Loj+yN4Q1ejMvxe7E7ujYGdRbWMs7JWyTj3O5/Fw==</M><E>Aw==</E></RSAPK>
+<IDK>100</IDK>
+</DA>
+<FRMA algoritmo="SHA1withRSA">KLYg0X2iS5QyUQX832i/CaW40Q0YX9U0RiWwgEZJD5poowl6qSZIFYLcNtYUTRthpwhIBz7xlrYM8CieOy8dwQ==</FRMA>
+</CAF>
+    <TSTED>2019-08-14T21:47:21</TSTED>
+  </DD>
+  <FRMT algoritmo="SHA1withRSA">AlgvLvfOcsWoTijUYzdJIsnuK+0zId85G77wc11LLDQX+qtLlMY6qWOSJZe5KBb/j47eViGKDx5vPgsdtMTvuA==</FRMT>
+</TED>
+  <TmstFirma>2019-08-14T21:47:21</TmstFirma></Documento>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#"><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI="#LibreDTE_T33F18"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>OMoLHrW2jm7xYqweH7eOqIrHRM0=</DigestValue></Reference></SignedInfo><SignatureValue>YS8vk/J3Pohrp5wb9wvguKuMyjxOIwUIM2ey1Lztl97VCaE3eXeCpWDDIED7g+sr
+jCihr/ZGBOWWfXht5/HdcUUNHKkIp4zz9jsy9uUyadSD3BeFGyrqfPyACK5GpINH
+pUJEUo6Dap5gA9rx5eD6ZC/0lpa8PDXmCQRQBgo1Aiq0i69EmmkLWEFI7LZWjqcU
+iNRQNX6RlEAU9hFXgrhH2rSxuu/2Fl/Iui92zxTPHjDJkvG+iRNnhD/6eRzg7Bcj
+QEdxwFev49ODP7zlWaiqmMEqW9cCIoHIEZbxeHpkdAMPqMnjV6TH+W5SQVOA56I2
+3K+j3esOicSROh4XsCmEKw==</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>jOlMCM7BTCOxsTbzQucd3/hRuh4fgPC5e8A0PQw7LlUnP4R+7GtjnbZdO6t/zYJp
+6pv6RETrDarU0bsLIhNbAGh14MJJx1J4N8EDpkxMnXtPriVx2mkEA4K8f0bVXJWp
+Skpp5ZZ2dysMWH0zgE9Ry9J915obg+gzBgvLa3G39grQTF4TrUOjMKOHUzpnt7hl
+emrs5XY8Mk7TDJ+IYaY0OTTfzvXFT0D4p9P3OUgaWkmsEbcggsxGiiRbPPL8FnWL
+BFeBU0NpjSo2/etsOOizndefpxnWrq3Ncv+ncuWOl6W0asqvMqW6oDk+D7KaRFqm
+2438PA6okIjHRVdfShRNow==</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIGRzCCBS+gAwIBAgIIICPTKw+WTkUwDQYJKoZIhvcNAQELBQAwga8xCzAJBgNV
+BAYTAkNMMRQwEgYDVQQKDAtFLVNpZ24gUy5BLjE5MDcGA1UECwwwVGVybXMgb2Yg
+dXNlIGF0IHd3dy5lc2lnbi1sYS5jb20vYWN1ZXJkb3RlcmNlcm9zMSswKQYDVQQD
+DCJFLVNpZ24gQ2xhc3MgMiBGaXJtYSBUcmlidXRhcmlhIENBMSIwIAYJKoZIhvcN
+AQkBFhNlLXNpZ25AZXNpZ24tbGEuY29tMB4XDTE3MDkwNDE2MjkwOFoXDTE5MDkw
+NDE2MjYwMFowgaYxCzAJBgNVBAYTAkNMMRQwEgYDVQQKDAtFLVNpZ24gUy5BLjE5
+MDcGA1UECwwwVGVybXMgb2YgdXNlIGF0IHd3dy5lc2lnbi1sYS5jb20vYWN1ZXJk
+b3RlcmNlcm9zMSEwHwYDVQQDDBhKT1NFIEFORFJFUyBSVUlaIENPUk5FSk8xIzAh
+BgkqhkiG9w0BCQEWFGpvc2VydWl6ODFAZ21haWwuY29tMIIBIjANBgkqhkiG9w0B
+AQEFAAOCAQ8AMIIBCgKCAQEAjOlMCM7BTCOxsTbzQucd3/hRuh4fgPC5e8A0PQw7
+LlUnP4R+7GtjnbZdO6t/zYJp6pv6RETrDarU0bsLIhNbAGh14MJJx1J4N8EDpkxM
+nXtPriVx2mkEA4K8f0bVXJWpSkpp5ZZ2dysMWH0zgE9Ry9J915obg+gzBgvLa3G3
+9grQTF4TrUOjMKOHUzpnt7hlemrs5XY8Mk7TDJ+IYaY0OTTfzvXFT0D4p9P3OUga
+WkmsEbcggsxGiiRbPPL8FnWLBFeBU0NpjSo2/etsOOizndefpxnWrq3Ncv+ncuWO
+l6W0asqvMqW6oDk+D7KaRFqm2438PA6okIjHRVdfShRNowIDAQABo4ICbDCCAmgw
+gYAGCCsGAQUFBwEBBHQwcjBKBggrBgEFBQcwAoY+aHR0cDovL3BraS5lc2lnbi1s
+YS5jb20vY2FjZXJ0cy9wa2lDbGFzczJGaXJtYVRyaWJ1dGFyaWFDQS5jcnQwJAYI
+KwYBBQUHMAGGGGh0dHA6Ly9vY3NwLmVzaWduLWxhLmNvbTAdBgNVHQ4EFgQUoFjl
+LK9NqO1d2+UxirEH0K9KLhAwDAYDVR0TAQH/BAIwADAfBgNVHSMEGDAWgBT5SvrC
+x27C5xKcV0U1hBptKOlKpDCByAYDVR0gBIHAMIG9MIG6BgwrBgEEAYLKagEEAQIw
+gakwfgYIKwYBBQUHAgIwch5wAEMAZQByAHQAaQBmAGkAYwBhAGQAbwAgAHAAYQBy
+AGEAIAB1AHMAbwAgAFQAcgBpAGIAdQB0AGEAcgBpAG8ALAAgAEMAbwBtAGUAcgBj
+AGkAbwAsACAAUABhAGcAbwBzACAAeQAgAE8AdAByAG8AczAnBggrBgEFBQcCARYb
+aHR0cDovL3d3dy5lc2lnbi1sYS5jb20vY3BzMFEGA1UdHwRKMEgwRqBEoEKGQGh0
+dHA6Ly9wa2kuZXNpZ24tbGEuY29tL2NybC9wa2lDbGFzczJGaXJtYVRyaWJ1dGFy
+aWEvZW5kdXNlci5jcmwwDgYDVR0PAQH/BAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUF
+BwMCBggrBgEFBQcDBDAjBgNVHREEHDAaoBgGCCsGAQQBwQEBoAwWCjEzOTkxNDk2
+LTEwIwYDVR0SBBwwGqAYBggrBgEEAcEBAqAMFgo5OTU1MTc0MC1LMA0GCSqGSIb3
+DQEBCwUAA4IBAQAsOWFVTa4HNpM6mmELeqJBbxTimARB6t6P/NxGgOqx08b9T7Ii
+gkGhsbhxQZVMsVsDkUG7DAitQFCLoG6j9fc8M6D42PratszUFf1gsudgm10rsZJJ
+DaVnn5hGSMLDww4Gdu1jHzoLrI5M2qHX4ZyCO8XibIwC84x7TkcFuOE5G4phlq3m
+m915W0NDE+/KoOnsskw4EETErJLLLH9aeYz5wm6ZJt0g0oUfuoDnm7FePS/d9cQG
+mExYmy8kpz0D5MT7L/QDOiKt8sgZkT9N/ZXI8Hcxh6VJn+xQPOYt+YQyHiaxigPA
+tk9YTwwPWEj90KQzV1de5PgfO7qUGKnio2qN</X509Certificate></X509Data></KeyInfo></Signature></DTE>
+<DTE version="1.0">
+  <Documento ID="LibreDTE_T33F19">
+    <Encabezado>
+      <IdDoc>
+        <TipoDTE>33</TipoDTE>
+        <Folio>19</Folio>
+        <FchEmis>2019-08-14</FchEmis>
+        <TpoTranVenta>1</TpoTranVenta>
+      </IdDoc>
+      <Emisor>
+        <RUTEmisor>13991496-1</RUTEmisor>
+        <RznSoc>JOSE ANDRES RUIZ CORNEJO</RznSoc>
+        <GiroEmis>PROCESAMIENTO DE DATOS, HOSPEDAJE Y ACTIVIDADES CONEXAS</GiroEmis>
+        <Acteco>631100</Acteco>
+        <DirOrigen>PASAJE AZALEA ORIENTE #2768 jardines del sol</DirOrigen>
+        <CmnaOrigen>52</CmnaOrigen>
+      </Emisor>
+      <Receptor>
+        <RUTRecep>15394719-8</RUTRecep>
+        <RznSocRecep>DIEGO LEOPOLDO DANIEL DIAZ REYES</RznSocRecep>
+        <GiroRecep>ACTIVIDADES DE PROGRAMACION INFORMATICA</GiroRecep>
+        <DirRecep>BORINQUEN 2 Block F DEPTO. 18 COND BRISAS DEL SUR</DirRecep>
+        <CmnaRecep>53</CmnaRecep>
+      </Receptor>
+      <Totales>
+        <MntNeto>653101</MntNeto>
+        <TasaIVA>19</TasaIVA>
+        <IVA>124089</IVA>
+        <MntTotal>777190</MntTotal>
+      </Totales>
+    </Encabezado>
+    <Detalle>
+      <NroLinDet>1</NroLinDet>
+      <NmbItem>Pañuelo AFECTO</NmbItem>
+      <QtyItem>247</QtyItem>
+      <PrcItem>2015</PrcItem>
+      <DescuentoPct>4</DescuentoPct>
+      <DescuentoMonto>19908</DescuentoMonto>
+      <MontoItem>477797</MontoItem>
+    </Detalle>
+    <Detalle>
+      <NroLinDet>2</NroLinDet>
+      <NmbItem>ITEM 2 AFECTO</NmbItem>
+      <QtyItem>173</QtyItem>
+      <PrcItem>1078</PrcItem>
+      <DescuentoPct>6</DescuentoPct>
+      <DescuentoMonto>11190</DescuentoMonto>
+      <MontoItem>175304</MontoItem>
+    </Detalle>
+    <Referencia>
+      <NroLinRef>1</NroLinRef>
+      <TpoDocRef>SET</TpoDocRef>
+      <FolioRef>19</FolioRef>
+      <FchRef>2019-08-14</FchRef>
+      <RazonRef>CASO 1137145-2</RazonRef>
+    </Referencia>
+    <TED version="1.0">
+  <DD>
+    <RE>13991496-1</RE>
+    <TD>33</TD>
+    <F>19</F>
+    <FE>2019-08-14</FE>
+    <RR>15394719-8</RR>
+    <RSR>DIEGO LEOPOLDO DANIEL DIAZ REYES</RSR>
+    <MNT>777190</MNT>
+    <IT1>Pañuelo AFECTO</IT1>
+    <CAF version="1.0">
+<DA>
+<RE>13991496-1</RE>
+<RS>JOSE ANDRES RUIZ CORNEJO</RS>
+<TD>33</TD>
+<RNG><D>1</D><H>50</H></RNG>
+<FA>2019-07-23</FA>
+<RSAPK><M>ph0WdT4yzSbBnIm3cc9W31fURyCpmJzMlu7HG32cfwYij0Loj+yN4Q1ejMvxe7E7ujYGdRbWMs7JWyTj3O5/Fw==</M><E>Aw==</E></RSAPK>
+<IDK>100</IDK>
+</DA>
+<FRMA algoritmo="SHA1withRSA">KLYg0X2iS5QyUQX832i/CaW40Q0YX9U0RiWwgEZJD5poowl6qSZIFYLcNtYUTRthpwhIBz7xlrYM8CieOy8dwQ==</FRMA>
+</CAF>
+    <TSTED>2019-08-14T21:47:21</TSTED>
+  </DD>
+  <FRMT algoritmo="SHA1withRSA">XmFrbsqBe1sHoA7x0aQ57ZdxV1OQ9eCax7dv34oJFAjO6YMAG8UkhmgKHtCBPcFHRC9uO6mKKpBS5XiGvAnQ8Q==</FRMT>
+</TED>
+  <TmstFirma>2019-08-14T21:47:21</TmstFirma></Documento>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#"><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI="#LibreDTE_T33F19"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>UyDwIP4pQAe0o667dkBoJTu2bPY=</DigestValue></Reference></SignedInfo><SignatureValue>Lo0/bHZ4PDZnPnpJzajnzZW9pVJofzQe12TFVpm8r8eD6gIlJgUVgSDNGU8rrPUJ
+KFk3xPjqwcbSBQWiVcBk4YLfO+vXA3yubbThLZ67nKqDtDIO17F1oSqenxhF5Yu2
+U1nJ2QLqeMbJPRJFdDA+uL0ooxlp8XmuAa8r5jfA5WMhDWvee4NU7klZ/sW4qZHn
+/H+sOUw9CWpeb7AdCAYqSypPplt5J3oSpMLPYE6lJF2EHc3IkYVwBzPAOgccRSwg
+L/TlCLMhmY9LmkKGJb/dZgsSnEeuaOz/UACcuEp8rJz7MeRUIQxwzZjjMuXi1Meh
+cf9UVhWO1iN1GYCKbLdmdw==</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>jOlMCM7BTCOxsTbzQucd3/hRuh4fgPC5e8A0PQw7LlUnP4R+7GtjnbZdO6t/zYJp
+6pv6RETrDarU0bsLIhNbAGh14MJJx1J4N8EDpkxMnXtPriVx2mkEA4K8f0bVXJWp
+Skpp5ZZ2dysMWH0zgE9Ry9J915obg+gzBgvLa3G39grQTF4TrUOjMKOHUzpnt7hl
+emrs5XY8Mk7TDJ+IYaY0OTTfzvXFT0D4p9P3OUgaWkmsEbcggsxGiiRbPPL8FnWL
+BFeBU0NpjSo2/etsOOizndefpxnWrq3Ncv+ncuWOl6W0asqvMqW6oDk+D7KaRFqm
+2438PA6okIjHRVdfShRNow==</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIGRzCCBS+gAwIBAgIIICPTKw+WTkUwDQYJKoZIhvcNAQELBQAwga8xCzAJBgNV
+BAYTAkNMMRQwEgYDVQQKDAtFLVNpZ24gUy5BLjE5MDcGA1UECwwwVGVybXMgb2Yg
+dXNlIGF0IHd3dy5lc2lnbi1sYS5jb20vYWN1ZXJkb3RlcmNlcm9zMSswKQYDVQQD
+DCJFLVNpZ24gQ2xhc3MgMiBGaXJtYSBUcmlidXRhcmlhIENBMSIwIAYJKoZIhvcN
+AQkBFhNlLXNpZ25AZXNpZ24tbGEuY29tMB4XDTE3MDkwNDE2MjkwOFoXDTE5MDkw
+NDE2MjYwMFowgaYxCzAJBgNVBAYTAkNMMRQwEgYDVQQKDAtFLVNpZ24gUy5BLjE5
+MDcGA1UECwwwVGVybXMgb2YgdXNlIGF0IHd3dy5lc2lnbi1sYS5jb20vYWN1ZXJk
+b3RlcmNlcm9zMSEwHwYDVQQDDBhKT1NFIEFORFJFUyBSVUlaIENPUk5FSk8xIzAh
+BgkqhkiG9w0BCQEWFGpvc2VydWl6ODFAZ21haWwuY29tMIIBIjANBgkqhkiG9w0B
+AQEFAAOCAQ8AMIIBCgKCAQEAjOlMCM7BTCOxsTbzQucd3/hRuh4fgPC5e8A0PQw7
+LlUnP4R+7GtjnbZdO6t/zYJp6pv6RETrDarU0bsLIhNbAGh14MJJx1J4N8EDpkxM
+nXtPriVx2mkEA4K8f0bVXJWpSkpp5ZZ2dysMWH0zgE9Ry9J915obg+gzBgvLa3G3
+9grQTF4TrUOjMKOHUzpnt7hlemrs5XY8Mk7TDJ+IYaY0OTTfzvXFT0D4p9P3OUga
+WkmsEbcggsxGiiRbPPL8FnWLBFeBU0NpjSo2/etsOOizndefpxnWrq3Ncv+ncuWO
+l6W0asqvMqW6oDk+D7KaRFqm2438PA6okIjHRVdfShRNowIDAQABo4ICbDCCAmgw
+gYAGCCsGAQUFBwEBBHQwcjBKBggrBgEFBQcwAoY+aHR0cDovL3BraS5lc2lnbi1s
+YS5jb20vY2FjZXJ0cy9wa2lDbGFzczJGaXJtYVRyaWJ1dGFyaWFDQS5jcnQwJAYI
+KwYBBQUHMAGGGGh0dHA6Ly9vY3NwLmVzaWduLWxhLmNvbTAdBgNVHQ4EFgQUoFjl
+LK9NqO1d2+UxirEH0K9KLhAwDAYDVR0TAQH/BAIwADAfBgNVHSMEGDAWgBT5SvrC
+x27C5xKcV0U1hBptKOlKpDCByAYDVR0gBIHAMIG9MIG6BgwrBgEEAYLKagEEAQIw
+gakwfgYIKwYBBQUHAgIwch5wAEMAZQByAHQAaQBmAGkAYwBhAGQAbwAgAHAAYQBy
+AGEAIAB1AHMAbwAgAFQAcgBpAGIAdQB0AGEAcgBpAG8ALAAgAEMAbwBtAGUAcgBj
+AGkAbwAsACAAUABhAGcAbwBzACAAeQAgAE8AdAByAG8AczAnBggrBgEFBQcCARYb
+aHR0cDovL3d3dy5lc2lnbi1sYS5jb20vY3BzMFEGA1UdHwRKMEgwRqBEoEKGQGh0
+dHA6Ly9wa2kuZXNpZ24tbGEuY29tL2NybC9wa2lDbGFzczJGaXJtYVRyaWJ1dGFy
+aWEvZW5kdXNlci5jcmwwDgYDVR0PAQH/BAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUF
+BwMCBggrBgEFBQcDBDAjBgNVHREEHDAaoBgGCCsGAQQBwQEBoAwWCjEzOTkxNDk2
+LTEwIwYDVR0SBBwwGqAYBggrBgEEAcEBAqAMFgo5OTU1MTc0MC1LMA0GCSqGSIb3
+DQEBCwUAA4IBAQAsOWFVTa4HNpM6mmELeqJBbxTimARB6t6P/NxGgOqx08b9T7Ii
+gkGhsbhxQZVMsVsDkUG7DAitQFCLoG6j9fc8M6D42PratszUFf1gsudgm10rsZJJ
+DaVnn5hGSMLDww4Gdu1jHzoLrI5M2qHX4ZyCO8XibIwC84x7TkcFuOE5G4phlq3m
+m915W0NDE+/KoOnsskw4EETErJLLLH9aeYz5wm6ZJt0g0oUfuoDnm7FePS/d9cQG
+mExYmy8kpz0D5MT7L/QDOiKt8sgZkT9N/ZXI8Hcxh6VJn+xQPOYt+YQyHiaxigPA
+tk9YTwwPWEj90KQzV1de5PgfO7qUGKnio2qN</X509Certificate></X509Data></KeyInfo></Signature></DTE>
+  </SetDTE>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI="#LibreDTE_SetDoc"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>ltSnjPi54j3nBSuSzxoW1TOIWFA=</DigestValue></Reference></SignedInfo><SignatureValue>OoiZDcMlGnBRMeJoW0HkAypfMY/kN5TP/3/12vO/RZ7fjjUtdrvgkgHRfzMwDwnd
+BiX4kNPdO8vT1aUz3evIA9bvzTfVd2XxZLonavp4TK2YiDNxzsXO73iTUap70gqw
+Sc0ong1eSjMsvF109e+N7JF2tF36eOBGvjIkJ7fQu2kLjYtQxdO+3mp5amlRIII+
+oCn6+C7nbOSl3JDAT50qrxG2/qElgy/NAmCrgFDn8QfStR9W8bchHzsjG4rt+AF+
+Pf27sXWEx+N/cILNHafbreqdvMgY9QAReAs63mY6YxnIM/6fLzb+ed276KaCqE35
+lmqlgWg62sqwBqCrAlXhiw==</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>jOlMCM7BTCOxsTbzQucd3/hRuh4fgPC5e8A0PQw7LlUnP4R+7GtjnbZdO6t/zYJp
+6pv6RETrDarU0bsLIhNbAGh14MJJx1J4N8EDpkxMnXtPriVx2mkEA4K8f0bVXJWp
+Skpp5ZZ2dysMWH0zgE9Ry9J915obg+gzBgvLa3G39grQTF4TrUOjMKOHUzpnt7hl
+emrs5XY8Mk7TDJ+IYaY0OTTfzvXFT0D4p9P3OUgaWkmsEbcggsxGiiRbPPL8FnWL
+BFeBU0NpjSo2/etsOOizndefpxnWrq3Ncv+ncuWOl6W0asqvMqW6oDk+D7KaRFqm
+2438PA6okIjHRVdfShRNow==</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIGRzCCBS+gAwIBAgIIICPTKw+WTkUwDQYJKoZIhvcNAQELBQAwga8xCzAJBgNV
+BAYTAkNMMRQwEgYDVQQKDAtFLVNpZ24gUy5BLjE5MDcGA1UECwwwVGVybXMgb2Yg
+dXNlIGF0IHd3dy5lc2lnbi1sYS5jb20vYWN1ZXJkb3RlcmNlcm9zMSswKQYDVQQD
+DCJFLVNpZ24gQ2xhc3MgMiBGaXJtYSBUcmlidXRhcmlhIENBMSIwIAYJKoZIhvcN
+AQkBFhNlLXNpZ25AZXNpZ24tbGEuY29tMB4XDTE3MDkwNDE2MjkwOFoXDTE5MDkw
+NDE2MjYwMFowgaYxCzAJBgNVBAYTAkNMMRQwEgYDVQQKDAtFLVNpZ24gUy5BLjE5
+MDcGA1UECwwwVGVybXMgb2YgdXNlIGF0IHd3dy5lc2lnbi1sYS5jb20vYWN1ZXJk
+b3RlcmNlcm9zMSEwHwYDVQQDDBhKT1NFIEFORFJFUyBSVUlaIENPUk5FSk8xIzAh
+BgkqhkiG9w0BCQEWFGpvc2VydWl6ODFAZ21haWwuY29tMIIBIjANBgkqhkiG9w0B
+AQEFAAOCAQ8AMIIBCgKCAQEAjOlMCM7BTCOxsTbzQucd3/hRuh4fgPC5e8A0PQw7
+LlUnP4R+7GtjnbZdO6t/zYJp6pv6RETrDarU0bsLIhNbAGh14MJJx1J4N8EDpkxM
+nXtPriVx2mkEA4K8f0bVXJWpSkpp5ZZ2dysMWH0zgE9Ry9J915obg+gzBgvLa3G3
+9grQTF4TrUOjMKOHUzpnt7hlemrs5XY8Mk7TDJ+IYaY0OTTfzvXFT0D4p9P3OUga
+WkmsEbcggsxGiiRbPPL8FnWLBFeBU0NpjSo2/etsOOizndefpxnWrq3Ncv+ncuWO
+l6W0asqvMqW6oDk+D7KaRFqm2438PA6okIjHRVdfShRNowIDAQABo4ICbDCCAmgw
+gYAGCCsGAQUFBwEBBHQwcjBKBggrBgEFBQcwAoY+aHR0cDovL3BraS5lc2lnbi1s
+YS5jb20vY2FjZXJ0cy9wa2lDbGFzczJGaXJtYVRyaWJ1dGFyaWFDQS5jcnQwJAYI
+KwYBBQUHMAGGGGh0dHA6Ly9vY3NwLmVzaWduLWxhLmNvbTAdBgNVHQ4EFgQUoFjl
+LK9NqO1d2+UxirEH0K9KLhAwDAYDVR0TAQH/BAIwADAfBgNVHSMEGDAWgBT5SvrC
+x27C5xKcV0U1hBptKOlKpDCByAYDVR0gBIHAMIG9MIG6BgwrBgEEAYLKagEEAQIw
+gakwfgYIKwYBBQUHAgIwch5wAEMAZQByAHQAaQBmAGkAYwBhAGQAbwAgAHAAYQBy
+AGEAIAB1AHMAbwAgAFQAcgBpAGIAdQB0AGEAcgBpAG8ALAAgAEMAbwBtAGUAcgBj
+AGkAbwAsACAAUABhAGcAbwBzACAAeQAgAE8AdAByAG8AczAnBggrBgEFBQcCARYb
+aHR0cDovL3d3dy5lc2lnbi1sYS5jb20vY3BzMFEGA1UdHwRKMEgwRqBEoEKGQGh0
+dHA6Ly9wa2kuZXNpZ24tbGEuY29tL2NybC9wa2lDbGFzczJGaXJtYVRyaWJ1dGFy
+aWEvZW5kdXNlci5jcmwwDgYDVR0PAQH/BAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUF
+BwMCBggrBgEFBQcDBDAjBgNVHREEHDAaoBgGCCsGAQQBwQEBoAwWCjEzOTkxNDk2
+LTEwIwYDVR0SBBwwGqAYBggrBgEEAcEBAqAMFgo5OTU1MTc0MC1LMA0GCSqGSIb3
+DQEBCwUAA4IBAQAsOWFVTa4HNpM6mmELeqJBbxTimARB6t6P/NxGgOqx08b9T7Ii
+gkGhsbhxQZVMsVsDkUG7DAitQFCLoG6j9fc8M6D42PratszUFf1gsudgm10rsZJJ
+DaVnn5hGSMLDww4Gdu1jHzoLrI5M2qHX4ZyCO8XibIwC84x7TkcFuOE5G4phlq3m
+m915W0NDE+/KoOnsskw4EETErJLLLH9aeYz5wm6ZJt0g0oUfuoDnm7FePS/d9cQG
+mExYmy8kpz0D5MT7L/QDOiKt8sgZkT9N/ZXI8Hcxh6VJn+xQPOYt+YQyHiaxigPA
+tk9YTwwPWEj90KQzV1de5PgfO7qUGKnio2qN</X509Certificate></X509Data></KeyInfo></Signature></EnvioDTE>

@@ -13,7 +13,7 @@
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 
-$cakeDescription = 'CakePHP: the rapid development php framework';
+$cakeDescription = 'DTE: Certificacion de documentos electrónicos para empresas';
 ?>
 <!DOCTYPE html>
 <html>
@@ -24,16 +24,18 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         <?= $cakeDescription ?>:
         <?= $this->fetch('title') ?>
     </title>
-    <script src="https://kit.fontawesome.com/8af6a4d7d0.js"></script>
+    <!--script src="https://kit.fontawesome.com/8af6a4d7d0.js"></script-->
     <?= $this->Html->meta('icon') ?>
 
     <?= $this->Html->script('jquery-1.6.3.min') ?>
-    <?= $this->Html->script('foundation') ?>
+    <?= $this->Html->script('jquery.foundation') ?>
+    <?= $this->Html->script('what-input') ?>
+    <?= $this->Html->script('foundation.min') ?>
 
+    <?= $this->Html->css('foundation.min') ?>
     <?= $this->Html->css('base.css') ?>
     <?= $this->Html->css('style.css') ?>
-    <?= $this->Html->css('foundation') ?>
-
+    
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
@@ -57,6 +59,10 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         <?= $this->fetch('content') ?>
     </div>
     <footer>
+        
     </footer>
 </body>
 </html>
+<script>
+  $(document).foundation();
+</script>

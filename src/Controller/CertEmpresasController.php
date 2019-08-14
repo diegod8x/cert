@@ -40,6 +40,38 @@ class CertEmpresasController extends AppController
         $this->set('certEmpresa', $certEmpresa);
     }
 
+    public function getEmisor()
+    {
+        if (!empty($this->request->query)){
+            $certEmpresa = $this->CertEmpresas->find('all')->where(['rut' => $this->request->query["rut"] ])->first()->toArray();            
+            $format = [
+                "RUTEmisor" => $certEmpresa["rut"],
+                "RznSoc" => $certEmpresa["nombre"],
+                "GiroEmis" => $certEmpresa["giro"],
+                "Acteco" => $certEmpresa["actividad"],
+                "DirOrigen" => $certEmpresa["direccion"],
+                "CmnaOrigen" => $certEmpresa["cert_comuna_id"]
+            ];            
+            echo json_encode($format);            
+        }        
+        exit;        
+    }
+    public function getReceptor()
+    {
+        if (!empty($this->request->query)){
+            $certEmpresa = $this->CertEmpresas->find('all')->where(['rut' => $this->request->query["rut"] ])->first()->toArray();
+            $format = [
+                "RUTRecep" => $certEmpresa["rut"],
+                "RznSocRecep" =>$certEmpresa["nombre"],
+                "GiroRecep" => $certEmpresa["giro"],
+                "DirRecep" => $certEmpresa["direccion"],
+                "CmnaRecep" => $certEmpresa["cert_comuna_id"]
+            ];            
+            echo json_encode($format);            
+        }
+        exit;        
+    }
+
     /**
      * Add method
      *

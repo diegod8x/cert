@@ -76,9 +76,7 @@ class CertEmpresasSetPruebasController extends AppController
                 exit;
             }
 */
-            //pr($this->request->data);
-            //exit;
-
+            
             $accion = $this->request->data["accion"];
             //set prueba
             $rutEmisor = $this->request->data["emisor"]["RUTEmisor"];
@@ -119,11 +117,8 @@ class CertEmpresasSetPruebasController extends AppController
             if(!$empresasTable->saveMany($entities)){
                 $obs = 'No se pudo guardar/actualizar empresas.';
             }
-            
-            pr($result);
-            exit;
-
-            $this->CertEmpresas->save();
+        
+            //$this->CertEmpresas->save();
 
             //cafs
             $cafs = $this->request->data["cafs"];
@@ -211,15 +206,16 @@ class CertEmpresasSetPruebasController extends AppController
                 //file_put_contents('xml/EnvioDTE.xml', $EnvioDTE->generar()); // guardar XML en sistema de archivos
             } else if($accion=='send') {
 
-                //$track_id = $EnvioDTE->enviar();
-                $track_id = '7778890';
-                echo $track_id;
+                $track_id = $EnvioDTE->enviar();
+                //$track_id = '7778890';
+                //echo $track_id;
+                $this->Flash->success(__('Certificado enviado correctamente. Track ID: '.$track_id));
+
+                return $this->redirect(['action' => 'index']);
+
             }
 
             exit;
-
-            
-
 
             $certEmpresasSetPrueba = $this->CertEmpresasSetPruebas->patchEntity($certEmpresasSetPrueba, $this->request->getData());
             if ($this->CertEmpresasSetPruebas->save($certEmpresasSetPrueba)) {

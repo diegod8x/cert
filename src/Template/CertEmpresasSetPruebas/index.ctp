@@ -4,18 +4,9 @@
  * @var \App\Model\Entity\CertEmpresasSetPrueba[]|\Cake\Collection\CollectionInterface $certEmpresasSetPruebas
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Cert Empresas Set Prueba'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Cert Empresas'), ['controller' => 'CertEmpresas', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Cert Empresa'), ['controller' => 'CertEmpresas', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Cert Set Pruebas'), ['controller' => 'CertSetPruebas', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Cert Set Prueba'), ['controller' => 'CertSetPruebas', 'action' => 'add']) ?></li>
-    </ul>
-</nav>
+<?= $this->element('nav') ?>
 <div class="certEmpresasSetPruebas index large-9 medium-8 columns content">
-    <h3><?= __('Cert Empresas Set Pruebas') ?></h3>
+    <h3><?= __('Empresas Set de Pruebas') ?></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>

@@ -6,7 +6,7 @@
 ?>
 <?= $this->element('nav') ?>
 <div class="certEmpresasSetPruebas form large-9 medium-8 columns content">
-    <?= $this->Form->create($certEmpresasSetPrueba, ['id' => 'certEmpresasSetPrueba', 'type' => 'file', "data-abide" => 'ajax']) ?>
+    <?= $this->Form->create($certEmpresasSetPrueba, ['id' => 'certEmpresasSetPrueba', 'type' => 'file', "data-abide" => '']) ?>
     <fieldset>
         <legend><?= __('Emisión de DTE') ?></legend>
 
@@ -15,7 +15,7 @@
         <div class="row">
             <div class="large-8">
                 <div class="large-6 columns">
-                    <?php echo $this->Form->control('cert_set_prueba_id', ['options' => $setPruebas, 'empty' => 'Set de Pruebas...', 'label' => 'Seleccione']); ?>
+                    <?php echo $this->Form->control('cert_set_prueba_id', ['options' => $setPruebas, 'empty' => 'Set de Pruebas...', 'label' => 'Seleccione',  "class" => 'select2']); ?>
                 </div>
                 <div class="large-6 columns">
                     <label>Set de Pruebas (.txt)
@@ -29,7 +29,7 @@
         <br />
         <div class="row">
             <div class="large-8">
-                <div class="large-6 columns">
+                <div class="large-6 columns name-field">
                     <label>Rut Emisor (Empresa a certificar)
                         <input type="text" name="emisor[RUTEmisor]" placeholder="Rut emisor" onchange="getEmisor(this.value)" required />
                     </label>
@@ -81,10 +81,10 @@
         <div class="row">
             <div class="large-8">
                 <div class="large-6 columns">
-                    <?php echo $this->Form->control('emisor[CmnaOrigen]', ['id'=> 'emisor[CmnaOrigen]', 'options' => $comunas, 'empty' => 'Comuna emisor...', 'label' => false]); ?>
+                    <?php echo $this->Form->control('emisor[CmnaOrigen]', ['options' => $comunas, 'empty' => 'Comuna emisor...', 'label' => false, "class" => 'select2', "id"=>"CmnaOrigen"]); ?>
                 </div>
                 <div class="large-6 columns">
-                    <?php echo $this->Form->control('receptor[CmnaRecep]', ['id'=> 'receptor[CmnaRecep]', 'options' => $comunas, 'empty' => 'Comuna receptor...', 'label' => false]); ?>
+                    <?php echo $this->Form->control('receptor[CmnaRecep]', ['options' => $comunas, 'empty' => 'Comuna receptor...', 'label' => false, "class" => 'select2', "id"=>"CmnaRecep"]); ?>
                 </div>
             </div>
             <div class="large-4 columns"></div>
@@ -185,15 +185,8 @@
 
 
 <script>
-$(document).foundation();
-$('#certEmpresasSetPrueba')
-  .on('invalid.fndtn.abide', function () {
-    var invalid_fields = $(this).find('[data-invalid]');
-    console.log(invalid_fields);
-  })
-  .on('valid.fndtn.abide', function () {
-    console.log('valid!');
-  });
+
+$('.select2').select2({theme: "foundation"});
 
 var countButton = 0;
 $("#addbutton").click(function() {
@@ -219,59 +212,64 @@ $("#addbutton").click(function() {
 
 $("#generate, #send").click(function() {
 
-   /* $('#certEmpresasSetPrueba')
+    $('#certEmpresasSetPrueba')
     .on('invalid.fndtn.abide', function () {
         var invalid_fields = $(this).find('[data-invalid]');
         console.log(invalid_fields);
     })
     .on('valid.fndtn.abide', function () {emisor[CmnaOrigen]
         console.log('valid!');
-    });*/
-
+    });
+    console.log("pasa")
     var accion = $(this).attr("id");
     $("#accion").val(accion);
 
     //var data = $('#certEmpresasSetPrueba').serializeArray();
     //console.log(JSON.stringify(data,null,2));
-    $("#certEmpresasSetPrueba").submit();
+    //$("#certEmpresasSetPrueba").submit();
 
 });
 
-
-
-    var getEmisor = function(rut){        
-        $.ajax({
-            type: "GET",
-            url:'<?php echo $this->Url->build(["controller"=>"cert-empresas", "action"=>"getEmisor"]) ?>',
-            data: { "rut" : rut },
-            async: true,
-            dataType: "json",
-                success: function(data) {
-                    console.log(typeof data);
-                    $.each(data, function(index, value) {                    
-                        $("input[name='emisor[" + index + "]']").val(value);
-                        $("#emisor[CmnaOrigen] option[value='" + value + "']").prop('selected', true);
-                    });
-                }
-            });
-    };
-    var getReceptor = function(rut){        
-        $.ajax({
-            type: "GET",
-            url:'<?php echo $this->Url->build(["controller"=>"cert-empresas", "action"=>"getReceptor"]) ?>',
-            data: { "rut" : rut },
-            async: true,
-            dataType: "json",
-                success: function(data) {
-                    console.log(typeof data);
-                    $.each(data, function(index, value) {
-                        $("input[name='receptor[" + index + "]']").val(value);
-                        //$("#receptor[]").val(value).change();
-                    });
-                }
-            });
-    };
+var getEmisor = function(rut){        
+    $.ajax({
+        type: "GET",
+        url:'<?php echo $this->Url->build(["controller"=>"cert-empresas", "action"=>"getEmisor"]) ?>',
+        data: { "rut" : rut },
+        async: true,
+        dataType: "json",
+            success: function(data) {
+                console.log(data);
+                $.each(data, function(index, value) {
+                    $("input[name='emisor[" + index + "]']").val(value);                                                
+                    if ($('#'+index).find("option[value='" + value + "']").length) {
+                        $('#'+index).val(value).trigger('change');
+                    }
+                });
+            }
+        });
+};
+var getReceptor = function(rut){        
+    $.ajax({
+        type: "GET",
+        url:'<?php echo $this->Url->build(["controller"=>"cert-empresas", "action"=>"getReceptor"]) ?>',
+        data: { "rut" : rut },
+        async: true,
+        dataType: "json",
+            success: function(data) {
+                console.log(typeof data);
+                $.each(data, function(index, value) {
+                    $("input[name='receptor[" + index + "]']").val(value);
+                    if ($('#CmnaRecep').find("option[value='" + value + "']").length) {
+                        $('#CmnaRecep').val(value).trigger('change');
+                    }
+                });
+            }
+        });
+};
 
 
 
 </script>
+<style>
+
+</style>

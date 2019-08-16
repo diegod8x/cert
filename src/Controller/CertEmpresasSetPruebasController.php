@@ -3,6 +3,9 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 use Cake\ORM\TableRegistry;
+use Cake\ORM\Query;
+use Cake\Database\Expression\QueryExpression;
+
 \sasco\LibreDTE\Sii::setAmbiente(\sasco\LibreDTE\Sii::CERTIFICACION);
 define("CERT_EMP", ROOT . DS . 'files' . DS . 'certificacion' . DS);
 define("FILE_DTE", 'EnvioDTE');
@@ -226,7 +229,11 @@ class CertEmpresasSetPruebasController extends AppController
             $this->Flash->error(__('The cert empresas set prueba could not be saved. Please, try again.'));
         }
         $comunas = $this->CertComunas->find('list',['idField' => 'id', 'valueField' => 'nombre'])->toArray();       
-        $setPruebas = $this->CertSetPruebas->find('list', ['idField' => 'id', 'valueField' => 'nombre'])->toArray();
+        $setPruebas = $this->CertSetPruebas->find('list', ['idField' => 'id', 'valueField' => 'nombre'])
+                                            ->where(function (QueryExpression $exp, Query $q) {
+                                                return $exp->in('id', [1,2,3,7]);
+                                            })->toArray();
+
         $this->set(compact('certEmpresasSetPrueba', 'comunas', 'setPruebas'));
     }
 

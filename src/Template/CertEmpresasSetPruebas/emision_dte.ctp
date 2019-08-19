@@ -6,20 +6,20 @@
 ?>
 <?= $this->element('nav') ?>
 <div class="certEmpresasSetPruebas form large-9 medium-8 columns content">
-    <?= $this->Form->create($certEmpresasSetPrueba, ['id' => 'certEmpresasSetPrueba', 'type' => 'file', "data-abide" => '']) ?>
+    <?= $this->Form->create($certEmpresasSetPrueba, ['id' => 'certEmpresasSetPrueba', 'type' => 'file', "role"=>"form", "data-abide" => '', "novalidate"=>'novalidate']) ?>
     <fieldset>
         <legend><?= __('Emisión de DTE') ?></legend>
-
-        <?php // echo $this->Form->input('set_de_pruebas', ['type' => 'file']); ?>
 
         <div class="row">
             <div class="large-8">
                 <div class="large-6 columns">
-                    <?php echo $this->Form->control('cert_set_prueba_id', ['options' => $setPruebas, 'empty' => 'Set de Pruebas...', 'label' => 'Seleccione',  "class" => 'select2']); ?>
+                    <label>Seleccione
+                        <?php echo $this->Form->control('cert_set_prueba_id', ['options' => $setPruebas, 'empty' => 'Set de Pruebas...', 'label' => false, "required"=>"required"]); ?>
+                    </label>
                 </div>
                 <div class="large-6 columns">
                     <label>Set de Pruebas (.txt)
-                        <input type="file" name="set_de_pruebas" onchange="onFileImage(this);" required />
+                        <input type="file" name="set_de_pruebas" required />
                     </label>
                 </div>
             </div>
@@ -29,18 +29,21 @@
         <br />
         <div class="row">
             <div class="large-8">
-                <div class="large-6 columns name-field">
+                <div class="large-6 columns">
+                    <input type="hidden" name="emisor[id]" />
                     <label>Rut Emisor (Empresa a certificar)
-                        <input type="text" name="emisor[RUTEmisor]" placeholder="Rut emisor" onchange="getEmisor(this.value)" required />
+                        <input type="text" name="emisor[RUTEmisor]" placeholder="Rut emisor"
+                            onchange="getEmisor(this.value)" required pattern="\d{3,8}-[\d|kK]{1}"/>
                     </label>
-                    <small class="error">A valid email address is required.</small>
                 </div>
 
                 <div class="large-6 columns">
-                    <label>Rut Receptor (Empresa certificadora)
-                        <input type="text" name="receptor[RUTRecep]" placeholder="Rut receptor" onchange="getReceptor(this.value)" required />
+                    <input type="hidden" name="receptor[id]" />
+                    <label>Rut Receptor
+                        <input type="text" name="receptor[RUTRecep]" id="RUTRecep" placeholder="Rut receptor"
+                        pattern="\d{3,8}-[\d|kK]{1}"
+                            onchange="getReceptor(this.value)" required />
                     </label>
-                    <small class="error">A valid email address is required.</small>
                 </div>
             </div>
             <div class="large-4 columns"></div>
@@ -59,21 +62,10 @@
         <div class="row">
             <div class="large-8">
                 <div class="large-6 columns">
-                    <input type="text" name="emisor[GiroEmis]" placeholder="Giro emisor" required/>
+                    <input type="text" name="emisor[GiroEmis]" placeholder="Giro emisor" required />
                 </div>
                 <div class="large-6 columns">
-                    <input type="text" name="receptor[GiroRecep]" placeholder="Giro receptor" required/>
-                </div>
-            </div>
-            <div class="large-4 columns"></div>
-        </div>
-        <div class="row">
-            <div class="large-8">
-                <div class="large-6 columns">
-                    <input type="text" name="emisor[DirOrigen]" placeholder="Dirección emisor" required/>
-                </div>
-                <div class="large-6 columns">
-                    <input type="text" name="receptor[DirRecep]" placeholder="Dirección receptor" required/>
+                    <input type="text" name="receptor[GiroRecep]" placeholder="Giro receptor" required />
                 </div>
             </div>
             <div class="large-4 columns"></div>
@@ -81,10 +73,10 @@
         <div class="row">
             <div class="large-8">
                 <div class="large-6 columns">
-                    <?php echo $this->Form->control('emisor[CmnaOrigen]', ['options' => $comunas, 'empty' => 'Comuna emisor...', 'label' => false, "class" => 'select2', "id"=>"CmnaOrigen"]); ?>
+                    <input type="text" name="emisor[DirOrigen]" placeholder="Dirección emisor" required />
                 </div>
                 <div class="large-6 columns">
-                    <?php echo $this->Form->control('receptor[CmnaRecep]', ['options' => $comunas, 'empty' => 'Comuna receptor...', 'label' => false, "class" => 'select2', "id"=>"CmnaRecep"]); ?>
+                    <input type="text" name="receptor[DirRecep]" placeholder="Dirección receptor" required />
                 </div>
             </div>
             <div class="large-4 columns"></div>
@@ -92,7 +84,18 @@
         <div class="row">
             <div class="large-8">
                 <div class="large-6 columns">
-                    <input type="text" name="emisor[Acteco]" placeholder="Actividad económica emisor" required />
+                    <?php echo $this->Form->control('emisor[CmnaOrigen]', ['options' => $comunas, 'empty' => 'Comuna emisor...', 'label' => false, "id"=>"CmnaOrigen" , "required"=>"required"]); ?>
+                </div>
+                <div class="large-6 columns">
+                    <?php echo $this->Form->control('receptor[CmnaRecep]', ['options' => $comunas, 'empty' => 'Comuna receptor...', 'label' => false, "id"=>"CmnaRecep" , "required"=>"required"]); ?>
+                </div>
+            </div>
+            <div class="large-4 columns"></div>
+        </div>
+        <div class="row">
+            <div class="large-8">
+                <div class="large-6 columns">
+                    <input type="text" name="emisor[Acteco]" placeholder="Actividad económica emisor" pattern="number" required />
                 </div>
                 <div class="large-6 columns">
                 </div>
@@ -106,12 +109,12 @@
             <div class="large-8">
                 <div class="large-6 columns">
                     <label>Firma electrónica (certificado formato .p12)
-                        <input type="file" name="certificado[firma]" onchange="onFileImage(this);" />
+                        <input type="file" name="certificado[firma]" required />
                     </label>
                 </div>
                 <div class="large-6 columns">
                     <label>Contraseña firma electrónica
-                        <input type="password" name="certificado[pass]" placeholder="Contraseña firma" required/>
+                        <input type="password" name="certificado[pass]" placeholder="Contraseña firma" required />
                     </label>
                 </div>
             </div>
@@ -123,12 +126,12 @@
             <div class="large-8">
                 <div class="large-6 columns">
                     <label>Fecha resolución
-                        <input type="text" name="caratula[FchResol]" placeholder="Fecha resolución" />
+                        <input type="text" name="caratula[FchResol]" placeholder="AAAA-MM-DD" pattern="date" required />
                     </label>
                 </div>
                 <div class="large-6 columns">
                     <label>Número de resolución
-                        <input type="text" name="caratula[NroResol]" placeholder="Número de resolución" />
+                        <input type="text" name="caratula[NroResol]" placeholder="Número de resolución" pattern="number" required />
                     </label>
                 </div>
             </div>
@@ -136,28 +139,30 @@
 
         <br />
         <div class="row" id="caf_container">
-            <div class="large-12">
+            <div class="large-12 columns">
                 <div class="large-4 columns">
                     <label>Archivos CAF (.xml)
-                        <input type="file" name="cafs[0][caf]" onchange="onFileImage(this);" />
+                        <input type="file" name="cafs[0][caf]" required />
                     </label>
                 </div>
                 <div class="large-2 columns">
                     <label>Nr. Documento
-                        <input type="text" name="cafs[0][nro_documento]" required/>
+                        <input type="text" name="cafs[0][nro_documento]" required />
                     </label>
                 </div>
                 <div class="large-2 columns">
                     <label>Folio desde
-                        <input type="text" name="cafs[0][folio_desde]" required/>
+                        <input type="text" name="cafs[0][folio_desde]" required />
                     </label>
                 </div>
+
                 <div class="large-4 columns">
                     <button type="button" class="button tiny" id="addbutton">
-                        <b>+</b>
+                        <i class="fi-plus"></i>
                     </button>
                 </div>
             </div>
+            
         </div>
 
     </fieldset>
@@ -175,7 +180,7 @@
                 Generar y Enviar a SII
             </button>
         </div>
-        
+
     </div>
     <br /><br /><br /><br /><br /><br />
     <input type="hidden" name="accion" id="accion" />
@@ -186,90 +191,77 @@
 
 <script>
 
-$('.select2').select2({theme: "foundation"});
-
-var countButton = 0;
-$("#addbutton").click(function() {
-    countButton++;
-    $("#caf_container").append('<div class="large-8">\
-                <div class="large-6 columns">\
-                    <label>\
-                        <input type="file" name="cafs[' + parseInt(countButton) + '][caf]" onchange="onFileImage(this);" />\
-                    </label>\
-                </div>\
-                <div class="large-3 columns">\
-                    <label>\
-                        <input type="text" name="cafs[' + parseInt(countButton) + '][nro_documento]" />\
-                    </label>\
-                </div>\
-                <div class="large-3 columns">\
-                    <label>\
-                        <input type="text" name="cafs[' + parseInt(countButton) + '][folio_desde]" />\
-                    </label>\
+    var countButton = 0;
+    $("#addbutton").click(function () {
+        countButton++;
+        $("#caf_container").append('\
+            <div class="large-12 columns">\
+                <div class="removerow'+parseInt(countButton)+'">\
+                    <div class="large-4 columns">\
+                        <label>\
+                            <input type="file" name="cafs[' + parseInt(countButton) + '][caf]" required />\
+                        </label>\
+                    </div>\
+                    <div class="large-2 columns">\
+                        <label>\
+                            <input type="text" name="cafs[' + parseInt(countButton) + '][nro_documento]" required />\
+                        </label>\
+                    </div>\
+                    <div class="large-2 columns">\
+                        <label>\
+                            <input type="text" name="cafs[' + parseInt(countButton) + '][folio_desde]" required /> \
+                        </label>\
+                    </div>\
+                    <div class="large-4 columns">\
+                        <a><i class="fi-x" id="deletebutton"></i></a>\
+                    </div>\
                 </div>\
             </div>');
-});
-
-$("#generate, #send").click(function() {
-
-    $('#certEmpresasSetPrueba')
-    .on('invalid.fndtn.abide', function () {
-        var invalid_fields = $(this).find('[data-invalid]');
-        console.log(invalid_fields);
-    })
-    .on('valid.fndtn.abide', function () {emisor[CmnaOrigen]
-        console.log('valid!');
     });
-    console.log("pasa")
-    var accion = $(this).attr("id");
-    $("#accion").val(accion);
+    $("#caf_container").on('click', '#deletebutton',  function () {
+        $(this).parent().parent().parent().remove();
+    });
 
-    //var data = $('#certEmpresasSetPrueba').serializeArray();
-    //console.log(JSON.stringify(data,null,2));
-    //$("#certEmpresasSetPrueba").submit();
+    $("#generate, #send").click(function() {    
+        var accion = $(this).attr("id");
+        $("#accion").val(accion);
+        $("#certEmpresasSetPrueba").submit();    
+    });
 
-});
-
-var getEmisor = function(rut){        
-    $.ajax({
-        type: "GET",
-        url:'<?php echo $this->Url->build(["controller"=>"cert-empresas", "action"=>"getEmisor"]) ?>',
-        data: { "rut" : rut },
-        async: true,
-        dataType: "json",
-            success: function(data) {
-                console.log(data);
-                $.each(data, function(index, value) {
-                    $("input[name='emisor[" + index + "]']").val(value);                                                
-                    if ($('#'+index).find("option[value='" + value + "']").length) {
-                        $('#'+index).val(value).trigger('change');
+    var getEmisor = function (rut) {
+        $.ajax({
+            type: "GET",
+            url: '<?php echo $this->Url->build(["controller"=>"cert-empresas", "action"=>"getEmisor"]) ?>',
+            data: { "rut": rut },
+            async: true,
+            dataType: "json",
+            success: function (data) {
+                $.each(data, function (index, value) {
+                    $("input[name='emisor[" + index + "]']").val(value);
+                    if ($('#' + index).find("option[value='" + value + "']").length) {
+                        $('#' + index).val(value).trigger('change');
                     }
                 });
             }
         });
-};
-var getReceptor = function(rut){        
-    $.ajax({
-        type: "GET",
-        url:'<?php echo $this->Url->build(["controller"=>"cert-empresas", "action"=>"getReceptor"]) ?>',
-        data: { "rut" : rut },
-        async: true,
-        dataType: "json",
-            success: function(data) {
-                console.log(typeof data);
-                $.each(data, function(index, value) {
+    };
+
+    var getReceptor = function (rut) {
+        $.ajax({
+            type: "GET",
+            url: '<?php echo $this->Url->build(["controller"=>"cert-empresas", "action"=>"getReceptor"]) ?>',
+            data: { "rut": rut },
+            async: true,
+            dataType: "json",
+            success: function (data) {
+                $.each(data, function (index, value) {
                     $("input[name='receptor[" + index + "]']").val(value);
-                    if ($('#CmnaRecep').find("option[value='" + value + "']").length) {
-                        $('#CmnaRecep').val(value).trigger('change');
+                    if ($('#' + index).find("option[value='" + value + "']").length) {
+                        $('#' + index).val(value).trigger('change');
                     }
                 });
             }
         });
-};
-
-
+    };
 
 </script>
-<style>
-
-</style>

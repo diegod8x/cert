@@ -43,14 +43,18 @@ class CertEmpresasController extends AppController
     public function getEmisor()
     {
         if (!empty($this->request->query)){
-            $certEmpresa = $this->CertEmpresas->find('all')->where(['rut' => $this->request->query["rut"] ])->first()->toArray();            
+            $certEmpresa = $this->CertEmpresas->find('all')->where(['rut' => $this->request->query["rut"] ])->first();            
+            if(!empty($certEmpresa))
+                $certEmpresa->toArray();
+
             $format = [
-                "RUTEmisor" => $certEmpresa["rut"],
-                "RznSoc" => $certEmpresa["nombre"],
-                "GiroEmis" => $certEmpresa["giro"],
-                "Acteco" => $certEmpresa["actividad"],
-                "DirOrigen" => $certEmpresa["direccion"],
-                "CmnaOrigen" => $certEmpresa["cert_comuna_id"]
+                "RUTEmisor" => $this->request->query["rut"],
+                "id" => isset($certEmpresa["id"])?$certEmpresa["id"]:null,
+                "RznSoc" => isset($certEmpresa["nombre"])?$certEmpresa["nombre"]:"",
+                "GiroEmis" => isset($certEmpresa["giro"])?$certEmpresa["giro"]:"",
+                "Acteco" => isset($certEmpresa["actividad"])?$certEmpresa["actividad"]:"",
+                "DirOrigen" => isset($certEmpresa["direccion"])?$certEmpresa["direccion"]:"",
+                "CmnaOrigen" => isset($certEmpresa["cert_comuna_id"])?$certEmpresa["cert_comuna_id"]:""
             ];            
             echo json_encode($format);            
         }        
@@ -59,13 +63,16 @@ class CertEmpresasController extends AppController
     public function getReceptor()
     {
         if (!empty($this->request->query)){
-            $certEmpresa = $this->CertEmpresas->find('all')->where(['rut' => $this->request->query["rut"] ])->first()->toArray();
+            $certEmpresa = $this->CertEmpresas->find('all')->where(['rut' => $this->request->query["rut"] ])->first();
+            if(!empty($certEmpresa))
+                $certEmpresa->toArray();
             $format = [
-                "RUTRecep" => $certEmpresa["rut"],
-                "RznSocRecep" =>$certEmpresa["nombre"],
-                "GiroRecep" => $certEmpresa["giro"],
-                "DirRecep" => $certEmpresa["direccion"],
-                "CmnaRecep" => $certEmpresa["cert_comuna_id"]
+                "RUTRecep" => $this->request->query["rut"],
+                "id" => isset($certEmpresa["id"])?$certEmpresa["id"]:null,
+                "RznSocRecep" =>isset($certEmpresa["nombre"])?$certEmpresa["nombre"]:"",
+                "GiroRecep" => isset($certEmpresa["giro"])?$certEmpresa["giro"]:"",
+                "DirRecep" => isset($certEmpresa["direccion"])?$certEmpresa["direccion"]:"",
+                "CmnaRecep" => isset($certEmpresa["cert_comuna_id"])?$certEmpresa["cert_comuna_id"]:""
             ];            
             echo json_encode($format);            
         }

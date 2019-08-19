@@ -65,9 +65,11 @@ class CertEmpresasSetPruebasController extends AppController
         
         $config = AppController::config();
         $certEmpresasSetPrueba = $this->CertEmpresasSetPruebas->newEntity();
+        $obs = '';
+
         if ($this->request->is('post')) {
-            
-            /*if (
+            pr($this->request->data);
+            if (
                 empty($this->request->data["emisor"]["RUTEmisor"]) || 
                 empty($this->request->data["receptor"]["RUTRecep"]) || 
                 empty($this->request->data["set_de_pruebas"]["name"]) || 
@@ -75,10 +77,10 @@ class CertEmpresasSetPruebasController extends AppController
                 empty($this->request->data["certificado"]["firma"]) || 
                 empty($this->request->data["caratula"]["FchResol"]) 
             ) {
-                echo json_encode(["message" => "Debe completar todos los campos antes de enviar la solicitud", "data" => []]); 
-                exit;
+                $this->Flash->error(__('Falta información para completar la acción. Por favor, intente nuevamente.'));
+                return $this->redirect(['action' => 'index']);
             }
-*/
+
             
             $accion = $this->request->data["accion"];
             //set prueba
@@ -96,32 +98,6 @@ class CertEmpresasSetPruebasController extends AppController
             $caratula = $this->request->data["caratula"];
             $caratula["RutEnvia"] = $rutEmisor;
             $caratula["RutReceptor"] = "60803000-K"; // sii revisar en produccion
-
-            //data almacenamiento
-            $empresaBD[] = [
-                "rut" => $Emisor["RUTEmisor"],
-                "nombre" => $Emisor["RznSoc"],
-                "giro" => $Emisor["GiroEmis"],
-                "direccion" => $Emisor["DirOrigen"],
-                "cert_comuna_id" => $Emisor["CmnaOrigen"],
-                "actividad" => $Emisor["Acteco"]
-            ];
-            $empresaBD[] = [
-                "rut" => $Receptor["RUTRecep"],
-                "nombre" => $Receptor["RznSocRecep"],
-                "giro" => $Receptor["GiroRecep"],
-                "direccion" => $Receptor["DirRecep"],
-                "cert_comuna_id" => $Receptor["CmnaRecep"],
-                "actividad" => null
-            ];
-
-            $empresasTable = TableRegistry::get('CertEmpresas');
-            $entities = $empresasTable->newEntities($empresaBD);
-            if(!$empresasTable->saveMany($entities)){
-                $obs = 'No se pudo guardar/actualizar empresas.';
-            }
-        
-            //$this->CertEmpresas->save();
 
             //cafs
             $cafs = $this->request->data["cafs"];
@@ -156,12 +132,12 @@ class CertEmpresasSetPruebasController extends AppController
             $documentos = $documentosDTE;
             
             //certificado               
-            //if (!file_exists(CERT_EMP .$rutEmisor ))  mkdir(CERT_EMP . $rutEmisor, 0777, true);
             if (!file_exists(CERT_EMP . $rutEmisor. DS . 'certificado')) mkdir(CERT_EMP . $rutEmisor. DS . 'certificado', 0777, true);   
 
             $certificadoFile = $this->request->data["certificado"]["firma"];
             $pathCERT = CERT_EMP . $rutEmisor . DS . 'certificado' . DS . basename($certificadoFile["name"]);
             move_uploaded_file($certificadoFile['tmp_name'], $pathCERT); 
+
             //firma
             $firma = [
                 'file' => $pathCERT,
@@ -189,37 +165,90 @@ class CertEmpresasSetPruebasController extends AppController
             // enviar dtes y mostrar resultado del envío: track id o bien =false si hubo error
             $EnvioDTE->setCaratula($caratula);
             $EnvioDTE->setFirma($Firma);
-            
+
+            $dom = new \DOMDocument;
+            $dom->preserveWhiteSpace = TRUE;
+            $dom->loadXML(trim($EnvioDTE->generar()));
+
+            if (!file_exists(CERT_EMP . $rutEmisor. DS . 'xml')) mkdir(CERT_EMP . $rutEmisor. DS . 'xml', 0777, true);
+            $pathXMLEnvio = CERT_EMP . $rutEmisor . DS . 'xml' . DS . FILE_DTE . '.xml';
+            $dom->save($pathXMLEnvio); //guarda local
+
             if($accion=='generate') {
-              
-                $dom = new \DOMDocument;
-                $dom->preserveWhiteSpace = TRUE;
-                $dom->loadXML(trim($EnvioDTE->generar()));
-
-                if (!file_exists(CERT_EMP . $rutEmisor. DS . 'xml')) mkdir(CERT_EMP . $rutEmisor. DS . 'xml', 0777, true);
-                $pathXMLEnvio = CERT_EMP . $rutEmisor . DS . 'xml' . DS . FILE_DTE . '.xml';
-
-                $dom->save($pathXMLEnvio); //guarda local
 
                 header('Content-type: text/xml');
                 header('Content-Disposition: attachment; filename='.FILE_DTE.'.xml');
-
                 echo $dom->saveXML() . "\n";
-                
-                //file_put_contents('xml/EnvioDTE.xml', $EnvioDTE->generar()); // guardar XML en sistema de archivos
+                exit;
+
             } else if($accion=='send') {
 
-                $track_id = $EnvioDTE->enviar();
-                //$track_id = '7778890';
-                //echo $track_id;
-                $this->Flash->success(__('Certificado enviado correctamente. Track ID: '.$track_id));
+                //$track_id = $EnvioDTE->enviar();
+                $track_id = '7778890';
 
-                return $this->redirect(['action' => 'index']);
+                //data almacenamiento                
+                $empresaReceptor = [
+                    "id" => isset($Receptor["id"])? $Receptor["id"] : null, 
+                    "rut" => $Receptor["RUTRecep"],
+                    "nombre" => $Receptor["RznSocRecep"],
+                    "giro" => $Receptor["GiroRecep"],
+                    "direccion" => $Receptor["DirRecep"],
+                    "cert_comuna_id" => $Receptor["CmnaRecep"],
+                    "actividad" => null
+                ];                
+                // data empresas ingresadas
+                $empresasTable = TableRegistry::get('CertEmpresas');
+
+
+                $resultReceptor = $empresasTable->find()->where(["id"=>$empresaReceptor['id']])->first();
+                $entityReceptor = isset($resultReceptor)? $resultReceptor : $empresasTable->newEntity();                
+                $entityReceptor = $empresasTable->patchEntity($entityReceptor, $empresaReceptor);
+                $savedReceptor = $empresasTable->save($entityReceptor);
+                if(!$savedReceptor)
+                    $obs .= 'No se pudo guardar/actualizar empresas receptor.'.'<br />';                
+                
+                // data empresa a certificar                
+                $empresaEmisor = [
+                    "id" => isset($Emisor["id"])? $Emisor["id"] : null, 
+                    "rut" => $Emisor["RUTEmisor"],
+                    "nombre" => $Emisor["RznSoc"],
+                    "giro" => $Emisor["GiroEmis"],
+                    "direccion" => $Emisor["DirOrigen"],
+                    "cert_comuna_id" => $Emisor["CmnaOrigen"],
+                    "actividad" => $Emisor["Acteco"],
+                    "certificado" => $pathCERT,
+                    "pass_firma" => $this->request->data["certificado"]["pass"],
+                    "fecha_resolucion" => $this->request->data["caratula"]["FchResol"],
+                    "numero_resolucion" => $this->request->data["caratula"]["NroResol"]
+                ];
+
+                $resultEmisor = $empresasTable->find()->where(["id"=>$empresaEmisor['id']])->first();
+                $entityEmisor = isset($resultEmisor)? $resultEmisor : $empresasTable->newEntity();
+                $entityEmisor = $empresasTable->patchEntity($entityEmisor, $empresaEmisor);
+                $savedEmisor = $empresasTable->save($entityEmisor);
+
+                if(!$savedEmisor)
+                    $obs .= 'No se pudo guardar/actualizar empresas emisor. '; 
+                
+                foreach (\sasco\LibreDTE\Log::readAll() as $error)
+                    $obs .= $error;
+
+                // data set prueba de empresas
+                $setPruebaEmpresa = [
+                    "cert_empresa_id" => $savedEmisor->id,
+                    "cert_set_prueba_id" => $this->request->data["cert_set_prueba_id"],
+                    "estado" => 'enviado',
+                    "set_prueba_envio" => $pathSETS,
+                    "xml_envio" => $pathXMLEnvio,
+                    "trackid_envio" => $track_id,
+                    "observaciones_envio" => $obs
+                ];
+
+                //$this->Flash->success(__('Certificado enviado correctamente. Track ID: '.$track_id));
+                //return $this->redirect(['action' => 'index']);
 
             }
-
-            exit;
-
+        
             $certEmpresasSetPrueba = $this->CertEmpresasSetPruebas->patchEntity($certEmpresasSetPrueba, $this->request->getData());
             if ($this->CertEmpresasSetPruebas->save($certEmpresasSetPrueba)) {
                 $this->Flash->success(__('The cert empresas set prueba has been saved.'));
@@ -227,13 +256,16 @@ class CertEmpresasSetPruebasController extends AppController
                 return $this->redirect(['action' => 'index']);
             }
             $this->Flash->error(__('The cert empresas set prueba could not be saved. Please, try again.'));
+
+            exit;
+
         }
+
         $comunas = $this->CertComunas->find('list',['idField' => 'id', 'valueField' => 'nombre'])->toArray();       
         $setPruebas = $this->CertSetPruebas->find('list', ['idField' => 'id', 'valueField' => 'nombre'])
                                             ->where(function (QueryExpression $exp, Query $q) {
                                                 return $exp->in('id', [1,2,3,7]);
                                             })->toArray();
-
         $this->set(compact('certEmpresasSetPrueba', 'comunas', 'setPruebas'));
     }
 

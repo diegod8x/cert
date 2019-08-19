@@ -24,6 +24,7 @@ class CertEmpresasTableTest extends TestCase
      */
     public $fixtures = [
         'app.CertEmpresas',
+        'app.CertComunas',
         'app.CertEmpresasSetPruebas'
     ];
 
@@ -67,6 +68,16 @@ class CertEmpresasTableTest extends TestCase
      * @return void
      */
     public function testValidationDefault()
+    {
+        $this->markTestIncomplete('Not implemented yet.');
+    }
+
+    /**
+     * Test buildRules method
+     *
+     * @return void
+     */
+    public function testBuildRules()
     {
         $this->markTestIncomplete('Not implemented yet.');
     }

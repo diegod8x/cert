@@ -63,9 +63,19 @@ class CertEmpresasSetPruebasTable extends Table
             ->allowEmptyString('estado');
 
         $validator
-            ->scalar('trackid')
-            ->maxLength('trackid', 45)
-            ->allowEmptyString('trackid');
+            ->scalar('set_prueba_envio')
+            ->maxLength('set_prueba_envio', 200)
+            ->allowEmptyString('set_prueba_envio');
+
+        $validator
+            ->scalar('xml_envio')
+            ->maxLength('xml_envio', 200)
+            ->allowEmptyString('xml_envio');
+
+        $validator
+            ->scalar('trackid_envio')
+            ->maxLength('trackid_envio', 200)
+            ->allowEmptyString('trackid_envio');
 
         $validator
             ->scalar('respuesta_envio')
@@ -73,9 +83,9 @@ class CertEmpresasSetPruebasTable extends Table
             ->allowEmptyString('respuesta_envio');
 
         $validator
-            ->scalar('xml_envio')
-            ->maxLength('xml_envio', 45)
-            ->allowEmptyString('xml_envio');
+            ->scalar('observaciones_envio')
+            ->maxLength('observaciones_envio', 1000)
+            ->allowEmptyString('observaciones_envio');
 
         return $validator;
     }

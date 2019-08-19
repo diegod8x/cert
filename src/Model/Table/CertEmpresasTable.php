@@ -9,7 +9,7 @@ use Cake\Validation\Validator;
 /**
  * CertEmpresas Model
  *
- * @property &\Cake\ORM\Association\BelongsTo $CertComunas
+ * @property \App\Model\Table\CertComunasTable&\Cake\ORM\Association\BelongsTo $CertComunas
  * @property \App\Model\Table\CertEmpresasSetPruebasTable&\Cake\ORM\Association\HasMany $CertEmpresasSetPruebas
  *
  * @method \App\Model\Entity\CertEmpresa get($primaryKey, $options = [])
@@ -81,6 +81,25 @@ class CertEmpresasTable extends Table
             ->scalar('actividad')
             ->maxLength('actividad', 4294967295)
             ->allowEmptyString('actividad');
+
+        $validator
+            ->scalar('certificado')
+            ->maxLength('certificado', 200)
+            ->allowEmptyString('certificado');
+
+        $validator
+            ->scalar('pass_firma')
+            ->maxLength('pass_firma', 200)
+            ->allowEmptyString('pass_firma');
+
+        $validator
+            ->scalar('fecha_resolucion')
+            ->maxLength('fecha_resolucion', 45)
+            ->allowEmptyString('fecha_resolucion');
+
+        $validator
+            ->integer('numero_resolucion')
+            ->allowEmptyString('numero_resolucion');
 
         return $validator;
     }

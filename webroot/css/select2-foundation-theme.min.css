@@ -17,6 +17,11 @@ span.select2-container--foundation .selection {
     outline: 0
 }
 
+.select2-hidden-accessible select{
+    display: block;
+    margin: 0px auto;
+    opacity: 0;
+    }
 .select2-container--foundation .select2-search--dropdown .select2-search__field {
     background-color: #fefefe;
     border: 1px solid #cacaca;
@@ -278,5 +283,4 @@ span.select2-container--foundation .selection {
     margin-top: .5rem
 }
 
-
-/*# sourceMappingURL=select2-foundation-theme.min.css.map */
+    

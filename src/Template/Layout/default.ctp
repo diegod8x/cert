@@ -29,19 +29,13 @@ $cakeDescription = 'DTE: Certificacion de documentos electrónicos para empresas
 
     <?= $this->Html->script('jquery-1.6.3.min') ?>
     <?= $this->Html->script('jquery.foundation') ?>
-    <?= $this->Html->script('what-input') ?>
-    <?= $this->Html->script('foundation.min') ?>
-    <?= $this->Html->script('select2.full.min') ?>
-    <?= $this->Html->script('select2.es') ?>
-
+    <?= $this->Html->script('foundation') ?>
     
     <?= $this->Html->css('foundation.min') ?>       
+    <?= $this->Html->css('home.css') ?>   
     <?= $this->Html->css('base.css') ?>
-    <?= $this->Html->css('style.css') ?>    
-    <?= $this->Html->css('select2.min') ?>    
-    <?= $this->Html->css('select2-foundation-theme.min') ?>
-     
-    
+    <?= $this->Html->css('style.css') ?>
+    <?= $this->Html->css('foundation-icons') ?>
     
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
@@ -71,5 +65,5 @@ $cakeDescription = 'DTE: Certificacion de documentos electrónicos para empresas
 </body>
 </html>
 <script>
-  $(document).foundation();
+    $(document).foundation();
 </script>

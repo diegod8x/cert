@@ -10,9 +10,11 @@ use Cake\ORM\Entity;
  * @property int|null $cert_empresa_id
  * @property int|null $cert_set_prueba_id
  * @property string|null $estado
- * @property string|null $trackid
- * @property string|null $respuesta_envio
+ * @property string|null $set_prueba_envio
  * @property string|null $xml_envio
+ * @property string|null $trackid_envio
+ * @property string|null $respuesta_envio
+ * @property string|null $observaciones_envio
  *
  * @property \App\Model\Entity\CertEmpresa $cert_empresa
  * @property \App\Model\Entity\CertSetPrueba $cert_set_prueba
@@ -32,9 +34,11 @@ class CertEmpresasSetPrueba extends Entity
         'cert_empresa_id' => true,
         'cert_set_prueba_id' => true,
         'estado' => true,
-        'trackid' => true,
-        'respuesta_envio' => true,
+        'set_prueba_envio' => true,
         'xml_envio' => true,
+        'trackid_envio' => true,
+        'respuesta_envio' => true,
+        'observaciones_envio' => true,
         'cert_empresa' => true,
         'cert_set_prueba' => true
     ];

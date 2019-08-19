@@ -13,7 +13,12 @@ use Cake\ORM\Entity;
  * @property string|null $direccion
  * @property int|null $cert_comuna_id
  * @property string|null $actividad
+ * @property string|null $certificado
+ * @property string|null $pass_firma
+ * @property string|null $fecha_resolucion
+ * @property int|null $numero_resolucion
  *
+ * @property \App\Model\Entity\CertComuna $cert_comuna
  * @property \App\Model\Entity\CertEmpresasSetPrueba[] $cert_empresas_set_pruebas
  */
 class CertEmpresa extends Entity
@@ -34,6 +39,11 @@ class CertEmpresa extends Entity
         'direccion' => true,
         'cert_comuna_id' => true,
         'actividad' => true,
+        'certificado' => true,
+        'pass_firma' => true,
+        'fecha_resolucion' => true,
+        'numero_resolucion' => true,
+        'cert_comuna' => true,
         'cert_empresas_set_pruebas' => true
     ];
 }

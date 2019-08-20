@@ -6,34 +6,37 @@
 ?>
 <?= $this->element('nav') ?>
 <div class="certEmpresasSetPruebas index large-9 medium-8 columns content">
-    <h3><?= __('Empresas Set de Pruebas') ?></h3>
+    <h3><?= __('Empresas Set Pruebas') ?></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('cert_empresa_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('cert_set_prueba_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('estado') ?></th>
+                <!-- >th scope="col"><?= $this->Paginator->sort('id') ?></th-->
+                <th scope="col"><?= $this->Paginator->sort('empresa') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('set_prueba') ?></th>
+                <!--th scope="col"><?= $this->Paginator->sort('estado') ?></th-->
+                <!-- >th scope="col"><?= $this->Paginator->sort('set_prueba_envio') ?></th-->
+                <th scope="col"><?= $this->Paginator->sort('xml') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('trackid') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('respuesta_envio') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('xml_envio') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('respuesta') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('observaciones') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($certEmpresasSetPruebas as $certEmpresasSetPrueba): ?>
             <tr>
-                <td><?= $this->Number->format($certEmpresasSetPrueba->id) ?></td>
-                <td><?= $certEmpresasSetPrueba->has('cert_empresa') ? $this->Html->link($certEmpresasSetPrueba->cert_empresa->id, ['controller' => 'CertEmpresas', 'action' => 'view', $certEmpresasSetPrueba->cert_empresa->id]) : '' ?></td>
-                <td><?= $certEmpresasSetPrueba->has('cert_set_prueba') ? $this->Html->link($certEmpresasSetPrueba->cert_set_prueba->id, ['controller' => 'CertSetPruebas', 'action' => 'view', $certEmpresasSetPrueba->cert_set_prueba->id]) : '' ?></td>
-                <td><?= h($certEmpresasSetPrueba->estado) ?></td>
-                <td><?= h($certEmpresasSetPrueba->trackid) ?></td>
+                <!-- td><?= $this->Number->format($certEmpresasSetPrueba->id) ?></td-->
+                <td><?= $certEmpresasSetPrueba->cert_empresa->nombre //? $this->Html->link($certEmpresasSetPrueba->cert_empresa->nombre, ['controller' => 'CertEmpresas', 'action' => 'view', $certEmpresasSetPrueba->cert_empresa->id]) : '' ?></td>
+                <td><?= $certEmpresasSetPrueba->cert_set_prueba->nombre //? $this->Html->link($certEmpresasSetPrueba->cert_set_prueba->nombre, ['controller' => 'CertSetPruebas', 'action' => 'view', $certEmpresasSetPrueba->cert_set_prueba->id]) : '' ?></td>
+                <!-- td><?= h($certEmpresasSetPrueba->estado) ?></td-->
+                <!-- >td><?= h($certEmpresasSetPrueba->set_prueba_envio) ?></td-->
+                <td><?php $nombreFile = explode('/', $certEmpresasSetPrueba->xml_envio); echo $this->Html->link(end($nombreFile), $certEmpresasSetPrueba->xml_envio, ["download"=>end($nombreFile)]) ?></td>
+                <td><?= h($certEmpresasSetPrueba->trackid_envio) ?></td>
                 <td><?= h($certEmpresasSetPrueba->respuesta_envio) ?></td>
-                <td><?= h($certEmpresasSetPrueba->xml_envio) ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $certEmpresasSetPrueba->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $certEmpresasSetPrueba->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $certEmpresasSetPrueba->id], ['confirm' => __('Are you sure you want to delete # {0}?', $certEmpresasSetPrueba->id)]) ?>
+                <td><?= h($certEmpresasSetPrueba->observaciones_envio) ?></td>
+                <td class="actions">                   
+                    <?= $this->Html->link(__('Consulta envio'), ['action' => 'consultaEnvio', $certEmpresasSetPrueba->id]) ?> |
+                    <?= $this->Form->postLink(__('Eliminar'), ['action' => 'delete', $certEmpresasSetPrueba->id], ['confirm' => __('¿Seguro desea eliminar el registro # {0}?', $certEmpresasSetPrueba->trackid_envio)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

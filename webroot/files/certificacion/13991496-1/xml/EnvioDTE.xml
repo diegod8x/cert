@@ -7,7 +7,7 @@
       <RutReceptor>60803000-K</RutReceptor>
       <FchResol>2019-07-23</FchResol>
       <NroResol>0</NroResol>
-      <TmstFirmaEnv>2019-08-20T02:24:43</TmstFirmaEnv>
+      <TmstFirmaEnv>2019-08-20T02:51:40</TmstFirmaEnv>
       <SubTotDTE>
         <TpoDTE>33</TpoDTE>
         <NroDTE>4</NroDTE>
@@ -97,17 +97,17 @@
 </DA>
 <FRMA algoritmo="SHA1withRSA">KLYg0X2iS5QyUQX832i/CaW40Q0YX9U0RiWwgEZJD5poowl6qSZIFYLcNtYUTRthpwhIBz7xlrYM8CieOy8dwQ==</FRMA>
 </CAF>
-    <TSTED>2019-08-20T02:24:43</TSTED>
+    <TSTED>2019-08-20T02:51:40</TSTED>
   </DD>
-  <FRMT algoritmo="SHA1withRSA">TZWCL3/dKrSJn45eohxdwYengo75XNuiAtzGWB9jmcqtchTGjtTlgZgTN1FLs3Tfz+fOaKnOpHsnJqIaLq9OuQ==</FRMT>
+  <FRMT algoritmo="SHA1withRSA">Ca940R2vbJkVbfaJhPbT43gay1DYQsnaY7NTrIHFQM0nCvRqw+htzpnDoFh6Hw64TdHTmA0z4nEocCcIMux6+g==</FRMT>
 </TED>
-  <TmstFirma>2019-08-20T02:24:43</TmstFirma></Documento>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#"><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI="#LibreDTE_T33F24"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>ohi+AD19DThrTobhdLQhwjOSIU0=</DigestValue></Reference></SignedInfo><SignatureValue>hp91fIBsfxFsImWS25fxgUkj2c5ZoJLHPdqNbEbXJcd8UtfX0pJK+1d+DV3no46U
-AZEYENed5PFr/R9NonYYpdjSWgHH+47HcumiPOwvzSwxnv6UBqtGNN5aXVv74Cdf
-5x2MfuaClwNrDlH9ApAAvwcMJCvoRG9XaqrgmlIun8Pix9cUmxfjMh9tf2oDeenC
-76kWn9GCfzjH7U3zUa5PvrTnISaD06W0t+ARQVRa7DCv7TsJrXNLN1B5FdiLzE5L
-/820OacH23KMV73bTKZe6kTkO7VmeYCMjvkUHl0nq/fA4+bHXZe2VFf60ERBszyT
-w3aSmnXhYo5gjFXt81NtlA==</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>jOlMCM7BTCOxsTbzQucd3/hRuh4fgPC5e8A0PQw7LlUnP4R+7GtjnbZdO6t/zYJp
+  <TmstFirma>2019-08-20T02:51:40</TmstFirma></Documento>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#"><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI="#LibreDTE_T33F24"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>u8RIuDGCfx5yHRQ61dooZ3RlrTk=</DigestValue></Reference></SignedInfo><SignatureValue>Y0vgX71sA77AT0pYzykDDPzuXHsn1Q8J0j1jyVovqsudZ4Le9he0Az3uK5hZYkcV
+MMRoZP6XtLL0mlUP1GpEbQ7w5mvM+e+dPyHigOXS9d376LA5++7JbXaUXomFs0is
+WegZZgEsrPIa7MU7t0eDK2rRIFg7ik4FLPuwoeHoQX5iYPoRm8IHLXj8WLBquRPH
+Qawq/ctZzQkteO58edA6rX2Q5WscukdluVE+qhlMPV0sIQxIu7GW6/YsSWO2PtMG
+tzyOVxWyjYgnIzzld/OpJZYROYyfYCYfyZ3eBqRdXRoZdNa1iZDu5CRzY/GRsMqF
+AVeAwntwiHsJMzYkSBydEw==</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>jOlMCM7BTCOxsTbzQucd3/hRuh4fgPC5e8A0PQw7LlUnP4R+7GtjnbZdO6t/zYJp
 6pv6RETrDarU0bsLIhNbAGh14MJJx1J4N8EDpkxMnXtPriVx2mkEA4K8f0bVXJWp
 Skpp5ZZ2dysMWH0zgE9Ry9J915obg+gzBgvLa3G39grQTF4TrUOjMKOHUzpnt7hl
 emrs5XY8Mk7TDJ+IYaY0OTTfzvXFT0D4p9P3OUgaWkmsEbcggsxGiiRbPPL8FnWL
@@ -226,17 +226,17 @@ tk9YTwwPWEj90KQzV1de5PgfO7qUGKnio2qN</X509Certificate></X509Data></KeyInfo></Sig
 </DA>
 <FRMA algoritmo="SHA1withRSA">KLYg0X2iS5QyUQX832i/CaW40Q0YX9U0RiWwgEZJD5poowl6qSZIFYLcNtYUTRthpwhIBz7xlrYM8CieOy8dwQ==</FRMA>
 </CAF>
-    <TSTED>2019-08-20T02:24:43</TSTED>
+    <TSTED>2019-08-20T02:51:40</TSTED>
   </DD>
-  <FRMT algoritmo="SHA1withRSA">UBKvvLP+We5OE7h1blpimbb/GKO4OYJ4egiOLqJSiKi3FTjk7deZwIoEHQyo9qFz7Y6mnrTFeebIvyJgyV/mhA==</FRMT>
+  <FRMT algoritmo="SHA1withRSA">pIo019JqGG8+LLtwP+qGok2KMpCOennyhVNwj/hV1MkvWIPVliXvBF7doF0HmfFZhZFJSUb6o+7oUrWvyqW4Pg==</FRMT>
 </TED>
-  <TmstFirma>2019-08-20T02:24:43</TmstFirma></Documento>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#"><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI="#LibreDTE_T33F25"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>Aro7G6eTbHgFk1ZxYF9vCmr5QWY=</DigestValue></Reference></SignedInfo><SignatureValue>Gdc7+zexI4nQ7hLEC9Znrzmxq0j42anFmU0pQDtxF9APvFThzeD6YP0Q4GenB6NW
-4Gp59ljeC8Ah+YUYe1/Ppu1a2bkevX4uVoIu40DgL/AG3jV+uGNzGAD8GjyUAp/L
-S44MkpCbtd8/iaHDns8p4HDSDD8Lke7BURAFH6oiUGPjI57XRcvFqDeBHgvexIMR
-i8Lwzk6z8ifhoZDQ/Fh76Q+wWpzcuc/2FYC1PmcjTgnYjg7c4DHV1w/3yuXtoVO+
-7cdTxYzJ/WDHePAP55yV2Bd/7oyRN+4I2BnFdo5hSeCpWLriO3gUqHIVfNlqEaIJ
-49Y5ysr6VUomyse1QOO5Lg==</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>jOlMCM7BTCOxsTbzQucd3/hRuh4fgPC5e8A0PQw7LlUnP4R+7GtjnbZdO6t/zYJp
+  <TmstFirma>2019-08-20T02:51:40</TmstFirma></Documento>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#"><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI="#LibreDTE_T33F25"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>PaodgVqaQO6VTr7h7FyazisSGSM=</DigestValue></Reference></SignedInfo><SignatureValue>AGQRf1VgG98HZZdhnMZWNFeD77JLkCnDk5NEBVFGqwfO0SS7PY0zUro7TNmzs63E
+VgH1TwekYS9iWnHP5q1GXMKewGv6QZplR5lP9vGC47yyBL05fLmx5Jvwku/nBSA7
+/1MzPQ+Gx9jCIXKoMzOX5FK5hM2IqXQqQ5LTQ0X6uzwqT7M5Yv/NTpFmSjJBHsCT
+voXoMvcqTsTZcG2plvomVJBE/3P9Am5l0Jwq3gZ+tnMBzintmFXzF9YLYmdg/OG0
+Fy36E+0PmCS57g7HeTSlgVXTZqjc5Du00MjLh8s8r0YhV1xwHc1idKtO1f7zBJZf
+jKvexooAb9PEanArZJpNRA==</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>jOlMCM7BTCOxsTbzQucd3/hRuh4fgPC5e8A0PQw7LlUnP4R+7GtjnbZdO6t/zYJp
 6pv6RETrDarU0bsLIhNbAGh14MJJx1J4N8EDpkxMnXtPriVx2mkEA4K8f0bVXJWp
 Skpp5ZZ2dysMWH0zgE9Ry9J915obg+gzBgvLa3G39grQTF4TrUOjMKOHUzpnt7hl
 emrs5XY8Mk7TDJ+IYaY0OTTfzvXFT0D4p9P3OUgaWkmsEbcggsxGiiRbPPL8FnWL
@@ -360,17 +360,17 @@ tk9YTwwPWEj90KQzV1de5PgfO7qUGKnio2qN</X509Certificate></X509Data></KeyInfo></Sig
 </DA>
 <FRMA algoritmo="SHA1withRSA">KLYg0X2iS5QyUQX832i/CaW40Q0YX9U0RiWwgEZJD5poowl6qSZIFYLcNtYUTRthpwhIBz7xlrYM8CieOy8dwQ==</FRMA>
 </CAF>
-    <TSTED>2019-08-20T02:24:43</TSTED>
+    <TSTED>2019-08-20T02:51:40</TSTED>
   </DD>
-  <FRMT algoritmo="SHA1withRSA">HEqf/dsWYSXmjHiSX91HAla/IPMIM1pE74AeJ7fFJk5hekKkew0yzpgTpH4Wv6lJHgYm8WK5ZWxIlRnbPbzbRg==</FRMT>
+  <FRMT algoritmo="SHA1withRSA">ZR9FbBYXVe/jc2buu3szILSLlGYDJwwxgesfleEBkxFrLysKDW2FJa/zpLAXMPASZj6rWT4xm+IdDx85FbkOsw==</FRMT>
 </TED>
-  <TmstFirma>2019-08-20T02:24:43</TmstFirma></Documento>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#"><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI="#LibreDTE_T33F26"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>P1WmR0a4eIyMdb7ThK13P3Twqls=</DigestValue></Reference></SignedInfo><SignatureValue>WyAdlRny6CCrtDTjgQRxmFCi1pETwbW7sS6Zl4Dfpw8u4jbzAJpQ9boPrmVir727
-HeqXqSr4ikq7jgPr/owXQE1moWAhxTibD/tYUw9PtgAFkC6pys3Qf+eMwJ6WBzq+
-y6qdEryU94wWJLnEYzf2jbmlrmX0KRQB/XbbwHE8voDWjItBFAuy5vpELXONik1G
-7FuXnzVjh26QU/z9y0DX4/O+obm/fFp1Z1kwjyiADfqNczjv5VuVgPNS+odhavby
-wLYRVRaHw/+3/fUXhC/PTO2B6X4A35LBMA7WTXlCVhjv+xw7G70NpY8durdcIWZA
-u0sSMEAR7mCV830hie1b9g==</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>jOlMCM7BTCOxsTbzQucd3/hRuh4fgPC5e8A0PQw7LlUnP4R+7GtjnbZdO6t/zYJp
+  <TmstFirma>2019-08-20T02:51:40</TmstFirma></Documento>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#"><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI="#LibreDTE_T33F26"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>oUVRpJvvmdILU/+2AA7flixz8g0=</DigestValue></Reference></SignedInfo><SignatureValue>I3OQovxvzhF/QWajpXUR8i+SSWZ+sHg8gaUh6LUq1sOpb/nccGVB1tn3F18MYiXA
+PIaMx6d0S1GRcOh/0RSzs3njykUKfu26UsWbnv1uOcyxWXlONWYbPnQSjpG3a6T3
+zL1+2Ea1vsOoGTmsbaih7Alf0D7MYxJ6G2v1xecEEWguj2N0xqyBii0+nE6VBwMS
+2TmDNfBDevJGUp9OrIpkaHUbP/Lkxa5WHJIH13ieCxVpWBdvikRK2hxkfYGcR7lV
+85e8EM+4uHioe519/G6M5tbCGOVVEbX/mB3AKQZJVyVFgx2wjGe66tKNyDqB6EST
+9kdt+6RU+y4B5Yb4iCsM/Q==</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>jOlMCM7BTCOxsTbzQucd3/hRuh4fgPC5e8A0PQw7LlUnP4R+7GtjnbZdO6t/zYJp
 6pv6RETrDarU0bsLIhNbAGh14MJJx1J4N8EDpkxMnXtPriVx2mkEA4K8f0bVXJWp
 Skpp5ZZ2dysMWH0zgE9Ry9J915obg+gzBgvLa3G39grQTF4TrUOjMKOHUzpnt7hl
 emrs5XY8Mk7TDJ+IYaY0OTTfzvXFT0D4p9P3OUgaWkmsEbcggsxGiiRbPPL8FnWL
@@ -500,17 +500,17 @@ tk9YTwwPWEj90KQzV1de5PgfO7qUGKnio2qN</X509Certificate></X509Data></KeyInfo></Sig
 </DA>
 <FRMA algoritmo="SHA1withRSA">KLYg0X2iS5QyUQX832i/CaW40Q0YX9U0RiWwgEZJD5poowl6qSZIFYLcNtYUTRthpwhIBz7xlrYM8CieOy8dwQ==</FRMA>
 </CAF>
-    <TSTED>2019-08-20T02:24:43</TSTED>
+    <TSTED>2019-08-20T02:51:40</TSTED>
   </DD>
-  <FRMT algoritmo="SHA1withRSA">IYO6RUfs2lztcoo1I+dWXwk+SpzAJSDft1eTalc5mM4bx0a85lnMIMs7UdUXFQnH2AUsKVgId+9Iuj2MXFNDjg==</FRMT>
+  <FRMT algoritmo="SHA1withRSA">a5UBFfBe2LmjjFUZQULqylPtGgyvVUQbi6J+Vc/cdb6o6wCCXsooUfijwB5f+iIu0nv20bLARmdmn3qbMxTNUQ==</FRMT>
 </TED>
-  <TmstFirma>2019-08-20T02:24:43</TmstFirma></Documento>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#"><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI="#LibreDTE_T33F27"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>RktXRC5OA9MI5hXpVE763IVEmzk=</DigestValue></Reference></SignedInfo><SignatureValue>Jk+Ylyx9RtTzC4pKZ6b/aeGQKEKSglCiImweKYV+YwawLJgvIb+OInfkYU4dRzTB
-OA7PgASIUxo6ACSWUf3KVoMXp9VaGUvGO+sr5mXn8sZGG2DZ2A3DQFo/wEYNuENF
-jzAXHASE8bKre/phOKezYZlDCFUQLQFIS1w6yWo/VY3c8NvltVFAhBZBx7sN59vC
-7XVf0/HmERt5Yc9l/OMSGfxMaw4r0Muc/Lc4itbCzOr5RM2etIxhoHZeBSjrUl9X
-6p2gDhHIpnD+jDeNiFyO2MVwCfrr6WEaAXzC8kXPVap4kjPjLvz8SvApS1Xg86yZ
-mEgy0dOysnMbHZ2S6tbQGw==</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>jOlMCM7BTCOxsTbzQucd3/hRuh4fgPC5e8A0PQw7LlUnP4R+7GtjnbZdO6t/zYJp
+  <TmstFirma>2019-08-20T02:51:40</TmstFirma></Documento>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#"><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI="#LibreDTE_T33F27"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>PgWtnVXyHgiVWtggLR7LtJQWhQg=</DigestValue></Reference></SignedInfo><SignatureValue>CCjPbx+XhSluBMOMe+1VC6HhGfwDu0wTptVFqVpooNixa6UVz5c+tDzIWNdoZa5Y
+rfdC5UhY8e8Qv9P2Vr8EUQfsGKA1FVGcYewahi36UEz0Bh+W5abYYQLKWZS4w4Ep
+9+C6rI0kTw1Ww9qTCACumq8A8BRTLd7E6+EI0onAGtDJXYXKEiP12pcT9e9i+R7W
+buMDNKhrKAHJs3A73gozDabl0WN0wQ10DwoSoiFBc3tuJe1ij4N+DHumFt0WCX1a
+UqE/IbxRtnjb/M5RaLWhwKVqmpKDmhLwv6TwK1ttJ+Z3GBR1ptywXtwRrt6/O0BC
+EA8p6vLy4s0tac4bk245Aw==</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>jOlMCM7BTCOxsTbzQucd3/hRuh4fgPC5e8A0PQw7LlUnP4R+7GtjnbZdO6t/zYJp
 6pv6RETrDarU0bsLIhNbAGh14MJJx1J4N8EDpkxMnXtPriVx2mkEA4K8f0bVXJWp
 Skpp5ZZ2dysMWH0zgE9Ry9J915obg+gzBgvLa3G39grQTF4TrUOjMKOHUzpnt7hl
 emrs5XY8Mk7TDJ+IYaY0OTTfzvXFT0D4p9P3OUgaWkmsEbcggsxGiiRbPPL8FnWL
@@ -623,17 +623,17 @@ tk9YTwwPWEj90KQzV1de5PgfO7qUGKnio2qN</X509Certificate></X509Data></KeyInfo></Sig
 </DA>
 <FRMA algoritmo="SHA1withRSA">rtSK7APxyeex+SbjNN/TKq/swWQUGDPnPvaM2mFNifHxuPvIN7OaX2LyFKHV6EFow/YgGJPLi7MqGT/TexMaDg==</FRMA>
 </CAF>
-    <TSTED>2019-08-20T02:24:43</TSTED>
+    <TSTED>2019-08-20T02:51:40</TSTED>
   </DD>
-  <FRMT algoritmo="SHA1withRSA">b+9aO4R9voPe1hxcGOVIHbiuJpypAI74cvcvIRTBOmVLs8G4fGqIPwIyJ9ltlqBFdKhrbQZoBPeQGYNjburLAw==</FRMT>
+  <FRMT algoritmo="SHA1withRSA">erKKKdFEffkJQoR59l8t+0bQOl4LBtLlCjEcEHpILf7lg6njWBeIlMXXK1Hr5BFeGq3Ms5ALAINaFHSG9nBwnA==</FRMT>
 </TED>
-  <TmstFirma>2019-08-20T02:24:43</TmstFirma></Documento>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#"><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI="#LibreDTE_T61F8"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>YkbxFZgBPhAJFXeUlGDIAPew9P0=</DigestValue></Reference></SignedInfo><SignatureValue>TzMoRRGh97Hgn4u5c8R8S73wInMfICOREzzMNv63QiiNZkc0TFHV4ya45sJTIOTS
-cCihbEw0VMyjTMKcSD2Yg3876YGTuMYGU8YXAXqKxqGuBkrZ9ejrxyEX2Q+jNEFJ
-IwdEeg7Chy8HqSKZbuXIEPLV1hovwCZ/QkhJZLgoBizTikWgPytTzhIxwMZyoHjZ
-bcQp5PrYuENezadWMlOAkKKxgBlLPLJXETIMB1HY9ZQg3pY8h4BcFZeiUXfOjx3G
-FiT97CX0oAHdVQTLJVnnBU1zwQ8QVP92wchEvWqwxxRvMaCLc7i1hr3CkaqNlhGm
-/KZjvpVflpNnr8P+2vjQGw==</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>jOlMCM7BTCOxsTbzQucd3/hRuh4fgPC5e8A0PQw7LlUnP4R+7GtjnbZdO6t/zYJp
+  <TmstFirma>2019-08-20T02:51:40</TmstFirma></Documento>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#"><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI="#LibreDTE_T61F8"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>rDMqljUIvjeuSPLOjut/iaB8POQ=</DigestValue></Reference></SignedInfo><SignatureValue>ZsqTZUSTeNjOaGmP239S+6szr1/mDqjpaEkqMGyjKLvA9VTDQl5GhfYQi4965O8U
+C3KG7D/NWZihIUlChaVxFnVrD92l9lF7//lM7AcRzv3CyAeCrR2ZLHQ9X8jnFqH0
+W9kzoil+0KA5YArsaHnjx3kDL0RqBNviU9uDpu9RNd0O9qn8qcI3k5HmKV3j+4IS
+EOmZpXiddGR80el2Dtci142j+o6jNf/061KVCbn444s/O8tHDhV17bQ9QX17BwSG
+fRzPlylSU9kB+B3nFDtWoGreZ/SZiB67/Kgf3KjWhzaDEPX9LkTqvwRu4i1pOzAB
+TyMdcIBR+uBXbdA4qEuePQ==</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>jOlMCM7BTCOxsTbzQucd3/hRuh4fgPC5e8A0PQw7LlUnP4R+7GtjnbZdO6t/zYJp
 6pv6RETrDarU0bsLIhNbAGh14MJJx1J4N8EDpkxMnXtPriVx2mkEA4K8f0bVXJWp
 Skpp5ZZ2dysMWH0zgE9Ry9J915obg+gzBgvLa3G39grQTF4TrUOjMKOHUzpnt7hl
 emrs5XY8Mk7TDJ+IYaY0OTTfzvXFT0D4p9P3OUgaWkmsEbcggsxGiiRbPPL8FnWL
@@ -761,17 +761,17 @@ tk9YTwwPWEj90KQzV1de5PgfO7qUGKnio2qN</X509Certificate></X509Data></KeyInfo></Sig
 </DA>
 <FRMA algoritmo="SHA1withRSA">rtSK7APxyeex+SbjNN/TKq/swWQUGDPnPvaM2mFNifHxuPvIN7OaX2LyFKHV6EFow/YgGJPLi7MqGT/TexMaDg==</FRMA>
 </CAF>
-    <TSTED>2019-08-20T02:24:43</TSTED>
+    <TSTED>2019-08-20T02:51:40</TSTED>
   </DD>
-  <FRMT algoritmo="SHA1withRSA">0lKaZk7yQW67IbNtGl9wK5HiOBIMEXDsqcLDTAILh1fWPeiy2odVG+Cv+6hMcVBh2PJHexsMQMsMLxMHhWvXQQ==</FRMT>
+  <FRMT algoritmo="SHA1withRSA">e7RnJqzYVf4oDV1kplTgOaYZpJgHcOm+/D1LMq79Zv6InTlkXW31MrMVt+axSLeYeEMatNApGLBxjZchUnhv1Q==</FRMT>
 </TED>
-  <TmstFirma>2019-08-20T02:24:43</TmstFirma></Documento>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#"><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI="#LibreDTE_T61F9"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>ebi13rSdCvY9BMunrkbU89peR/I=</DigestValue></Reference></SignedInfo><SignatureValue>WklAeCgNY66C/nsydew2/Y/BBAfffGwwAy/paq4FBGS8NgfTO9maThkscML5NbYX
-bsHk7X5MLulvEEsi0o5lmBPv6rrsU49nqmhimfGj9quLvW0AT9w0Sc9ktnWycy6D
-lIGieDJexg0X/fI3g6joIhi5KTmbt5eJpJ//VMZ+keKF4JGEUSiRj4FrdlJlAxyT
-ycM4flh3u/VbpBZMZbQtNIKT4V40qpZwbqn1KJtchmW0hZ5MBcrD5OGExsAXVwYj
-l57V0z8SZwqV59tPnkkcoTnK+OMUse4AsQYu55ptcUprYTqHh7QiVNKnJ499JDu4
-KZdTdFz4sgvIaPgT2k9pRw==</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>jOlMCM7BTCOxsTbzQucd3/hRuh4fgPC5e8A0PQw7LlUnP4R+7GtjnbZdO6t/zYJp
+  <TmstFirma>2019-08-20T02:51:40</TmstFirma></Documento>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#"><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI="#LibreDTE_T61F9"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>CIiTUsKxEDerL3FktLO860rhNvI=</DigestValue></Reference></SignedInfo><SignatureValue>e/qT3Oy1rlLmqqj1bvX16B9h7/yicOA2hzMXwN3XK3Fuz16aC52UDYnYhsYwpUn4
+VIWhvN0Gb1ewzFWOLhUZPROSp8PsB/C1F9osHp+zsSNLCzQWy23sEBRgDGZ/fUVU
+jV7hJa3vzw+GB+jQf964BPyGv3nW9Kn3xGh3SSuP5/MifdRPzBwlgQWQuvfh+7Sy
+e4qeBDM+LXNXKPf24sHnEwmBpB4t6I9R2s3lU58jtSmfoOcT3LG70PO/MBo88mug
+d+Bp34tsH+TzV1Ai9MRlbzqzdJ+V38KYF1YBS/+Pf+rqripidWK482G0zu59vBDM
+nE7S7s4UNHkX8i2xyBiohg==</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>jOlMCM7BTCOxsTbzQucd3/hRuh4fgPC5e8A0PQw7LlUnP4R+7GtjnbZdO6t/zYJp
 6pv6RETrDarU0bsLIhNbAGh14MJJx1J4N8EDpkxMnXtPriVx2mkEA4K8f0bVXJWp
 Skpp5ZZ2dysMWH0zgE9Ry9J915obg+gzBgvLa3G39grQTF4TrUOjMKOHUzpnt7hl
 emrs5XY8Mk7TDJ+IYaY0OTTfzvXFT0D4p9P3OUgaWkmsEbcggsxGiiRbPPL8FnWL
@@ -903,17 +903,17 @@ tk9YTwwPWEj90KQzV1de5PgfO7qUGKnio2qN</X509Certificate></X509Data></KeyInfo></Sig
 </DA>
 <FRMA algoritmo="SHA1withRSA">rtSK7APxyeex+SbjNN/TKq/swWQUGDPnPvaM2mFNifHxuPvIN7OaX2LyFKHV6EFow/YgGJPLi7MqGT/TexMaDg==</FRMA>
 </CAF>
-    <TSTED>2019-08-20T02:24:43</TSTED>
+    <TSTED>2019-08-20T02:51:40</TSTED>
   </DD>
-  <FRMT algoritmo="SHA1withRSA">B6wxlpbHlqZnAL9I/cSvMUzR1M6GXgEzGwQgBr0lxh5pEE8ypsFuXE4Qi5vcL9fKZUNm4qOjLw6Hutc0VNb7gA==</FRMT>
+  <FRMT algoritmo="SHA1withRSA">hRMnJXngLUbKmxmGRh5X0Yd7XltNYjIRUIT23q4aOkpEjyedhse+6keWcL6UgjAV9Vh7j+q3Vn2dGev0OYwCWw==</FRMT>
 </TED>
-  <TmstFirma>2019-08-20T02:24:43</TmstFirma></Documento>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#"><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI="#LibreDTE_T61F10"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>SQtgx0fUdhj1gW941/6rNehrb48=</DigestValue></Reference></SignedInfo><SignatureValue>hKzqrh+zfz+mAbgcrXU6RXOfdlRjKU25GFJeCQot7MOZsGphSqSq1XXOQgVy5UFv
-Wk5u90yr8JyPVb0vt8YfxgLbx5CSQKMC6PD/6L1oH2q8FI/hdLTDUCygF5NQUP6K
-WjmCTDQf0z3lAg1cwgXWE07GZ+/fxp8/fxLjgJHeWO89slEhuGLumcOQaFMNPUlB
-24rRWYsSH2knLU0n+aEEjR+0yJtesAnVwDNmFh0yPsFzcIt5pyedIYFcn9u7FHcH
-aW6ui8skrmfLrSSju9DbL/mVXjp1iNFl9qkvolesdzVbZlWvsLw12/dcuDpU/JSX
-fP8ylY/MW8uCNOr3gDGwnQ==</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>jOlMCM7BTCOxsTbzQucd3/hRuh4fgPC5e8A0PQw7LlUnP4R+7GtjnbZdO6t/zYJp
+  <TmstFirma>2019-08-20T02:51:40</TmstFirma></Documento>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#"><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI="#LibreDTE_T61F10"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>MZCKyfr4E32blaRTq/li54CntSI=</DigestValue></Reference></SignedInfo><SignatureValue>OIVOjWbTyhOVdhy/XfNd/uZsBozJ3Ys7tXduZ40qp5pKMbo2jpMNVBmYZqXexeSl
+lg4Dc6mHkKyWpwSzjekuE3ftPxd1QF2HS9P9fMSrodsMDf8mrcDaX9gHhcdpIdOX
+iJheqp9a3lWRK60MPm+NQo1SOsqEhxqSrnT9lICYnuh8s6oFFaP1Bk+AZZNcCRfl
+hsncpE9G/wL4f4aDRsO77xDfjwJhbNyNd1D6/pTyQfthDPXMwqIIlDSOKRM1lHDo
++UtCiKHrtyKjoWJOyzg2fL91ZyNfSgmxM0ZJSrkDUqlormbFz8RM9eJZg9W4kkLT
+dU3YIKuImAJxsUerO6lEfA==</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>jOlMCM7BTCOxsTbzQucd3/hRuh4fgPC5e8A0PQw7LlUnP4R+7GtjnbZdO6t/zYJp
 6pv6RETrDarU0bsLIhNbAGh14MJJx1J4N8EDpkxMnXtPriVx2mkEA4K8f0bVXJWp
 Skpp5ZZ2dysMWH0zgE9Ry9J915obg+gzBgvLa3G39grQTF4TrUOjMKOHUzpnt7hl
 emrs5XY8Mk7TDJ+IYaY0OTTfzvXFT0D4p9P3OUgaWkmsEbcggsxGiiRbPPL8FnWL
@@ -1026,17 +1026,17 @@ tk9YTwwPWEj90KQzV1de5PgfO7qUGKnio2qN</X509Certificate></X509Data></KeyInfo></Sig
 </DA>
 <FRMA algoritmo="SHA1withRSA">pgV/sBj7SyXMC8AfhjdVIjkckm75NOkDfL+z72inmyDYKGL6FscumwMjVMsVeDhgHrO6BEioYBb1g+52awWczQ==</FRMA>
 </CAF>
-    <TSTED>2019-08-20T02:24:43</TSTED>
+    <TSTED>2019-08-20T02:51:40</TSTED>
   </DD>
-  <FRMT algoritmo="SHA1withRSA">asAU3wDzsLIkSuAEek0Jhendz/hgEj2/QY3jv95V+rXSXHLl3A4TaVrpuAeWn+K3KMmiX/NoEp5/oCVOgh5mhw==</FRMT>
+  <FRMT algoritmo="SHA1withRSA">Dy+FkbhMnS5jh1pEzJci7XzZqdPGxd/viskoD+QljL8xR7v0Geax6b5G68upxngE9nU+/JDdbx1SabSKHX06ow==</FRMT>
 </TED>
-  <TmstFirma>2019-08-20T02:24:43</TmstFirma></Documento>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#"><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI="#LibreDTE_T56F8"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>QuVIIazg4si7XxICKyqr0o2MA+w=</DigestValue></Reference></SignedInfo><SignatureValue>LiacHiXrF3kjdXVyOJY5wzBHBIDaApYmketQT6fSO7GhqpVIPz98rkH5gbm2da5t
-Prq1arraI76r+9ABGi043jXb0JsLxEKy0+HfLyuhQsHPYzg9tJALDcV11IjR65ny
-TAkS+OWXLo12fGqv68TEQNOBR8UNxzb1XMgWzXhqfLc2c4KqCKPPxYc0lK/Te8zp
-59EQcbj1MFTsqk4N45WmX3gx+OH7ebOQU3mx3atDTvpIbJiiKirwJm+qn+E9Lmq7
-HpjRohHqW3Cs1s7HZJNOuQoWrdmNq5WdPoMm2HTjf34HeCl8KUyVRPFb6rRPwNM5
-A93JMnlaVyIiDrXQfxXzxA==</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>jOlMCM7BTCOxsTbzQucd3/hRuh4fgPC5e8A0PQw7LlUnP4R+7GtjnbZdO6t/zYJp
+  <TmstFirma>2019-08-20T02:51:40</TmstFirma></Documento>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#"><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI="#LibreDTE_T56F8"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>1EmiOetmDL78OkWDraAfkEuMyow=</DigestValue></Reference></SignedInfo><SignatureValue>aILJrj/+O5W6xphMyaKU1uzMo5L5tTXtAcsfyps0HIZKApgJv50Evx7jY4qU6pxA
+XMiBnAvd725h2qroKbuMQjJWOf1dToS44RMRJe42DNNCv05QbJi01epL4mFTkRl/
+qLdKtJ8pe367SBFUNVp3azXibrVwmvp1sXP8Dh8esho76pFJGqTDu5kOOJrFlXLq
++1fnSJ1NRjP1YRwn2u2Hodei0/m7d+5cZJB6xNoe7ShX1ZlCORdM1SpyaDzGL+A5
+F8ls5gg0l+PcFKrD+OfDijPYfF9cpQnWl60IpigrUyL4ZXiJEG1GwY53050b2svf
+RZjMJpNgD0vjiwmiqyEjXQ==</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>jOlMCM7BTCOxsTbzQucd3/hRuh4fgPC5e8A0PQw7LlUnP4R+7GtjnbZdO6t/zYJp
 6pv6RETrDarU0bsLIhNbAGh14MJJx1J4N8EDpkxMnXtPriVx2mkEA4K8f0bVXJWp
 Skpp5ZZ2dysMWH0zgE9Ry9J915obg+gzBgvLa3G39grQTF4TrUOjMKOHUzpnt7hl
 emrs5XY8Mk7TDJ+IYaY0OTTfzvXFT0D4p9P3OUgaWkmsEbcggsxGiiRbPPL8FnWL
@@ -1076,12 +1076,12 @@ m915W0NDE+/KoOnsskw4EETErJLLLH9aeYz5wm6ZJt0g0oUfuoDnm7FePS/d9cQG
 mExYmy8kpz0D5MT7L/QDOiKt8sgZkT9N/ZXI8Hcxh6VJn+xQPOYt+YQyHiaxigPA
 tk9YTwwPWEj90KQzV1de5PgfO7qUGKnio2qN</X509Certificate></X509Data></KeyInfo></Signature></DTE>
   </SetDTE>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI="#LibreDTE_SetDoc"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>fmB1zK3Nvzs6H9OUc4DIf66WqUo=</DigestValue></Reference></SignedInfo><SignatureValue>J+vOhY1MEsGcQnhE4dhpr8EMyr1NVykC4pycS8ERzG9WJ4PyznY3Cwy9fL/a/F7E
-g1t3/oWygy9F1CDMJz2X3vqnc0ghHt9vOk5HYZrbfh0TwGKcc3rAVO7ykyWFoZn/
-Aqyq45YrT/lTDKwQfnvEfC7MZFqV1w50gFkGHHhWbgZ4XMC/R5OYve3EGCfc95XD
-0EE8x9ldkETpKzmmoKQ2p4NINEaaHAzBffReZKqyGImdh6IOAo+D9G6TEiYubPRj
-YgEbVEu/udW/+QxHP84flASxuouT/o/UE6mq7NZcH1nMWg90O2IixREokxyiAakZ
-BWMxlcgMNV87FCUZJRCtBg==</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>jOlMCM7BTCOxsTbzQucd3/hRuh4fgPC5e8A0PQw7LlUnP4R+7GtjnbZdO6t/zYJp
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI="#LibreDTE_SetDoc"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>IWeGaCevWlKUOUqnnI/hYh9/vBk=</DigestValue></Reference></SignedInfo><SignatureValue>e1eEAtNRIbPNmg0JLGs+egqYNoPjRiyyWc0NTnWDwCL/zN+nXnpj1YEUFMgMZJge
+vjx7OSRZiiXwF4e6YEzsrE9W3lwxs1/bcR9B9t+I38jRG8FN1h9GgudTIT+x4JOp
+4Icngej2MhRXGyrIJVsCJ3fQ96TFqcBXkqUYycemiTjJYllRwsuv6fYRic9mJUTL
+NjOYBu/96n/4EhHe6/drvzUSPohurHiDPPlNEaN3ov/dE6moTLT+EDXunkywiij5
+5TdPtBHjOJgo/XyjRBdkbbSUxqCHNQ5d6mzlBMYVrjManEzsr1ZylulVmSw8DWVg
+bbnQJtQDdgWSQySs8jjywQ==</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>jOlMCM7BTCOxsTbzQucd3/hRuh4fgPC5e8A0PQw7LlUnP4R+7GtjnbZdO6t/zYJp
 6pv6RETrDarU0bsLIhNbAGh14MJJx1J4N8EDpkxMnXtPriVx2mkEA4K8f0bVXJWp
 Skpp5ZZ2dysMWH0zgE9Ry9J915obg+gzBgvLa3G39grQTF4TrUOjMKOHUzpnt7hl
 emrs5XY8Mk7TDJ+IYaY0OTTfzvXFT0D4p9P3OUgaWkmsEbcggsxGiiRbPPL8FnWL

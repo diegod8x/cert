@@ -33,16 +33,24 @@
             <td><?= h($certEmpresasSetPrueba->estado) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Track Id') ?></th>
-            <td><?= h($certEmpresasSetPrueba->trackid) ?></td>
+            <th scope="row"><?= __('Set Prueba Envio') ?></th>
+            <td><?= h($certEmpresasSetPrueba->set_prueba_envio) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Xml Envio') ?></th>
+            <td><?= h($certEmpresasSetPrueba->xml_envio) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Trackid Envio') ?></th>
+            <td><?= h($certEmpresasSetPrueba->trackid_envio) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Respuesta Envio') ?></th>
             <td><?= h($certEmpresasSetPrueba->respuesta_envio) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Xml Envio') ?></th>
-            <td><?= h($certEmpresasSetPrueba->xml_envio) ?></td>
+            <th scope="row"><?= __('Observaciones Envio') ?></th>
+            <td><?= h($certEmpresasSetPrueba->observaciones_envio) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Id') ?></th>

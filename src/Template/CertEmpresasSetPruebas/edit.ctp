@@ -28,9 +28,11 @@
             echo $this->Form->control('cert_empresa_id', ['options' => $certEmpresas, 'empty' => true]);
             echo $this->Form->control('cert_set_prueba_id', ['options' => $certSetPruebas, 'empty' => true]);
             echo $this->Form->control('estado');
-            echo $this->Form->control('trackid');
-            echo $this->Form->control('respuesta_envio');
+            echo $this->Form->control('set_prueba_envio');
             echo $this->Form->control('xml_envio');
+            echo $this->Form->control('trackid_envio');
+            echo $this->Form->control('respuesta_envio');
+            echo $this->Form->control('observaciones_envio');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

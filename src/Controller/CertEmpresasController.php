@@ -40,6 +40,15 @@ class CertEmpresasController extends AppController
         $this->set('certEmpresa', $certEmpresa);
     }
 
+    public function getEmpresa($id = null)
+    {
+        $certEmpresa = $this->CertEmpresas->get($id, [
+            'contain' => ['CertEmpresasSetPruebas']
+        ]);
+
+        return json_encode($certEmpresa);
+    }
+
     public function getEmisor()
     {
         if (!empty($this->request->query)){

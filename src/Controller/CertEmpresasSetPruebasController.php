@@ -58,13 +58,10 @@ class CertEmpresasSetPruebasController extends AppController
     public function emisionDte()
     {
 
-        
-        
         $this->loadModel('CertComunas');
         $this->loadModel('CertSetPruebas');
         
-        $config = AppController::config();
-        $certEmpresasSetPrueba = $this->CertEmpresasSetPruebas->newEntity();
+        $config = AppController::config();        
         $obs = '';
 
         if ($this->request->is('post')) {
@@ -179,7 +176,6 @@ class CertEmpresasSetPruebasController extends AppController
                 header('Content-type: text/xml');
                 header('Content-Disposition: attachment; filename='.FILE_DTE.'.xml');
                 echo $dom->saveXML() . "\n";
-                exit;
 
             } else if($accion=='send') {
 
@@ -198,7 +194,6 @@ class CertEmpresasSetPruebasController extends AppController
                 ];                
                 // data empresas ingresadas
                 $empresasTable = TableRegistry::get('CertEmpresas');
-
 
                 $resultReceptor = $empresasTable->find()->where(["id"=>$empresaReceptor['id']])->first();
                 $entityReceptor = isset($resultReceptor)? $resultReceptor : $empresasTable->newEntity();                
@@ -235,8 +230,9 @@ class CertEmpresasSetPruebasController extends AppController
 
                 // data set prueba de empresas
                 $setPruebaEmpresa = [
-                    "cert_empresa_id" => $savedEmisor->id,
+                    "id" => isset($this->request->data["id"]) ? $this->request->data["id"] : null, 
                     "cert_set_prueba_id" => $this->request->data["cert_set_prueba_id"],
+                    "cert_empresa_id" => $savedEmisor->id,                    
                     "estado" => 'enviado',
                     "set_prueba_envio" => $pathSETS,
                     "xml_envio" => $pathXMLEnvio,
@@ -244,21 +240,22 @@ class CertEmpresasSetPruebasController extends AppController
                     "observaciones_envio" => $obs
                 ];
 
-                //$this->Flash->success(__('Certificado enviado correctamente. Track ID: '.$track_id));
-                //return $this->redirect(['action' => 'index']);
+                $resultSetEmpresa = $this->CertEmpresasSetPruebas->find()->where(["id"=>$setPruebaEmpresa['id']])->first();
+                $entitySetEmpresa = isset($resultSetEmpresa)? $resultSetEmpresa : $this->CertEmpresasSetPruebas->newEntity();                
+                $entitySetEmpresa = $this->CertEmpresasSetPruebas->patchEntity($entitySetEmpresa, $empresaReceptor);
+                $savedSetEmpresa = $this->CertEmpresasSetPruebas->save($entitySetEmpresa);
 
-            }
-        
-            $certEmpresasSetPrueba = $this->CertEmpresasSetPruebas->patchEntity($certEmpresasSetPrueba, $this->request->getData());
-            if ($this->CertEmpresasSetPruebas->save($certEmpresasSetPrueba)) {
-                $this->Flash->success(__('The cert empresas set prueba has been saved.'));
+                if(!$savedSetEmpresa){
+                    $obs .= 'No se pudo guardar/actualizar set prueba empresas.'.'<br />';
+                    $this->Flash->error(__('No se pudo guardar/actualizar set prueba empresas. Por favor, intente nuevamente.'));
 
+                } else {
+                    $this->Flash->success(__('El set de prueba ha sido guardado correctamente.'));
+                }
                 return $this->redirect(['action' => 'index']);
+                
             }
-            $this->Flash->error(__('The cert empresas set prueba could not be saved. Please, try again.'));
-
             exit;
-
         }
 
         $comunas = $this->CertComunas->find('list',['idField' => 'id', 'valueField' => 'nombre'])->toArray();       
@@ -266,6 +263,7 @@ class CertEmpresasSetPruebasController extends AppController
                                             ->where(function (QueryExpression $exp, Query $q) {
                                                 return $exp->in('id', [1,2,3,7]);
                                             })->toArray();
+        $certEmpresasSetPrueba = $this->CertEmpresasSetPruebas->newEntity();
         $this->set(compact('certEmpresasSetPrueba', 'comunas', 'setPruebas'));
     }
 

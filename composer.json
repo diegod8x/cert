@@ -10,6 +10,7 @@
         "cakephp/migrations": "^2.0.0",
         "cakephp/plugin-installer": "^1.0",
         "mobiledetect/mobiledetectlib": "2.*",
+        "ozdemirburak/json-csv": "^0.2.0",
         "sasco/libredte": "dev-master"
     },
     "require-dev": {

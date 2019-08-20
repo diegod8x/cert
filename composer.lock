@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5478d2533a68e10630fa6fa7e1c1e6ba",
+    "content-hash": "f5d30cf6543b9045231425fdf1ada946",
     "packages": [
         {
             "name": "aura/intl",
@@ -398,6 +398,56 @@
                 "php mobile detect"
             ],
             "time": "2018-09-01T15:05:15+00:00"
+        },
+        {
+            "name": "ozdemirburak/json-csv",
+            "version": "0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ozdemirburak/json-csv.git",
+                "reference": "add96ef62c7643d0ff3781f9cfaa7feeabd7c131"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ozdemirburak/json-csv/zipball/add96ef62c7643d0ff3781f9cfaa7feeabd7c131",
+                "reference": "add96ef62c7643d0ff3781f9cfaa7feeabd7c131",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": "~7.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~6.0|~7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "OzdemirBurak\\JsonCsv\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Burak Özdemir",
+                    "email": "mail@burakozdemir.co.uk",
+                    "homepage": "https://ozdemirburak.com"
+                }
+            ],
+            "description": "JSON to CSV and CSV to JSON converters in PHP.",
+            "homepage": "https://github.com/ozdemirburak/json-csv",
+            "keywords": [
+                "csv",
+                "csv to json",
+                "csv2json",
+                "json",
+                "json to csv",
+                "json2csv"
+            ],
+            "time": "2018-10-31T22:40:29+00:00"
         },
         {
             "name": "phpseclib/phpseclib",

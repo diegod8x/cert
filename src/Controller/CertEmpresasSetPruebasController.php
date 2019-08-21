@@ -303,6 +303,7 @@ class CertEmpresasSetPruebasController extends AppController
             // mostrar error si hubo
             foreach (\sasco\LibreDTE\Log::readAll() as $error)
                 $observaciones .= $error.'. ';
+                
         }
 
         $certEmpresasSetPruebas->observaciones_envio = $observaciones;

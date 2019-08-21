@@ -3,6 +3,9 @@
      * @var \App\View\AppView $this
      * @var \App\Model\Entity\CertEmpresasSetPrueba $certEmpresasSetPrueba
      */
+    
+set_time_limit(0);
+
 ?>
 <?= $this->element('nav') ?>
 <div class="certEmpresasSetPruebas form large-9 medium-8 columns content">
@@ -136,17 +139,25 @@
 
     </fieldset>
     <br />
-    <div class="large-8">
-        <div class="large-2 columns">&nbsp;</div>
+    <div class="large-9">        
         <div class="large-3 columns">
-            <button type="button" class="button" id="generate">
-                Generar XML
+            <button type="button" class="button" id="boletas">                
+                Boletas XML (Preliminar)
+                <i class="fi-download medium"></i>
             </button>
         </div>
         <div class="large-1 columns">&nbsp;</div>
-        <div class="large-5 columns">
-            <button type="button" class="button" id="send">
-                Generar y Enviar a SII
+        <div class="large-3 columns">
+            <button type="button" class="button" id="consumo">                  
+                Consumo XML (Preliminar)         
+                <i class="fi-download medium"></i>
+            </button>
+        </div>
+        <div class="large-1 columns">&nbsp;</div>
+        <div class="large-4 columns">
+            <button type="button" class="button" id="completo">                
+                Generar documentos y <br />Enviar Consumo a SII                
+                <i class="fi-page-export-doc medium"></i>
             </button>
         </div>
 
@@ -191,10 +202,10 @@
         $(this).parent().parent().parent().remove();
     });
 
-    $("#generate, #send").click(function() {    
+    $("#consumo, #boletas, #completo").click(function() {    
         var accion = $(this).attr("id");
         $("#accion").val(accion);
-        $("#certEmpresasSetPrueba").submit();    
+        $("#certEmpresasSetPrueba").submit();
     });
 
     var getEmisor = function (rut) {

@@ -168,16 +168,18 @@
     </fieldset>
     <br />
     <div class="large-8">
-        <div class="large-2 columns">&nbsp;</div>
-        <div class="large-3 columns">
+        <div class="large-1 columns">&nbsp;</div>
+        <div class="large-4 columns">
             <button type="button" class="button" id="generate">
-                Generar XML
+                Generar XML (Preliminar)
+                <i class="fi-download medium"></i>
             </button>
         </div>
-        <div class="large-1 columns">&nbsp;</div>
+        <div class="large-2 columns">&nbsp;</div>
         <div class="large-5 columns">
             <button type="button" class="button" id="send">
                 Generar y Enviar a SII
+                <i class="fi-page-export-doc medium"></i>
             </button>
         </div>
 

@@ -49,9 +49,10 @@ class CertEmpresasController extends AppController
         return json_encode($certEmpresa);
     }
 
-    public function getEmisor()
+    public function getEmisor($rut = null)
     {
-        if (!empty($this->request->query)){
+        $rut = isset($this->request->query["rut"])? $this->request->query["rut"] : $rut; 
+        if (!empty($rut)){
             $certEmpresa = $this->CertEmpresas->find('all')->where(['rut' => $this->request->query["rut"] ])->first();            
             if(!empty($certEmpresa))
                 $certEmpresa->toArray();
@@ -65,25 +66,32 @@ class CertEmpresasController extends AppController
                 "DirOrigen" => isset($certEmpresa["direccion"])?$certEmpresa["direccion"]:"",
                 "CmnaOrigen" => isset($certEmpresa["cert_comuna_id"])?$certEmpresa["cert_comuna_id"]:""
             ];            
-            echo json_encode($format);            
+            if ($this->request->is('get'))     
+                echo json_encode($format);
+            else 
+                return $format;          
         }        
         exit;        
     }
-    public function getReceptor()
+    public function getReceptor($rut = null)
     {
-        if (!empty($this->request->query)){
-            $certEmpresa = $this->CertEmpresas->find('all')->where(['rut' => $this->request->query["rut"] ])->first();
+        $rut = isset($this->request->query["rut"])? $this->request->query["rut"] : $rut; 
+        if (!empty($rut)){
+            $certEmpresa = $this->CertEmpresas->find('all')->where(['rut' => $rut ])->first();
             if(!empty($certEmpresa))
                 $certEmpresa->toArray();
             $format = [
-                "RUTRecep" => $this->request->query["rut"],
+                "RUTRecep" => $rut,
                 "id" => isset($certEmpresa["id"])?$certEmpresa["id"]:null,
                 "RznSocRecep" =>isset($certEmpresa["nombre"])?$certEmpresa["nombre"]:"",
                 "GiroRecep" => isset($certEmpresa["giro"])?$certEmpresa["giro"]:"",
                 "DirRecep" => isset($certEmpresa["direccion"])?$certEmpresa["direccion"]:"",
                 "CmnaRecep" => isset($certEmpresa["cert_comuna_id"])?$certEmpresa["cert_comuna_id"]:""
-            ];            
-            echo json_encode($format);            
+            ];       
+            if ($this->request->is('get'))     
+                echo json_encode($format);
+            else 
+                return $format;
         }
         exit;        
     }

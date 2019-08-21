@@ -11,7 +11,8 @@ use OzdemirBurak\JsonCsv\File\Csv;
 \sasco\LibreDTE\Sii::setAmbiente(\sasco\LibreDTE\Sii::CERTIFICACION);
 define("CERT_EMP", WWW_ROOT . 'files' . DS . 'certificacion' . DS);
 define("FILE_DTE", 'EnvioDTE');
-define("FILE_BOLETA", 'ConsumoFolioEnvioBOLETA');
+define("FILE_BOLETA", 'EnvioBOLETA');
+define("FILE_CONSUMO", 'EnvioCONSUMO');
 
 /**
  * CertEmpresasSetPruebas Controller
@@ -47,6 +48,12 @@ class CertEmpresasSetPruebasController extends AppController
 
         $this->loadModel('CertComunas');
         $this->loadModel('CertSetPruebas');
+
+        $comunas = $this->CertComunas->find('list',['idField' => 'id', 'valueField' => 'nombre'])->toArray();       
+        $setPruebas = $this->CertSetPruebas->find('list', ['idField' => 'id', 'valueField' => 'nombre'])
+                                            ->where(function (QueryExpression $exp, Query $q) {
+                                                return $exp->in('id', [1,2,3,7]);
+                                            })->toArray();
              
         $obs = '';
 
@@ -89,6 +96,9 @@ class CertEmpresasSetPruebasController extends AppController
             //emisor receptor
             $Emisor = $this->request->data["emisor"];
             $Receptor = $this->request->data["receptor"];
+            $Emisor["CmnaOrigen"] = $comunas[$Emisor["CmnaOrigen"]];
+            $Receptor["CmnaRecep"] = $comunas[$Receptor["CmnaRecep"]];
+
             $caratula = $this->request->data["caratula"];
             $caratula["RutEnvia"] = $rutEmisor;
             $caratula["RutReceptor"] = "60803000-K"; // sii revisar en produccion
@@ -249,11 +259,6 @@ class CertEmpresasSetPruebasController extends AppController
             $certEmpresasSetPrueba = $this->CertEmpresasSetPruebas->patchEntity($certEmpresasSetPrueba, $this->request->getData());
         }*/
 
-        $comunas = $this->CertComunas->find('list',['idField' => 'id', 'valueField' => 'nombre'])->toArray();       
-        $setPruebas = $this->CertSetPruebas->find('list', ['idField' => 'id', 'valueField' => 'nombre'])
-                                            ->where(function (QueryExpression $exp, Query $q) {
-                                                return $exp->in('id', [1,2,3,7]);
-                                            })->toArray();
         $this->set(compact('certEmpresasSetPrueba','comunas', 'setPruebas'));
     }
 
@@ -263,13 +268,20 @@ class CertEmpresasSetPruebasController extends AppController
         $this->loadModel('CertComunas');
         $this->loadModel('CertSetPruebas');
 
+        $comunas = $this->CertComunas->find('list',['idField' => 'id', 'valueField' => 'nombre'])->toArray();       
+        $setPruebas = $this->CertSetPruebas->find('list', ['idField' => 'id', 'valueField' => 'nombre'])
+                                            ->where(function (QueryExpression $exp, Query $q) {
+                                                return $exp->in('id', [1,2,3,7]);
+                                            })->toArray();
+
+        $empresas = new CertEmpresasController();
+
         $resultSetEmpresa = $this->CertEmpresasSetPruebas->find()->where(["id"=>$id])->first();
         if(empty($resultSetEmpresa)){
             $entitySetEmpresa = $certEmpresasSetPrueba = $this->CertEmpresasSetPruebas->newEntity();
         } else { 
             $entitySetEmpresa = $certEmpresasSetPrueba = $resultSetEmpresa;            
         }
-
 
         if ($this->request->is('post') && is_null($id)) {
                         
@@ -284,15 +296,16 @@ class CertEmpresasSetPruebasController extends AppController
             if (!file_exists(CERT_EMP . $rutEmisor. DS . 'xml' . DS . $pruebaId)) mkdir(CERT_EMP . $rutEmisor. DS . 'xml' . DS . $pruebaId, 0777, true);
 
             //genera boleta data cabecera
-           $Emisor = $this->request->data["emisor"];           
-           $caratula = $this->request->data["caratula"];
-           $caratula["RutEnvia"] = $rutEmisor;
-           $caratula["RutReceptor"] = "60803000-K"; // sii revisar en produccion
-
+            $Emisor = $this->request->data["emisor"];
+            $Receptor = (isset($this->request->data["receptor"]))? $this->request->data["receptor"] : $empresas->getReceptor('15394719-8'); 
+            $Emisor["CmnaOrigen"] = $comunas[$Emisor["CmnaOrigen"]];
+            $Receptor["CmnaRecep"] = $comunas[$Receptor["CmnaRecep"]];
+            $caratula = $this->request->data["caratula"];           
+            $caratula["RutEnvia"] = $caratula["RutEmisor"] = $rutEmisor;
+            $caratula["RutReceptor"] = "60803000-K"; // sii revisar en produccion            
             $set_pruebasFile = $this->request->data["set_de_pruebas"];
             $pathSETS = CERT_EMP . $rutEmisor . DS . 'set_pruebas' . DS . basename($set_pruebasFile["name"]);
             move_uploaded_file($set_pruebasFile['tmp_name'], $pathSETS);
-
             //cafs
             $cafs = $this->request->data["cafs"];
             $folios = [];
@@ -304,16 +317,22 @@ class CertEmpresasSetPruebasController extends AppController
                     move_uploaded_file($cafFile['tmp_name'], $pathCAF);
                 }                    
             }
-
             // obtener JSON del set de pruebas
-            $documentos = $this->setToJSON($pathSETS);     
-            pr($documentos);exit;
-
+            $documentos = $this->setBoletaJSON($pathSETS, $folios);     
+            // asigna empresas
+            $documentosDTE = [];
+            foreach ($documentos as $documento){            
+                if (!isset($documento["Encabezado"]["Emisor"]))
+                    $documento["Encabezado"]["Emisor"] = $Emisor;
+                if (!isset($documento["Encabezado"]["Receptor"]))
+                    $documento["Encabezado"]["Receptor"] = $Receptor; 
+                $documentosDTE[] = $documento;
+            }
+            $documentos = $documentosDTE;
             $Folios = [];
-            $rutaXml = CERT_EMP . $rutEmisor . DS.'xml'.DS.$pruebaId.DS;
+            $rutaXml = CERT_EMP . $rutEmisor . DS . 'folios' . DS;
             foreach ($folios as $tipo => $cantidad)
-                $Folios[$tipo] = new \sasco\LibreDTE\Sii\Folios(file_get_contents($rutaXml.$tipo.'.xml'));
-           
+                $Folios[$tipo] = new \sasco\LibreDTE\Sii\Folios(file_get_contents($rutaXml.$tipo.'.xml'));           
             //certificado
             $certificadoFile = $this->request->data["certificado"]["firma"];
             $pathCERT = CERT_EMP . $rutEmisor . DS . 'certificado' . DS . basename($certificadoFile["name"]);
@@ -325,62 +344,68 @@ class CertEmpresasSetPruebasController extends AppController
             ];
             $Firma = new \sasco\LibreDTE\FirmaElectronica($firma);
 
-            //boletas
-            if(!empty($documentos)) {   
-                // generar cada DTE, timbrar, firmar y agregar al sobre de EnvioBOLETA
-                $EnvioDTE = new \sasco\LibreDTE\Sii\EnvioDte();          
-                foreach ($documentos as $documento) {
-                    $DTE = new \sasco\LibreDTE\Sii\Dte($documento);                        
-                    if (!$DTE->timbrar($Folios[$DTE->getTipo()]))
-                        break;
-                    if (!$DTE->firmar($Firma))
-                        break;
-                    $EnvioDTE->agregar($DTE);
-                }
-                $EnvioDTE->setCaratula($caratula);
-                $EnvioDTE->setFirma($Firma);
-            } else {
-                die("No existen pruebas!");
+            //--------------------------------------------------------------------------------------
+            // generar cada DTE, timbrar, firmar y agregar al sobre de EnvioBOLETA   
+            $EnvioBOLETA = new \sasco\LibreDTE\Sii\EnvioDte();                                   
+            foreach ($documentos as $documento) {
+                $DTE = new \sasco\LibreDTE\Sii\Dte($documento);                        
+                if (!$DTE->timbrar($Folios[$DTE->getTipo()]))
+                    break;
+                if (!$DTE->firmar($Firma))
+                    break;
+                $EnvioBOLETA->agregar($DTE);
             }
-            // agregar detalle de boletas
-            foreach ($EnvioDTE->getDocumentos() as $Dte) {
+            $EnvioBOLETA->setCaratula($caratula);
+            $EnvioBOLETA->setFirma($Firma);
+            // xml
+            $dom = new \DOMDocument;
+            $dom->preserveWhiteSpace = TRUE;
+            $dom->loadXML(trim($EnvioBOLETA->generar()));            
+            $pathXMLBoletas = CERT_EMP . $rutEmisor . DS . 'xml' . DS . $pruebaId . DS . FILE_BOLETA . '.xml';
+            $dom->save($pathXMLBoletas); //guarda local
+            $EnvioBOLETA->loadXML(file_get_contents($pathXMLBoletas));
+            //--------------------------------------------------------------------------------------
+            // consumo folios: agregar detalle de boletas
+            $ConsumoFolio = new \sasco\LibreDTE\Sii\ConsumoFolio();
+            $ConsumoFolio->setFirma(new \sasco\LibreDTE\FirmaElectronica($firma));
+            $ConsumoFolio->setDocumentos(array_keys($folios)); // [39, 61] si es sólo afecto, [41, 61] si es sólo exento    
+            foreach ($EnvioBOLETA->getDocumentos() as $Dte) {
                 $ConsumoFolio->agregar($Dte->getResumen());
             }
-
-            $CaratulaEnvioBOLETA = $EnvioDTE->getCaratula();
+            $CaratulaEnvioBOLETA = $EnvioBOLETA->getCaratula();            
             $ConsumoFolio->setCaratula([
                 'RutEmisor' => $CaratulaEnvioBOLETA['RutEmisor'],
                 'FchResol' => $CaratulaEnvioBOLETA['FchResol'],
                 'NroResol' => $CaratulaEnvioBOLETA['NroResol'],
-            ]);
-            
+            ]);            
             $ConsumoFolio->generar();
-
             if ($ConsumoFolio->schemaValidate()) {
-
-                $Caratula = $ConsumoFolio->getCaratula();
-                $Documentos = $ConsumoFolio->getDocumentos();
-                                
                 $dom = new \DOMDocument;
                 $dom->preserveWhiteSpace = TRUE;
                 $dom->loadXML(trim($ConsumoFolio->generar()));
-                $pathXMLEnvio = CERT_EMP . $rutEmisor . DS . 'xml' . DS . $pruebaId . DS . FILE_BOLETA . '.xml';
-                $dom->save($pathXMLEnvio); //guarda local
+                $pathXMLConsumo = CERT_EMP . $rutEmisor . DS . 'xml' . DS . $pruebaId . DS . FILE_CONSUMO . '.xml';
+                $dom->save($pathXMLConsumo); //guarda local
 
-                $accion='preliminar';
-
-                if($accion=='preliminar') {
-
+                $accion='completo';
+                if($accion=='consumo') {
+                    header('Content-type: text/xml');
+                    header('Content-Disposition: attachment; filename='.FILE_CONSUMO.'.xml');
+                    echo $dom->saveXML() . "\n";    
+                } else if($accion=='boletas') {
                     header('Content-type: text/xml');
                     header('Content-Disposition: attachment; filename='.FILE_BOLETA.'.xml');
+                    $dom->save($pathXMLBoletas); //guarda local
                     echo $dom->saveXML() . "\n";
-    
                 } else if($accion=='completo') {
 
-                    $track_id = $ConsumoFolio->enviar();
-                    //$track_id = '789456123';
+                    //$track_id = $ConsumoFolio->enviar();
+                    $track_id = '789456123';
+
+                    $Caratula = $EnvioBOLETA->getCaratula();
+                    $Documentos = $EnvioBOLETA->getDocumentos();
+
                     // directorio temporal para guardar los PDF
-                    $dir = sys_get_temp_dir().'/dte_'.$Caratula['RutEmisor'].'_'.$Caratula['RutReceptor'].'_'.str_replace(['-', ':', 'T'], '', $Caratula['TmstFirmaEnv']);
+                    $dir = sys_get_temp_dir().'/dte_'.$Caratula['RutEmisor'].'_'.str_replace(['-', ':', 'T'], '', $Caratula['TmstFirmaEnv']);
                     if (is_dir($dir))
                         \sasco\LibreDTE\File::rmdir($dir);
                     if (!mkdir($dir))
@@ -396,111 +421,25 @@ class CertEmpresasSetPruebasController extends AppController
                             'right' => 'http://www.neonet.cl',
                         ];
                         $pdf->setFooterText($footer);
-                        $pdf->setLogo(CERT_EMP . $RutEmisor . DS . 'logo.png'); // debe ser PNG!
+                        $pdf->setLogo(CERT_EMP . $rutEmisor . DS . 'logo.png'); // debe ser PNG!
                         $pdf->setResolucion(['FchResol'=>$Caratula['FchResol'], 'NroResol'=>$Caratula['NroResol']]);
                         //$pdf->setCedible(true);
                         $pdf->agregar($DTE->getDatos(), $DTE->getTED());
                         $id = str_replace('LibreDTE_', '', $DTE->getID());                    
-                        $pdf->Output($dir.'/dte_'.$Caratula['RutEmisor'].'_'.$id.'.pdf', 'F');
+                        $pdf->Output(CERT_EMP . $rutEmisor. DS . 'xml' . DS . $pruebaId . DS . 'dte_'.$Caratula['RutEmisor'].'_'.$id.'.pdf', 'F');
                     }
                     // entregar archivo comprimido que incluirá cada uno de los DTEs
                     \sasco\LibreDTE\File::compress(CERT_EMP . $rutEmisor. DS . 'xml' . DS . $pruebaId, ['format'=>'zip', 'delete'=>false]);
+
                     $this->Flash->success(__('El set de prueba ha sido guardado correctamente.'));                
                     return $this->redirect(['action' => 'index']);
                 }
-            }
-
-            /*if($accion=='generate') {
-
-                header('Content-type: text/xml');
-                header('Content-Disposition: attachment; filename='.FILE_BOLETA.'.xml');
-                echo $dom->saveXML() . "\n";
-
-            } else if($accion=='send') {
-
-                $track_id = $EnvioDTE->enviar();
-
-                //$track_id = '7778890';
-
-                //data almacenamiento                
-                $empresaReceptor = [
-                    "id" => isset($Receptor["id"])? $Receptor["id"] : null, 
-                    "rut" => $Receptor["RUTRecep"],
-                    "nombre" => $Receptor["RznSocRecep"],
-                    "giro" => $Receptor["GiroRecep"],
-                    "direccion" => $Receptor["DirRecep"],
-                    "cert_comuna_id" => $Receptor["CmnaRecep"],
-                    "actividad" => null
-                ];                
-                // data empresas ingresadas
-                $empresasTable = TableRegistry::get('CertEmpresas');
-
-                $resultReceptor = $empresasTable->find()->where(["id"=>$empresaReceptor['id']])->first();
-                $entityReceptor = isset($resultReceptor)? $resultReceptor : $empresasTable->newEntity();                
-                $entityReceptor = $empresasTable->patchEntity($entityReceptor, $empresaReceptor);
-                $savedReceptor = $empresasTable->save($entityReceptor);
-                if(!$savedReceptor)
-                    $obs .= 'No se pudo guardar/actualizar empresas receptor.'.'<br />';                
-                
-                // data empresa a certificar                
-                $empresaEmisor = [
-                    "id" => isset($Emisor["id"])? $Emisor["id"] : null, 
-                    "rut" => $Emisor["RUTEmisor"],
-                    "nombre" => $Emisor["RznSoc"],
-                    "giro" => $Emisor["GiroEmis"],
-                    "direccion" => $Emisor["DirOrigen"],
-                    "cert_comuna_id" => $Emisor["CmnaOrigen"],
-                    "actividad" => $Emisor["Acteco"],
-                    "certificado" => str_replace(WWW_ROOT, '', $pathCERT),
-                    "pass_firma" => $this->request->data["certificado"]["pass"],
-                    "fecha_resolucion" => $this->request->data["caratula"]["FchResol"],
-                    "numero_resolucion" => $this->request->data["caratula"]["NroResol"]
-                ];
-
-                $resultEmisor = $empresasTable->find()->where(["id"=>$empresaEmisor['id']])->first();
-                $entityEmisor = isset($resultEmisor)? $resultEmisor : $empresasTable->newEntity();
-                $entityEmisor = $empresasTable->patchEntity($entityEmisor, $empresaEmisor);
-                $savedEmisor = $empresasTable->save($entityEmisor);
-
-                if(!$savedEmisor)
-                    $obs .= 'No se pudo guardar/actualizar empresas emisor. '; 
-                
+            } else {
                 foreach (\sasco\LibreDTE\Log::readAll() as $error)
-                    $obs .= $error;
-
-                // data set prueba de empresas
-                $setPruebaEmpresa = [
-                    "id" => $id, 
-                    "cert_set_prueba_id" => $pruebaId,
-                    "cert_empresa_id" => $savedEmisor->id,
-                    "estado" => 'enviado',
-                    "set_prueba_envio" => str_replace(WWW_ROOT, '', $pathSETS), 
-                    "xml_envio" => str_replace(WWW_ROOT, '', $pathXMLEnvio),
-                    "trackid_envio" => $track_id,
-                    "observaciones_envio" => $obs
-                ];
-            
-                $entitySetEmpresa = $this->CertEmpresasSetPruebas->patchEntity($entitySetEmpresa, $setPruebaEmpresa);
-                $savedSetEmpresa = $this->CertEmpresasSetPruebas->save($entitySetEmpresa);
-
-                if(!$savedSetEmpresa){                    
-                    $this->Flash->error(__('No se pudo guardar/actualizar set prueba empresas. Por favor, intente nuevamente.'));
-
-                } else {
-                    $this->Flash->success(__('El set de prueba ha sido guardado correctamente.'));
-                }
-                return $this->redirect(['action' => 'index']);
-                
-            }*/
-            exit;            
-
+                    echo $error,"\n";
+            }        
+            exit;          
         }
-
-        $comunas = $this->CertComunas->find('list',['idField' => 'id', 'valueField' => 'nombre'])->toArray();       
-        $setPruebas = $this->CertSetPruebas->find('list', ['idField' => 'id', 'valueField' => 'nombre'])
-                                            ->where(function (QueryExpression $exp, Query $q) {
-                                                return $exp->in('id', [1,2,3,7]);
-                                            })->toArray();
 
         $this->set(compact('certEmpresasSetPrueba','comunas', 'setPruebas'));
 
@@ -586,26 +525,57 @@ class CertEmpresasSetPruebasController extends AppController
     }
 
 
-    public function setBoletaFromCSV($file){
+    public function setBoletaJSON($file, $folios){
+        $csvToArray = $this->transformCSV($file,';');
+        $documentos = [];
+        foreach($folios as $tipoDoc => $desde){
+            switch($tipoDoc) {            
+                case 39: {  
+                    $tipo = $tipoDoc; 
+                    $nroFolio = $desde - 1;
+                    $formato = [
+                            'Encabezado' => [
+                                'IdDoc' => [
+                                    'TipoDTE' => 39,
+                                    'Folio' => 0,
+                                ],
+                                //'Emisor' => "",
+                               // 'Receptor' => ""
+                            ]
+                        ];
+                }
+                default;
+            }
 
-        $csvToJson = $this->setToJSON($file,';');
-
-
+            foreach($csvToArray as $caso){
+                if ($caso["Folio"] != '') {
+                    $index = $caso["Folio"];
+                    unset($caso["Folio"]);
+                    $detalles[$index][] = array_filter($caso);
+                } else {                
+                    unset($caso["Folio"]);
+                    $detalles[$index][] = array_filter($caso);                
+                }
+            }
+            foreach($detalles as $caso => $detalle) {
+                $formato['Encabezado']['IdDoc']['Folio'] = $nroFolio + $caso;
+                $formato['Detalle'] = $detalles[$caso];
+                $documentos[] = $formato;
+            }
+        }
+        return $documentos;
     }
 
 
-    public function setToJSON($path, $delimiter = ';' ){
+    public function transformCSV($path, $delimiter = ';', $tipo = 'array' ){
         if (($handle = fopen($path, "r")) === false) die("can't open the file.");
         $csv_headers = fgetcsv($handle, 4000, $delimiter);
         $csv_json = array();
         while ($row = fgetcsv($handle, 4000, $delimiter))
-        {   
-            if($row[0] != '') {
-                $csv_json[] = array_combine($csv_headers, $row);
-            }
-            
+        {    
+            $csv_json[] = array_combine($csv_headers, $row);
         }
         fclose($handle);
-        return json_encode($csv_json,JSON_PARTIAL_OUTPUT_ON_ERROR); // ojo parcial
+        return ($tipo == 'array') ? $csv_json : json_encode($csv_json,JSON_PARTIAL_OUTPUT_ON_ERROR);
     }
 }

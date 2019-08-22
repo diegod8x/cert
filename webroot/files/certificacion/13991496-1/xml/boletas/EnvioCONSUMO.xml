@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <ConsumoFolios xmlns="http://www.sii.cl/SiiDte" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sii.cl/SiiDte ConsumoFolio_v10.xsd" version="1.0">
-  <DocumentoConsumoFolios ID="LibreDTE_CONSUMO_FOLIO_139914961_20190821_1566425003">
+  <DocumentoConsumoFolios ID="LibreDTE_CONSUMO_FOLIO_139914961_20190822_1566445250">
     <Caratula version="1.0">
       <RutEmisor>13991496-1</RutEmisor>
       <RutEnvia>13991496-1</RutEnvia>
       <FchResol>2019-07-23</FchResol>
       <NroResol>0</NroResol>
-      <FchInicio>2019-08-21</FchInicio>
-      <FchFinal>2019-08-21</FchFinal>
+      <FchInicio>2019-08-22</FchInicio>
+      <FchFinal>2019-08-22</FchFinal>
       <SecEnvio>1</SecEnvio>
-      <TmstFirmaEnv>2019-08-21T22:03:23</TmstFirmaEnv>
+      <TmstFirmaEnv>2019-08-22T03:40:50</TmstFirmaEnv>
     </Caratula>
     <Resumen>
       <TipoDocumento>39</TipoDocumento>
@@ -27,12 +27,12 @@
       </RangoUtilizados>
     </Resumen>
   </DocumentoConsumoFolios>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI="#LibreDTE_CONSUMO_FOLIO_139914961_20190821_1566425003"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>XRu7EMAIkkNUHLXf9Zs5RulL7/I=</DigestValue></Reference></SignedInfo><SignatureValue>IKVaOy79p3j59YC1KSFo4osKLxwo20C3SUO/pD+CzcJC/RKssdUWMn1gt28c0qQg
-Kv9QXSxoI9yx7/y697e9GYgsMhlqCf9LivmOSd6fD48ffYgessi1FrCQ8TGYqmGp
-vvVxJrEmwV1aGgSiYG6DAw1EVM5YvPvLmW2p1QDF+TVyt1JQSs4LOYq+3T11gcg3
-sDvrxpdODTjJsM7nhItsweoN7jR2GiaVwV+Q2yUlk3Nf0ZZi5h3tMRGhioibZ+gu
-vfhC8L4vpZBi6fjZ2J+OutrZ1ywgBq7/6MR+W2LVLW/VptTdfPHsHtcBo/p/8pLf
-HyFGiS7+m+wirwLtfnmoOQ==</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>jOlMCM7BTCOxsTbzQucd3/hRuh4fgPC5e8A0PQw7LlUnP4R+7GtjnbZdO6t/zYJp
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI="#LibreDTE_CONSUMO_FOLIO_139914961_20190822_1566445250"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>ah2ZKbjYKVj0PFxpWH0FPJaTcYU=</DigestValue></Reference></SignedInfo><SignatureValue>bd6wl87ph7dYant3a+NZmvXDEnDsa3e8ZERjaxWd9bYojEWfxkPEU5JjSkx+z8KQ
+uodJuU46bvQvC37l3KlT0vnIp3w4ydayzborjx+z5iYdRBhMDHnxR5tnYs7f45LI
+zdtjkGl8OPp9GgxZKcaThsjjm0cjzPOp1PZ+HgqQuFmUvFMpQJRviKFhocs/80My
+1HU0zI6lBGS1n6hP7trTkCrzS+bBJSJL/jbWUWBRnLx0NrToGNjKDJsNidO6n4zR
+ObEKa9Z8QSMK60khStj1WfcoSUpxK2d6aWb5n3wRMpvXQcPNi8IiKs2StZ3qPZQR
+feX14b2xordltWllhFDSmw==</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>jOlMCM7BTCOxsTbzQucd3/hRuh4fgPC5e8A0PQw7LlUnP4R+7GtjnbZdO6t/zYJp
 6pv6RETrDarU0bsLIhNbAGh14MJJx1J4N8EDpkxMnXtPriVx2mkEA4K8f0bVXJWp
 Skpp5ZZ2dysMWH0zgE9Ry9J915obg+gzBgvLa3G39grQTF4TrUOjMKOHUzpnt7hl
 emrs5XY8Mk7TDJ+IYaY0OTTfzvXFT0D4p9P3OUgaWkmsEbcggsxGiiRbPPL8FnWL

@@ -12,7 +12,7 @@ set_time_limit(0);
     <?= $this->Form->create($certEmpresasSetPrueba, ['id' => 'certEmpresasSetPrueba', 'type' => 'file', "role"=>"form", "data-abide" => '', "novalidate"=>'novalidate']) ?>
     <fieldset>
         <legend><?= __('Boletas') ?></legend>
-
+        <input type="hidden" name="cert_set_prueba_id" value="8" required />
         <div class="row">
             <div class="large-8">
                 <div class="large-12 columns">

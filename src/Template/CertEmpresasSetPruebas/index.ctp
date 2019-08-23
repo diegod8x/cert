@@ -30,7 +30,19 @@
                 <td><?= $certEmpresasSetPrueba->cert_set_prueba->nombre //? $this->Html->link($certEmpresasSetPrueba->cert_set_prueba->nombre, ['controller' => 'CertSetPruebas', 'action' => 'view', $certEmpresasSetPrueba->cert_set_prueba->id]) : '' ?></td>
                 <!-- td><?= h($certEmpresasSetPrueba->estado) ?></td-->
                 <!-- >td><?= h($certEmpresasSetPrueba->set_prueba_envio) ?></td-->
-                <td><?php $nombreFile = explode('/', $certEmpresasSetPrueba->xml_envio); echo $this->Html->link(end($nombreFile), $certEmpresasSetPrueba->xml_envio, ["download"=>end($nombreFile)]) ?></td>
+                <td>
+                <?php 
+                    $links = [];
+                    foreach($certEmpresasSetPrueba->xml_envio as $key => $doc){
+                        $nombreFile = explode('/', $doc);
+                        $file = explode(".",end($nombreFile));
+                        if(end($file)=='zip')
+                            echo $this->Html->link(end($nombreFile), ['controller' =>'CertEmpresasSetPruebas', 'action' => 'descargarZIP', '?' => ["file"=>$doc]], ["target" => "_blank"]);
+                        else 
+                            echo $this->Html->link(end($nombreFile), $doc, ["download"=>end($nombreFile)]).'<br />';
+                    }
+                    ?>
+                </td>
                 <td><?= h($certEmpresasSetPrueba->trackid_envio) ?></td>
                 <td><?= h($certEmpresasSetPrueba->respuesta_envio) ?></td>
                 <td><?= h($certEmpresasSetPrueba->observaciones_envio) ?></td>

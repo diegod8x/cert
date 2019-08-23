@@ -7,7 +7,7 @@
       <RutReceptor>60803000-K</RutReceptor>
       <FchResol>2019-07-23</FchResol>
       <NroResol>0</NroResol>
-      <TmstFirmaEnv>2019-08-22T03:40:50</TmstFirmaEnv>
+      <TmstFirmaEnv>2019-08-22T20:59:05</TmstFirmaEnv>
       <SubTotDTE>
         <TpoDTE>39</TpoDTE>
         <NroDTE>5</NroDTE>
@@ -34,7 +34,7 @@
         <RUTRecep>15394719-8</RUTRecep>
         <RznSocRecep>DIEGO LEOPOLDO DANIEL DIAZ REYES</RznSocRecep>
         <DirRecep>BORINQUEN 2 Block F DEPTO. 18 COND BRISAS DEL SUR</DirRecep>
-        <CmnaRecep>Viña del Mar</CmnaRecep>
+        <CmnaRecep>Villa Alemana</CmnaRecep>
         <id>2</id>
       </Receptor>
       <Totales>
@@ -77,17 +77,17 @@
 </DA>
 <FRMA algoritmo="SHA1withRSA">MiIVZx0QDk7QCF30fFEayI1qddHBQmyMFH4GYfCEpPyKZ47zUAYTJQ+fJNhFeOVF7CvGau2fvV10b4kcJyK+8g==</FRMA>
 </CAF>
-    <TSTED>2019-08-22T03:40:50</TSTED>
+    <TSTED>2019-08-22T20:59:05</TSTED>
   </DD>
-  <FRMT algoritmo="SHA1withRSA">pSMklRshAxa7CBiMFd9TMQtmJrn5Y8F9oz5lzdH9VELP8CE5kM2f2ECIgpGvT1Fg7MD8oWUZH6q2NK2zSaFy2Q==</FRMT>
+  <FRMT algoritmo="SHA1withRSA">KlSgDmjfMA0eQXtvSYqECyKaEZ7ISySU9ZeqVrtQkPKKrTEWJ1AF61seR7T7Nt0JrQBQUhY+L8n3h7FiRVk9zw==</FRMT>
 </TED>
-  <TmstFirma>2019-08-22T03:40:50</TmstFirma></Documento>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#"><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI="#LibreDTE_T39F1"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>4bb1ooKGI4LMiKiBWqtTHdaRmpY=</DigestValue></Reference></SignedInfo><SignatureValue>cQssY7L7rpAWnL0YOWBvXEkilD/71APOxdaltpbISr0er1+pSzkSAIx1GYl/hd5z
-zy1X0Yg6h9Bu67ZAuA6OS4CkPJjlbzZGDH5EJBgdiHMVRnX3LKLZdtlHJttEYjiY
-Ir4CQa+oSRoJq8H+fO9gPi9WMTeVYObhZwV1mVjRPvHVBM+JvCp0EHbAmZtMEwP4
-CXr7T+nE7xhw1h1S79KdaVJorNNzjR1RZfvyIGBK3S7XNtU4HDNTlibogBODDyMr
-zoRmnpGex1piY+hdZw9f92seeoX73N17nPtcCZy9L1KyLQ08nejyYim83z054BW4
-BfGHx1tfr+BgvPFpecTRUw==</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>jOlMCM7BTCOxsTbzQucd3/hRuh4fgPC5e8A0PQw7LlUnP4R+7GtjnbZdO6t/zYJp
+  <TmstFirma>2019-08-22T20:59:05</TmstFirma></Documento>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#"><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI="#LibreDTE_T39F1"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>cY7Nhdp3vwI+PWSVtTX8qpzjTR0=</DigestValue></Reference></SignedInfo><SignatureValue>WQCaXDK0dMCS3Ur8AM1dzgvafVwPVAR1V0IPUB0we8rXKa3U6gYTWs+b3dJEiBpv
+jEowjdhaQdr9Yal1QxqfR9lpvPvzdvF0r3qFUyp1BuShGCrfZ6GAFI1565ZI53Pk
+ABeWLLWA5JlhpHlesrXN8eXr/uqM5LbTuWBdK4aZKfTrAGiH0r8NrMA15GIgIdIy
+ASsf/tjeqErHOPIsfbfgd70/7MqWrdRIiH7LVE3EDrBt2UEag8EnqA0KyRv6eS9Q
+A4rFoT0oG8x6Ecfc6IEzdU5r3q3qJ3apxDFh0Y3RwZr+7s09OLlvIFuXvVK7Uffs
++dUY+uG2RHVzY9YOmwUJyQ==</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>jOlMCM7BTCOxsTbzQucd3/hRuh4fgPC5e8A0PQw7LlUnP4R+7GtjnbZdO6t/zYJp
 6pv6RETrDarU0bsLIhNbAGh14MJJx1J4N8EDpkxMnXtPriVx2mkEA4K8f0bVXJWp
 Skpp5ZZ2dysMWH0zgE9Ry9J915obg+gzBgvLa3G39grQTF4TrUOjMKOHUzpnt7hl
 emrs5XY8Mk7TDJ+IYaY0OTTfzvXFT0D4p9P3OUgaWkmsEbcggsxGiiRbPPL8FnWL
@@ -147,7 +147,7 @@ tk9YTwwPWEj90KQzV1de5PgfO7qUGKnio2qN</X509Certificate></X509Data></KeyInfo></Sig
         <RUTRecep>15394719-8</RUTRecep>
         <RznSocRecep>DIEGO LEOPOLDO DANIEL DIAZ REYES</RznSocRecep>
         <DirRecep>BORINQUEN 2 Block F DEPTO. 18 COND BRISAS DEL SUR</DirRecep>
-        <CmnaRecep>Viña del Mar</CmnaRecep>
+        <CmnaRecep>Villa Alemana</CmnaRecep>
         <id>2</id>
       </Receptor>
       <Totales>
@@ -183,17 +183,17 @@ tk9YTwwPWEj90KQzV1de5PgfO7qUGKnio2qN</X509Certificate></X509Data></KeyInfo></Sig
 </DA>
 <FRMA algoritmo="SHA1withRSA">MiIVZx0QDk7QCF30fFEayI1qddHBQmyMFH4GYfCEpPyKZ47zUAYTJQ+fJNhFeOVF7CvGau2fvV10b4kcJyK+8g==</FRMA>
 </CAF>
-    <TSTED>2019-08-22T03:40:50</TSTED>
+    <TSTED>2019-08-22T20:59:05</TSTED>
   </DD>
-  <FRMT algoritmo="SHA1withRSA">kBhb7e0pL5kLmvi7ajQrp3bKxVuso9d97Vy56Sex+4Dw8Ruqo3KpF0F7OT9+2NfTattCbebd9nk6NWFtO8+ezQ==</FRMT>
+  <FRMT algoritmo="SHA1withRSA">LXXYqxiBHTN9H7HDjjEhc2KgpgToJIAWY4cURD1UYTA0wM4BpvzxWJa2EBgAMNlGzuSk+kuU5DXb/ohdamyfGg==</FRMT>
 </TED>
-  <TmstFirma>2019-08-22T03:40:50</TmstFirma></Documento>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#"><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI="#LibreDTE_T39F2"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>7rT93ofNB6QIhvX5asq5W2WmYZA=</DigestValue></Reference></SignedInfo><SignatureValue>hU+rXH9PPHYu3jGINCdWmrcXY1tyfOtvBU9mWFzMeD8YfkDMpLpKc1tlDNSV9W3c
-l3cJ54l1h7UGASlRUuur4lsmj42nb9fsXj29w5cA+Hsp3VY/ezuArY4a/peGX3tH
-4NqRqtxNe5tZvvtOoQlWbiA+2Az5Ug6bhNzIl7PeXnSIgE89PK+GsoGtwQFH0b3S
-Caf5aFhZQwn8zg2AM52EJrA9hoCgipi3ReYfl6Bg/Rf39scZVWE+gjtcq5EE9GiL
-lWMcSFri8v8O0wi27QXAltYbX0ktH/TAYSKHxOiK1yZ3lQOXIaz1m5CjebRGKTGQ
-dTDQKzacgjki2QB6ISxAew==</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>jOlMCM7BTCOxsTbzQucd3/hRuh4fgPC5e8A0PQw7LlUnP4R+7GtjnbZdO6t/zYJp
+  <TmstFirma>2019-08-22T20:59:05</TmstFirma></Documento>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#"><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI="#LibreDTE_T39F2"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>yQ3zbd+zeusi+51Bskup3UfC0MI=</DigestValue></Reference></SignedInfo><SignatureValue>QfxVUEk45/phJtLg763099VUlTQttx4RrjZcNGw7wL8IFQOgNOhMXdsOH8X7t53D
+8iBlGe0XhmcS3kGmgnbmNPty6VV6C9ybb1+jiJNCgGyHXso67dg/dE6xKAj6ED/8
+VJhoQANLBBLYF6deB/Ufg1YCfI2gSYPPEagpfULQjtukgFWZtIVwh8aUaKzddkq0
+toGzTtCeZm1Pd1TPjGVjx0w0422vCh6B+8G+8RpVmakD8sYgD72hOmC72d3bAVG8
+IvdqtiIYlLTwfESGoh3NRmPrMBzWFoUyFI2Z6bwh8byl2t6A9nmjAIqNEpB0QM2f
+SddQh2Xms5sPUupTi87GLQ==</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>jOlMCM7BTCOxsTbzQucd3/hRuh4fgPC5e8A0PQw7LlUnP4R+7GtjnbZdO6t/zYJp
 6pv6RETrDarU0bsLIhNbAGh14MJJx1J4N8EDpkxMnXtPriVx2mkEA4K8f0bVXJWp
 Skpp5ZZ2dysMWH0zgE9Ry9J915obg+gzBgvLa3G39grQTF4TrUOjMKOHUzpnt7hl
 emrs5XY8Mk7TDJ+IYaY0OTTfzvXFT0D4p9P3OUgaWkmsEbcggsxGiiRbPPL8FnWL
@@ -253,7 +253,7 @@ tk9YTwwPWEj90KQzV1de5PgfO7qUGKnio2qN</X509Certificate></X509Data></KeyInfo></Sig
         <RUTRecep>15394719-8</RUTRecep>
         <RznSocRecep>DIEGO LEOPOLDO DANIEL DIAZ REYES</RznSocRecep>
         <DirRecep>BORINQUEN 2 Block F DEPTO. 18 COND BRISAS DEL SUR</DirRecep>
-        <CmnaRecep>Viña del Mar</CmnaRecep>
+        <CmnaRecep>Villa Alemana</CmnaRecep>
         <id>2</id>
       </Receptor>
       <Totales>
@@ -296,17 +296,17 @@ tk9YTwwPWEj90KQzV1de5PgfO7qUGKnio2qN</X509Certificate></X509Data></KeyInfo></Sig
 </DA>
 <FRMA algoritmo="SHA1withRSA">MiIVZx0QDk7QCF30fFEayI1qddHBQmyMFH4GYfCEpPyKZ47zUAYTJQ+fJNhFeOVF7CvGau2fvV10b4kcJyK+8g==</FRMA>
 </CAF>
-    <TSTED>2019-08-22T03:40:50</TSTED>
+    <TSTED>2019-08-22T20:59:05</TSTED>
   </DD>
-  <FRMT algoritmo="SHA1withRSA">c1JTPbZA3TZI/8NGmvQw/BLV9J44gJe758TDfHRCows6RITEpVZNJR6eqxS2IuOtsbQq1QkJUofYv9eLyb04oQ==</FRMT>
+  <FRMT algoritmo="SHA1withRSA">QFQ6/6gGpX+zNKLuVBO8gROEXxw2pHvRIJX4KntGIlwtibULU7V9a/Ok3Vc3W85veuO257CxYA5Fp62Gcb8i1Q==</FRMT>
 </TED>
-  <TmstFirma>2019-08-22T03:40:50</TmstFirma></Documento>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#"><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI="#LibreDTE_T39F3"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>0XvMVXFe3B8FCzmAHYc3Acb1tBw=</DigestValue></Reference></SignedInfo><SignatureValue>ds8ll+voJc8uOhCofEepKw7aK2kyeH2K11YX4l1a6eV8s5brvGcn7p4EJpk4ejPF
-q8uvbS5LI0C6Q76HK6R46Dwg122oCiraJ57mJmHZzFiWiFz0jKSb+Zs/PCg0EAuB
-ouwKX1NAM1GERTPtA1su0/55yqw+bSNyNYo4/OKwdqmB9HTZ6w2QZHP4Hu+1NU5a
-QGZ+2334KLgQ+JyAi9x+/6oShoWtANI969joMxRGSBYasPZB6F54QSMNOI47odxv
-QjH9qF1qTQnnid089+7kysXp8YgCU+LvVAW1BPVX/fUTApTuAipz27fzP8lEyGYv
-k896D0aTfjkA0aSVd7LQUw==</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>jOlMCM7BTCOxsTbzQucd3/hRuh4fgPC5e8A0PQw7LlUnP4R+7GtjnbZdO6t/zYJp
+  <TmstFirma>2019-08-22T20:59:05</TmstFirma></Documento>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#"><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI="#LibreDTE_T39F3"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>3MEbyoW8NXnRfGIDpomDuk952M8=</DigestValue></Reference></SignedInfo><SignatureValue>R5VkYaeN+euCz+3LdwDtEKitRfG2/4RPmuI42OvhegeOOO5HKiP2vr9BJD8ud+wL
+UtvJGPUy8KJog8nuX7RuD8EbJvBT9fQ96DuwoTZIdtTOGsvh4nj81GJ/RlJ+swKM
+5dVZs/XcTgNVa1jU4ok2wE80iggeXZ9MVHBesfJBr2XuEU/AvIy9JRWJ+v8dx5Lu
+WgZUkt01PfjbxEicEo67g6812ItM8nn9KE8aJynZjodtPsn+VHW4f5f0sNO0rs4p
+u6bM5MQkJWP7PtoOvrZkb7OJjhIU26MAWf9ODU0hNpmBWj0B5DtFr+IlC0LhJ5hN
+aV4z+nZTKgzD+JiiiJjfzg==</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>jOlMCM7BTCOxsTbzQucd3/hRuh4fgPC5e8A0PQw7LlUnP4R+7GtjnbZdO6t/zYJp
 6pv6RETrDarU0bsLIhNbAGh14MJJx1J4N8EDpkxMnXtPriVx2mkEA4K8f0bVXJWp
 Skpp5ZZ2dysMWH0zgE9Ry9J915obg+gzBgvLa3G39grQTF4TrUOjMKOHUzpnt7hl
 emrs5XY8Mk7TDJ+IYaY0OTTfzvXFT0D4p9P3OUgaWkmsEbcggsxGiiRbPPL8FnWL
@@ -366,7 +366,7 @@ tk9YTwwPWEj90KQzV1de5PgfO7qUGKnio2qN</X509Certificate></X509Data></KeyInfo></Sig
         <RUTRecep>15394719-8</RUTRecep>
         <RznSocRecep>DIEGO LEOPOLDO DANIEL DIAZ REYES</RznSocRecep>
         <DirRecep>BORINQUEN 2 Block F DEPTO. 18 COND BRISAS DEL SUR</DirRecep>
-        <CmnaRecep>Viña del Mar</CmnaRecep>
+        <CmnaRecep>Villa Alemana</CmnaRecep>
         <id>2</id>
       </Receptor>
       <Totales>
@@ -411,17 +411,17 @@ tk9YTwwPWEj90KQzV1de5PgfO7qUGKnio2qN</X509Certificate></X509Data></KeyInfo></Sig
 </DA>
 <FRMA algoritmo="SHA1withRSA">MiIVZx0QDk7QCF30fFEayI1qddHBQmyMFH4GYfCEpPyKZ47zUAYTJQ+fJNhFeOVF7CvGau2fvV10b4kcJyK+8g==</FRMA>
 </CAF>
-    <TSTED>2019-08-22T03:40:50</TSTED>
+    <TSTED>2019-08-22T20:59:05</TSTED>
   </DD>
-  <FRMT algoritmo="SHA1withRSA">Qo/xxG9e9r6FbBdqXuxrBfxPjou2Fcy+G1O2eZVx2iYnSeFSjrx4kVsEAAZ9O9MHD2Ui+NBsuo/BSgQerTXUDg==</FRMT>
+  <FRMT algoritmo="SHA1withRSA">QC/jQHXtyVkV3Bz7yB2YkqS2rKGB0hl3FS76zXaABngvkiSWxFC/gfX2rvDfFAW5yo7MqiGLnIooRvabTQbPjg==</FRMT>
 </TED>
-  <TmstFirma>2019-08-22T03:40:50</TmstFirma></Documento>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#"><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI="#LibreDTE_T39F4"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>FuqpC3V7iUC8xjViPoRF5b500f4=</DigestValue></Reference></SignedInfo><SignatureValue>QEOZ6X+WxY7JbanEqR8Jw+yCeowIJpCP3/Wd71nv00ejwLsmqwmSI/FAWhv3hFdY
-J3A7eWp3lNWUJ93evW/gA/HD2GmGqD8O3yEJsmZ2ngdnalBE4fPnnw17q9BOLxbW
-A9klltxeHofnXlnbWV8eRw4cxfDd1XUSFPE8SSm2W+2PSD6Q5MWn3Cg5VYYeZeb3
-afyiYoErKU2bP4qd7qUdulOJi+qrV/7YMeF2d//D6x6G/OVXf6un7T3vxyOD3Yr1
-VWLgA0S4Mh8mfbbjNXFGHZRqK6lf3csfU+xxzegq8RzrMHtjJE8N/6f17sFmeZAo
-o3jmnrJtcB9y+zh5nlyPxQ==</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>jOlMCM7BTCOxsTbzQucd3/hRuh4fgPC5e8A0PQw7LlUnP4R+7GtjnbZdO6t/zYJp
+  <TmstFirma>2019-08-22T20:59:05</TmstFirma></Documento>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#"><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI="#LibreDTE_T39F4"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>YUZn55gwITR2uP4CfoZLgIbkDjQ=</DigestValue></Reference></SignedInfo><SignatureValue>WkBRH0XW02tOV3jk8kLsFcNbAU2TYYeVKIh4uKkk9W+V222eFH+0G1cqIF/HsmO5
+RlbYUPrwLZSf0zrYXgbLtJy2t8Tv4kB6TGtwYYMQD1nQ5CSL1WzOs/0E6R87vxL2
+6eny0934Z4hmQifvGAlpghiAfXqPHdJVghV4NYbUv1E0wMix6QqnHLqjdr/PYgA1
+FBDltv0U3BY6K29OW3Tr+t+WJFdF3ZMhMXtTlgZ25IiZd9zh3O22FA1xUxh+f4dj
+JxAygFqGxtSZRLXDmI9w79p7bzU8Hcgg9alkn8eXSh7RjX7zk+/IkfpqZpfIvPQb
+GaWM3ZueFpjmojQLXbYzkA==</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>jOlMCM7BTCOxsTbzQucd3/hRuh4fgPC5e8A0PQw7LlUnP4R+7GtjnbZdO6t/zYJp
 6pv6RETrDarU0bsLIhNbAGh14MJJx1J4N8EDpkxMnXtPriVx2mkEA4K8f0bVXJWp
 Skpp5ZZ2dysMWH0zgE9Ry9J915obg+gzBgvLa3G39grQTF4TrUOjMKOHUzpnt7hl
 emrs5XY8Mk7TDJ+IYaY0OTTfzvXFT0D4p9P3OUgaWkmsEbcggsxGiiRbPPL8FnWL
@@ -481,7 +481,7 @@ tk9YTwwPWEj90KQzV1de5PgfO7qUGKnio2qN</X509Certificate></X509Data></KeyInfo></Sig
         <RUTRecep>15394719-8</RUTRecep>
         <RznSocRecep>DIEGO LEOPOLDO DANIEL DIAZ REYES</RznSocRecep>
         <DirRecep>BORINQUEN 2 Block F DEPTO. 18 COND BRISAS DEL SUR</DirRecep>
-        <CmnaRecep>Viña del Mar</CmnaRecep>
+        <CmnaRecep>Villa Alemana</CmnaRecep>
         <id>2</id>
       </Receptor>
       <Totales>
@@ -518,17 +518,17 @@ tk9YTwwPWEj90KQzV1de5PgfO7qUGKnio2qN</X509Certificate></X509Data></KeyInfo></Sig
 </DA>
 <FRMA algoritmo="SHA1withRSA">MiIVZx0QDk7QCF30fFEayI1qddHBQmyMFH4GYfCEpPyKZ47zUAYTJQ+fJNhFeOVF7CvGau2fvV10b4kcJyK+8g==</FRMA>
 </CAF>
-    <TSTED>2019-08-22T03:40:50</TSTED>
+    <TSTED>2019-08-22T20:59:05</TSTED>
   </DD>
-  <FRMT algoritmo="SHA1withRSA">BTVFyf990GYGfeTdOXwRaCCHWPCV/KSpwbcgsJk+xneb/kohjipTCPdc5IWnEuM1JX6sWDqpL0oNfq1dUHSNxw==</FRMT>
+  <FRMT algoritmo="SHA1withRSA">EUuP1t681ROEq09RWyuXKqNuJKKrizkjlGFwJVgrDMKhS90k8AhiVfKgoeHYZdxDbuTU6N4H06+9rap+/0cJzQ==</FRMT>
 </TED>
-  <TmstFirma>2019-08-22T03:40:50</TmstFirma></Documento>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#"><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI="#LibreDTE_T39F5"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>0yvPh/31P0h1wX4/JdSSETK4AmI=</DigestValue></Reference></SignedInfo><SignatureValue>fMbfe8Za1E2V8RBp1W8gj3Nedxc5fLMIgXzO1cTiJ+jo9kIoHIP4Ufw+KuhY528r
-LNO+YMKwlPOBn7zGyqpt7ECUxhfK/e3XwLtwVTd5TMOIebG46LYirRv0toKCExBx
-sgRJwPYUvK97RuPLZZSnH3iOX+B3N6O7Uy2woM5ImWMLoxKVHjILngFIZC2RmVr6
-Kg4f/aWWnK+XuX3GZFKJSZ7ODlqoiDqn3F5PiQjTPjFwi/RTuXO3IoyEXhHPruIF
-7V1AzV/iw/Qu+QCzpH4Hn8zSdJqhXQwZj+7mte48kXby3Z2+Sss9mh0onyqOvVUG
-TA8ZMqziN1NFv96TSEl9ug==</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>jOlMCM7BTCOxsTbzQucd3/hRuh4fgPC5e8A0PQw7LlUnP4R+7GtjnbZdO6t/zYJp
+  <TmstFirma>2019-08-22T20:59:05</TmstFirma></Documento>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#"><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI="#LibreDTE_T39F5"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>OLGNW9PooBvIhS80J6R5UpwG0p8=</DigestValue></Reference></SignedInfo><SignatureValue>FgCvI/mHkIabZnJKBvoF8BzasCh+QzhIVzpLa+41MzA1Fc5qX9ZxcI6b/fvSn8fi
+YPlGpzAbxRVh1uTXCTqo3dgP66ZWPalgnDk2zQb1yv3+gJoTYjJ+HRURsp6VvKs2
+2HjL9DP7Qw5XDIB9cSSIEi7l6+LPl7JcnoAtMoGGpFvbu5Wifnh6OJylcpEQKPJ2
+XQm8Wsntx2EtkuDrMea6VfZuYkD7twGSddokfm08NEriZiK1jknoCCWT9wu2g1ZZ
+OQQBzEQLceATuRjsoFRoXrIUqHqpCsEf20t70vQkQLi6ajWhqoB+V4TNeSz++yok
+zteFWrJ3FH4Q0sW0qBVtMQ==</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>jOlMCM7BTCOxsTbzQucd3/hRuh4fgPC5e8A0PQw7LlUnP4R+7GtjnbZdO6t/zYJp
 6pv6RETrDarU0bsLIhNbAGh14MJJx1J4N8EDpkxMnXtPriVx2mkEA4K8f0bVXJWp
 Skpp5ZZ2dysMWH0zgE9Ry9J915obg+gzBgvLa3G39grQTF4TrUOjMKOHUzpnt7hl
 emrs5XY8Mk7TDJ+IYaY0OTTfzvXFT0D4p9P3OUgaWkmsEbcggsxGiiRbPPL8FnWL
@@ -568,12 +568,12 @@ m915W0NDE+/KoOnsskw4EETErJLLLH9aeYz5wm6ZJt0g0oUfuoDnm7FePS/d9cQG
 mExYmy8kpz0D5MT7L/QDOiKt8sgZkT9N/ZXI8Hcxh6VJn+xQPOYt+YQyHiaxigPA
 tk9YTwwPWEj90KQzV1de5PgfO7qUGKnio2qN</X509Certificate></X509Data></KeyInfo></Signature></DTE>
   </SetDTE>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI="#LibreDTE_SetDoc"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>EQUo8xb+WF7/SBVxTFgf1uu/UQA=</DigestValue></Reference></SignedInfo><SignatureValue>VjR7yHBy1lmrmNSckGPy9gFx05jL+0Rc6lgxSqKSjmCt+CcmUp13Px+LZY+QIQjo
-EGiRMwmI6ryBjuYjt5i5r9RFCXaHITBgpCV+ggdgdQ5kfpEZV8I1p29q4vyq7ZlL
-BNlNu7Rthux/3IT24q2yI3nluSSmeR6zIyVHsonVbl431SelMU7cqLDHqQJXJ3Cx
-zU35WKMAJymrFtTbpEw2slUqcs2YTrLUetsqg6mOBVI99Ls/mk+7gHxlj3y6loq6
-fhfhPbyfL/aG1UV3zujo1jVLUchvpzDN+2ENp1SmO4BU86GWCT+LI1twEIfuoVok
-rleR3EEoPV0a7eEE79L5Zw==</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>jOlMCM7BTCOxsTbzQucd3/hRuh4fgPC5e8A0PQw7LlUnP4R+7GtjnbZdO6t/zYJp
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI="#LibreDTE_SetDoc"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>/Lg2sh1YBOPxB0uYltNo6Wm13Mc=</DigestValue></Reference></SignedInfo><SignatureValue>TyydK2ldRlSsOek7XscFYP5afFX8kpibz6KI/bmzFIF8bdjVPEMOKsAb6BOkG0Ei
+Gg7+lBiguoZLnK2eSrE07xzC8g7CEcPp+y7qdE556eYAzkelh4aCnAjul0HgBUiR
+EXML9klU8uSzAM99oKuC47erQl+m3sQIfrIIwo1hNdToaIGIvMXPDCcHlspZaUbT
+C8qX4Rb9fCTNKgg1O8hbQvJ6Ph6lIyvhYYF22H2IUkIQ9ErqtR53A+TMlC4wfnzO
+Ux51ZtVUrbtcjA3GFUS1iCj3/ZPOXg3pBKIHTqVJSAzO6PnFEId2TcdYyC+RkYB8
+YrIsFzF62zMY7gTgxc4gIw==</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>jOlMCM7BTCOxsTbzQucd3/hRuh4fgPC5e8A0PQw7LlUnP4R+7GtjnbZdO6t/zYJp
 6pv6RETrDarU0bsLIhNbAGh14MJJx1J4N8EDpkxMnXtPriVx2mkEA4K8f0bVXJWp
 Skpp5ZZ2dysMWH0zgE9Ry9J915obg+gzBgvLa3G39grQTF4TrUOjMKOHUzpnt7hl
 emrs5XY8Mk7TDJ+IYaY0OTTfzvXFT0D4p9P3OUgaWkmsEbcggsxGiiRbPPL8FnWL

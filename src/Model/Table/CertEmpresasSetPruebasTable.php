@@ -69,7 +69,7 @@ class CertEmpresasSetPruebasTable extends Table
 
         $validator
             ->scalar('xml_envio')
-            ->maxLength('xml_envio', 200)
+            ->maxLength('xml_envio', 4294967295)
             ->allowEmptyString('xml_envio');
 
         $validator

@@ -13,6 +13,7 @@ set_time_limit(0);
     <fieldset>
         <legend><?= __('Boletas') ?></legend>
         <input type="hidden" name="cert_set_prueba_id" value="8" required />
+        <input type="hidden" name="emisor[id]" required />
         <div class="row">
             <div class="large-8">
                 <div class="large-12 columns">

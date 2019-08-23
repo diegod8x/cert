@@ -106,8 +106,8 @@ class CertEmpresasSetPruebasController extends AppController
             $Receptor["CmnaRecep"] = $comunas[$Receptor["CmnaRecep"]];
 
             $caratula = $this->request->data["caratula"];
-            $caratula["RutEnvia"] = $rutEmisor;
-            $caratula["RutReceptor"] = "60803000-K"; // sii revisar en produccion
+            $caratula["RutEnvia"] = $caratula["RutEmisor"] = $rutEmisor;
+            $caratula["RutReceptor"] = "60803000-K"; // sii revisar en produccion 
 
             //cafs
             $cafs = $this->request->data["cafs"];
@@ -156,8 +156,6 @@ class CertEmpresasSetPruebasController extends AppController
             }
                 
             $EnvioDTE = new \sasco\LibreDTE\Sii\EnvioDte();
-
-            // generar cada DTE, timbrar, firmar y agregar al sobre de EnvioDTE
             foreach ($documentos as $documento) {
                 $DTE = new \sasco\LibreDTE\Sii\Dte($documento);
                 if (!$DTE->timbrar($Folios[$DTE->getTipo()]))
@@ -165,14 +163,15 @@ class CertEmpresasSetPruebasController extends AppController
                 if (!$DTE->firmar($Firma))
                     break;
                 $EnvioDTE->agregar($DTE);
-            }
-            // enviar dtes y mostrar resultado del envío: track id o bien =false si hubo error
+            }            
             $EnvioDTE->setCaratula($caratula);
             $EnvioDTE->setFirma($Firma);
+
 
             $dom = new \DOMDocument;
             $dom->preserveWhiteSpace = TRUE;
             $dom->loadXML(trim($EnvioDTE->generar()));
+            $EnvioDTE->loadXML(trim($EnvioDTE->generar()));
 
             // xml
             $pathXMLEnvio = CERT_EMP . $rutEmisor . DS . 'xml' . DS . $pruebaId . DS . FILE_DTE . '.xml';
@@ -185,18 +184,15 @@ class CertEmpresasSetPruebasController extends AppController
                 echo $dom->saveXML() . "\n";
 
             } else if($accion=='send') {
-
                 //$track_id = $EnvioDTE->enviar();
                 $track_id = '7778890';
                 $Caratula = $EnvioDTE->getCaratula();
                 $Documentos = $EnvioDTE->getDocumentos();
-                pr($Caratula);
-                pr($Documentos);
-                
-                exit;
                 $this->generarPDF($Documentos, $Caratula, $rutEmisor, $pruebaId);
+
                 foreach (\sasco\LibreDTE\Log::readAll() as $error)
                     $observaciones .= $error;
+
                 //data almacenamiento                
                 $Receptor = $this->request->data["receptor"];      
                 $empresaReceptor = [
@@ -246,6 +242,7 @@ class CertEmpresasSetPruebasController extends AppController
 
                 // data set prueba de empresas
                 $archivos["envio_xml"] = str_replace(WWW_ROOT, '', $pathXMLEnvio);
+                $archivos["pdf_zip"] = str_replace(WWW_ROOT, '', CERT_EMP . $rutEmisor. DS . 'xml' . DS . $pruebaId . DS . 'pdf' . DS . 'pdf.zip');
                 $setPruebaEmpresa = [
                     "id" => $id, 
                     "cert_set_prueba_id" => $pruebaId,
@@ -443,8 +440,7 @@ class CertEmpresasSetPruebasController extends AppController
 
                     //$track_id = $ConsumoFolio->enviar();
                     $track_id = '789456123';
-                    $Caratula = $EnvioBOLETA->getCaratula();
-                    
+                    $Caratula = $EnvioBOLETA->getCaratula();                    
                     $Documentos = $EnvioBOLETA->getDocumentos();
                     $this->generarPDF($Documentos, $Caratula, $rutEmisor, $pruebaId);
                     foreach (\sasco\LibreDTE\Log::readAll() as $error)
@@ -490,8 +486,7 @@ class CertEmpresasSetPruebasController extends AppController
                         "xml_envio" => json_encode($archivos),
                         "trackid_envio" => $track_id,
                         "observaciones_envio" => $observaciones
-                    ];
-                    //pr($setPruebaEmpresa);exit;
+                    ];                    
                 
                     $entitySetEmpresa = $this->CertEmpresasSetPruebas->patchEntity($entitySetEmpresa, $setPruebaEmpresa);                    
                     $savedSetEmpresa = $this->CertEmpresasSetPruebas->save($entitySetEmpresa);
@@ -551,9 +546,7 @@ class CertEmpresasSetPruebasController extends AppController
             $pdf->agregar($DTE->getDatos(), $DTE->getTED());
             $id = str_replace('LibreDTE_', '', $DTE->getID());                         
             $pdf->Output(CERT_EMP . $rutEmisor. DS . 'xml' . DS . $pruebaId . DS . 'pdf' . DS . 'dte_'.$Caratula['RutEmisor'].'_'.$id.'.pdf', 'F');
-            
         }
-
     }
 
     /**
@@ -576,33 +569,26 @@ class CertEmpresasSetPruebasController extends AppController
                 'pass' => $certEmpresasSetPruebas->cert_empresa->pass_firma,
             ],
         ];
-
         // trabajar en ambiente de certificación
         // solicitar token
         $token = \sasco\LibreDTE\Sii\Autenticacion::getToken($config['firma']);
         if (!$token) {
             foreach (\sasco\LibreDTE\Log::readAll() as $error)
-                $observaciones .= $error.'. ';
-            
+                $observaciones .= $error.'. ';            
         } else {
-
             // consultar estado enviado
             $rutDv = explode("-",$certEmpresasSetPruebas->cert_empresa->rut);
             $rut = $rutDv[0];
             $dv = $rutDv[1];
             $trackID = $certEmpresasSetPruebas->trackid_envio;
-
-            $estado = \sasco\LibreDTE\Sii::request('QueryEstUp', 'getEstUp', [$rut, $dv, $trackID, $token]);
-            
+            $estado = \sasco\LibreDTE\Sii::request('QueryEstUp', 'getEstUp', [$rut, $dv, $trackID, $token]);            
             // si el estado se pudo recuperar se muestra estado y glosa
             if ($estado!==false) {
                 $certEmpresasSetPruebas->respuesta_envio = (string)$estado->xpath('/SII:RESPUESTA/SII:RESP_HDR/ESTADO')[0] . ': '. (string)$estado->xpath('/SII:RESPUESTA/SII:RESP_HDR/GLOSA')[0];            
-            }
-            
+            }            
             // mostrar error si hubo
             foreach (\sasco\LibreDTE\Log::readAll() as $error)
-                $observaciones .= $error.'. ';
-                
+                $observaciones .= $error.'. ';                
         }
 
         $certEmpresasSetPruebas->observaciones_envio = $observaciones;
@@ -639,9 +625,7 @@ class CertEmpresasSetPruebasController extends AppController
     public function setBoletaJSON($file, $folios){
         $csvToArray = $this->transformCSV($file);
         $documentos = [];
-
         foreach($folios as $tipoDoc => $desde){
-
             switch($tipoDoc) {            
                 case 39: {  
                     $tipo = $tipoDoc; 
@@ -657,7 +641,6 @@ class CertEmpresasSetPruebasController extends AppController
                 }
                 default;
             }
-
             foreach($csvToArray as $caso){
                 if ($caso["Folio"] != '') {
                     $index = $caso["Folio"];
@@ -673,9 +656,7 @@ class CertEmpresasSetPruebasController extends AppController
                 $formato['Detalle'] = $detalles[$caso];
                 $documentos[] = $formato;
             }
-
         }
-
         return $documentos;
     }
 
